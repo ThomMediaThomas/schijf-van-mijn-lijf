@@ -1,0 +1,23 @@
+#add-entry {
+  padding-top: 0px;
+
+  .add-entry-type {
+    background-color: $grayLight;
+    @include clearfix();
+
+    ul {
+      li {
+        width: 33.3333%;
+        float: left;
+
+        &.active {
+          background-color: White;
+        }
+      }
+    }
+  }
+
+  form {
+    padding-top: $baseMargin;
+  }
+}

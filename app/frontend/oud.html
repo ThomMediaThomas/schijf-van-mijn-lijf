@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="NL">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Schijf van m'n lijf</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <div class="content-wrapper">
+                    <img id="logo" src="files/images/logo.png" title="Schijf van mijn lijf" alt="Schijf van mijn lijf" />
+                </div>
+            </div>
+            <div class="entries" data-bind="foreach: entries()">
+                <div class="entry" data-bind="css: className()">
+                    <div class="content-wrapper">
+                        <div class="entry-image">
+                            <img data-bind="attr: { src: product().image, alt: product().name, title: product().name }" />
+                        </div>
+                        <div class="entry-content">
+                            <h4 data-bind="text: product().name"></h4>
+                            <h5><strong>1 x 250ml</strong> - <span data-bind="text: product().calories"></span> calorieën</h5>
+                        </div>
+                        <div class="entry-category">
+                            <span class="category" data-bind="css: categorySystemName()">
+                                <i class="icon" data-bind="css: icon()"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="entry-percentage" data-bind="css: categorySystemName()">
+                        <div class="content-wrapper">
+                            <i class="percentage"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="entries">
+                <div class="daypart">
+                    <div class="content-wrapper">
+                        <h3>Ochtend</h3>
+                        <strong class="day-total">276cal</strong>
+                    </div>
+                </div>
+                <div class="entry meats">
+                    <div class="content-wrapper">
+                        <div class="entry-image">
+                            <img src="/files/images/yoghurt.jpg" alt="Yoghurt" title="Yoghurt" />
+                        </div>
+                        <div class="entry-content">
+                            <h4>Griekse yoghurt</h4>
+                            <h5><strong>1 x 250ml</strong> - 130cal</h5>
+                        </div>
+                        <div class="entry-category">
+                            <span class="category meats">
+                                <i class="icon-milk"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="entry-percentage meats">
+                        <div class="content-wrapper">
+                            <i class="percentage"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="entry vegetables">
+                    <div class="content-wrapper">
+                        <div class="entry-image">
+                            <img src="/files/images/peer.jpg" alt="Peer" title="Peer" />
+                        </div>
+                        <div class="entry-content">
+                            <h4>Conference peer</h4>
+                            <h5><strong>1 x stuk</strong> - 130cal</h5>
+                        </div>
+                        <div class="entry-category">
+                            <span class="category vegetables">
+                                <i class="icon-fruits"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="entry-percentage vegetables">
+                        <div class="content-wrapper">
+                            <i class="percentage"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="entry wheats">
+                    <div class="content-wrapper">
+                        <div class="entry-image">
+                            <img src="/files/images/lijnzaad.jpg" alt="Lijnzaad" title="Lijnzaad" />
+                        </div>
+                        <div class="entry-content">
+                            <h4>Lijnzaad</h4>
+                            <h5><strong>1 x eetlepel</strong> - 130cal</h5>
+                        </div>
+                        <div class="entry-category">
+                            <span class="category wheats">
+                                <i class="icon-seeds"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="entry-percentage wheats">
+                        <div class="content-wrapper">
+                            <i class="percentage"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="entries">
+                <div class="daypart">
+                    <div class="content-wrapper">
+                        <h3>Lunch</h3>
+                        <strong class="day-total">276cal</strong>
+                    </div>
+                </div>
+                <div class="entry grouped">
+                    <div class="content-wrapper">
+                        <div class="entry-content">
+                            <h4>Lunch kantoor</h4>
+                        </div>
+                        <div class="entry-category">
+                            <span class="category small wheats">
+                                <i class="icon-bread"></i>
+                            </span>
+                            <span class="category small meats">
+                                <i class="icon-meat"></i>
+                            </span>
+                            <span class="category small fats">
+                                <i class="icon-butter"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="entry inset wheats">
+                    <div class="content-wrapper">
+                        <div class="entry-image">
+                            <img src="/files/images/brood.jpg" alt="Brood" title="Brood" />
+                        </div>
+                        <div class="entry-content">
+                            <h4>Volkorenbrood</h4>
+                            <h5><strong>4 x sneetje</strong> - 130cal</h5>
+                        </div>
+                        <div class="entry-category">
+                            <span class="category wheats">
+                                <i class="icon-bread"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="entry-percentage wheats">
+                        <div class="content-wrapper">
+                            <i class="percentage"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="entry inset fats">
+                    <div class="content-wrapper">
+                        <div class="entry-image">
+                            <img src="/files/images/halvarine.jpg" alt="Halvarine" title="Halvarine" />
+                        </div>
+                        <div class="entry-content">
+                            <h4>Halvarine</h4>
+                            <h5><strong>2 x eetlepel</strong> - 130cal</h5>
+                        </div>
+                        <div class="entry-category">
+                            <span class="category fats">
+                                <i class="icon-butter"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="entry-percentage fats">
+                        <div class="content-wrapper">
+                            <i class="percentage"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="entry inset meats">
+                    <div class="content-wrapper">
+                        <div class="entry-image">
+                            <img src="/files/images/ham.jpg" alt="Beenham" title="Beenham" />
+                        </div>
+                        <div class="entry-content">
+                            <h4>Beenham</h4>
+                            <h5><strong>2 x plakje</strong> - 130cal</h5>
+                        </div>
+                        <div class="entry-category">
+                            <span class="category meats">
+                                <i class="icon-meat"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="entry-percentage meats">
+                        <div class="content-wrapper">
+                            <i class="percentage"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="entry vegetables">
+                    <div class="content-wrapper">
+                        <div class="entry-image">
+                            <img src="/files/images/tomaat.jpg" alt="Tomaat" title="Tomaat" />
+                        </div>
+                        <div class="entry-content">
+                            <h4>Tomaat</h4>
+                            <h5><strong>1 x stuk</strong> - 130cal</h5>
+                        </div>
+                        <div class="entry-category">
+                            <span class="category vegetables">
+                                <i class="icon-vegetables"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="entry-percentage vegetables">
+                        <div class="content-wrapper">
+                            <i class="percentage"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+        <script src="js/vendor/jquery-3.2.1.min.js"></script>
+        <script src="js/vendor/underscore-1.8.3.min.js"></script>
+        <script src="js/vendor/knockout-3.4.2.js"></script>
+
+        <script src="js/app/application.js"></script>
+
+        <script src="js/app/models/brand.js"></script>
+        <script src="js/app/models/category.js"></script>
+        <script src="js/app/models/daypart.js"></script>
+        <script src="js/app/models/entry.js"></script>
+        <script src="js/app/models/portion.js"></script>
+        <script src="js/app/models/product.js"></script>
+        <script src="js/app/models/subcategory.js"></script>
+        <script src="js/app/models/user.js"></script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

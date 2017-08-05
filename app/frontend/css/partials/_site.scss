@@ -1,0 +1,56 @@
+html {
+  font-size: $bodyFontSize;
+  font-family: $bodyFont;
+  color: $bodyFontColor;
+  line-height: 1;
+}
+
+h3 {
+  font-weight: $semibold;
+  @include pxToRem(12px);
+  margin-bottom: $spacer;
+}
+
+h4 {
+  font-weight: $semibold;
+  @include pxToRem(12px);
+  margin-bottom: $spacer;
+}
+
+h5 {
+  font-weight: $light;
+  font-style: italic;
+  @include pxToRem(10px);
+
+  strong {
+    font-weight: $semibold;
+    font-style: normal;
+  }
+}
+
+.heading {
+  border-bottom: 1px solid $cyan;
+  color: $cyan;
+  margin-bottom: $baseMargin;
+
+  &.sub {
+    border-bottom: 1px solid $green;
+    color: $green;
+  }
+}
+
+p {
+  line-height: $baseLineHeight;
+  margin-bottom: $baseMargin;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-wrapper {
+  width: 100%;
+  padding: 0px $baseMargin;
+  @include clearfix();
+}

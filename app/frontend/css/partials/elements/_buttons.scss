@@ -1,0 +1,47 @@
+.button {
+  display: block;
+  color: White;
+  background-color: $green;
+  padding: $baseMargin/2;
+  border-radius: $radius;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: $baseMargin;
+
+  /*&:hover {
+    background-color: $orange;
+  }*/
+
+  &.small {
+    background-color: transparent;
+    border: 1px solid $green;
+    color: $green;
+  }
+}
+
+$buttonIconSize: 16px;
+
+.button-icon {
+  display: block;
+  text-align: center;
+  padding: $baseMargin/2;
+
+  i {
+    @include pxToRem($buttonIconSize);
+    display: block;
+    margin-bottom: $baseMargin/2;
+  }
+
+  span {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    @include pxToRem($buttonIconSize/2);
+  }
+
+  /*&:hover {
+    color: $orange;
+  }*/
+}

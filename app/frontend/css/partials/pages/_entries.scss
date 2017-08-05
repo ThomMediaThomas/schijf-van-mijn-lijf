@@ -1,0 +1,9 @@
+#entries {
+  .date-nav {
+    position: fixed;
+    top: $headerHeight;
+    left: 0px;
+    width: 100%;
+    z-index: $headerZ - 10;
+  }
+}

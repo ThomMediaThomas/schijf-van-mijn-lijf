@@ -1,0 +1,18 @@
+#page {
+  @include transition(all 0.3s ease-in-out);
+
+  opacity: 1;
+
+  &.before-toggle {
+    opacity: 0;
+  }
+}
+
+.page {
+  padding-top: $datenavHeight;
+  margin-bottom: 200px;
+
+  &.no-padding {
+    padding: 0;
+  }
+}

@@ -1,0 +1,65 @@
+$datenavHeight: 40px;
+$datenavPadding: $spacer*3;
+
+.date-nav,
+.selection-nav {
+  background-color: $grayLight;
+  border-bottom: 1px solid $grayDark;
+
+  text-align: center;
+
+  h3 {
+    margin-bottom: 0px;
+  }
+
+  .content-wrapper {
+    position: relative;
+    padding-top: $datenavPadding;
+    padding-bottom: $datenavPadding;
+  }
+}
+
+.date-nav {
+  background-color: $cyanLight;
+  height: $datenavHeight;
+  color: $cyan;
+  border-bottom: 1px solid $cyan;
+
+  .content-wrapper {
+    padding-top: $datenavPadding + 5;
+    padding-bottom: $datenavPadding - 5;
+  }
+
+  .datenav-button {
+    position: absolute;
+    font-size: 20px;
+    line-height: 20px;
+    top: 50%;
+    margin-top: -10px;
+
+    &.previous {
+      left: $baseMargin;
+    }
+
+    &.next {
+      right: $baseMargin;
+    }
+  }
+}
+
+.selection-nav {
+  position: fixed;
+  bottom: $footerHeight;
+  left: 0px;
+  width: 100%;
+  background-color: $cyanLight;
+  border-top: 1px solid $cyan;
+  color: $cyan;
+
+  ul {
+    li {
+      width: 50%;
+      float: left;
+    }
+  }
+}

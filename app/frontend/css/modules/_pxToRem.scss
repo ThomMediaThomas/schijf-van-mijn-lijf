@@ -1,0 +1,4 @@
+@mixin pxToRem($size) {
+  font-size: $size;
+  font-size: ($size/$bodyFontSize) + rem;
+}

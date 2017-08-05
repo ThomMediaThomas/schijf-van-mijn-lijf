@@ -1,0 +1,219 @@
+.entry {
+  $entrySize: 26px;
+  $entryPadding: $spacer;
+
+  border-bottom: 1px solid $grayDark;
+  position: relative;
+
+  @include transition(all 0.25s ease-in-out);
+
+  .entry {
+    border-bottom: 0px;
+    border-top: 1px solid $grayDark;
+    background-color: White;
+  }
+
+  .content-wrapper {
+    position: relative;
+  }
+
+  .entry-wrapper {
+    padding-top: $entryPadding;
+    padding-bottom: $entryPadding;
+    @include clearfix();
+  }
+
+  .entry-image {
+    width: $entrySize;
+    margin-right: $entryPadding;
+    float: left;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    i {
+      @include pxToRem(16px);
+      height: 16px;
+      width: 16px;
+      display: block;
+      text-align: center;
+      margin: ($entrySize - 16px)/2 auto;
+    }
+  }
+
+  .entry-content {
+    width: calc(100% - #{$entrySize + $baseSize});
+    float: left;
+  }
+
+  .entry-category {
+    text-align: right;
+    position: absolute;
+    right: $baseMargin;
+    top: 50%;
+    margin-top: -$baseSize/2;
+  }
+
+  .entry-foldout {
+    border-top: 1px solid transparent;
+    background-color: transparent;
+    height: 0px;
+    overflow: hidden;
+    @include transition(all 0.25s ease-in-out);
+
+    &.open {
+      background-color: $grayLight;
+      border-top: 1px solid $gray;
+      height: 55px;
+    }
+
+    ul {
+      @include clearfix();
+
+      li {
+        width: 33.33%;
+        float: left;
+      }
+
+      i {
+        &.icon-checkbox-checked {
+          color: $cyan;
+        }
+      }
+    }
+  }
+
+  /*.entry-percentage {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+
+    i {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      width: 50%;
+    }
+
+    .content-wrapper {
+      padding: 0px;
+      height: 3px;
+    }
+
+    &.vegetables {
+      background-color: lighten($vegetables, 40);
+
+      i {
+        background-color: $vegetables;
+      }
+    }
+
+    &.fats {
+      background-color: lighten($fats, 40);
+
+      i {
+        background-color: $fats;
+      }
+    }
+
+    &.meats {
+      background-color: lighten($meats, 40);
+
+      i {
+        background-color: $meats;
+      }
+    }
+
+    &.wheats {
+      background-color: lighten($wheats, 40);
+
+      i {
+        background-color: $wheats;
+      }
+    }
+
+    &.drinks {
+      background-color: lighten($drinks, 40);
+
+      i {
+        background-color: $drinks;
+      }
+    }
+  }*/
+
+  &.add {
+    color: $gray;
+  }
+
+  &.meal {
+    background-color: $bgGrayLight;
+
+    .entry-category {
+      margin-top: -7px;
+
+      .category {
+        display: inline-block;
+        text-align: right;
+      }
+    }
+
+    .meal-products {
+      max-height: 0px;
+      overflow: hidden;
+      @include transition(all 0.25s ease-in-out);
+
+      &.open {
+        max-height: 200px;
+      }
+    }
+  }
+
+  &.inset {
+    .entry-image {
+      margin-left: $entrySize/2;
+    }
+
+    .entry-content {
+      width: calc(100% - #{$entrySize*2 + $baseSize});
+    }
+  }
+
+  &.selected {
+    border-left: 4px solid $cyan;
+  }
+
+  &.vegetables {
+    h4 {
+      color: $vegetables;
+    }
+  }
+
+  &.fats {
+    h4 {
+      color: $fats;
+    }
+  }
+
+  &.meats {
+    h4 {
+      color: $meats;
+    }
+  }
+
+  &.wheats {
+    h4 {
+      color: $wheats;
+    }
+  }
+
+  &.drinks {
+    h4 {
+      color: $drinks;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+form {
+  .form-row {
+    width: 100%;
+    margin-bottom: $baseMargin;
+    @include clearfix();
+  }
+
+  .form-group {
+    padding: $baseMargin/2;
+    border-radius: $radius;
+    border: 1px solid $gray;
+    margin-bottom: $baseMargin;
+  }
+
+  .form-row-inner {
+    display: block;
+    float: left;
+    padding-right: $spacer;
+
+    &:last-child {
+      padding-right: 0px;
+    }
+
+    &.quart {
+      width: 25%;
+    }
+
+    &.half {
+      width: 50%;
+    }
+
+    &.three-quart {
+      width: 75%;
+    }
+  }
+
+  label {
+    text-transform: uppercase;
+    margin-bottom: $spacer;
+    display: block;
+    @include pxToRem(12px);
+  }
+
+  input,
+  select{
+    width: 100%;
+    display: block;
+
+    border: 0px;
+    outline: 0px;
+    border-bottom: 1px solid $gray;
+
+    font-family: inherit;
+    font-size: inherit;
+    color: $bodyFontColor;
+
+    padding: $spacer;
+
+    &:focus {
+      border-color: $cyan;
+    }
+
+    &:disabled {
+      background-color: $grayLight;
+    }
+  }
+
+  select {
+    padding-top: $spacer - 1px;
+  }
+}

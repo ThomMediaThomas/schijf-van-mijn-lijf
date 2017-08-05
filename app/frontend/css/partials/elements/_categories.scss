@@ -1,0 +1,38 @@
+.category {
+  display: inline-block;
+  width: $categorySize;
+  height: $categorySize;
+  padding: 4px;
+  border-radius: $categorySize / 2;
+  color: White;
+  @include pxToRem(12px);
+
+  &.small {
+    width: $categorySize/2;
+    height: $categorySize/2;
+    padding: 2px;
+    border-radius: $categorySize / 4;
+    @include pxToRem(6px);
+
+  }
+
+  &.vegetables {
+    background-color: $vegetables;
+  }
+
+  &.fats {
+    background-color: $fats;
+  }
+
+  &.meats {
+    background-color: $meats;
+  }
+
+  &.wheats {
+    background-color: $wheats;
+  }
+
+  &.drinks {
+    background-color: $drinks;
+  }
+}

@@ -1,0 +1,23 @@
+.daypart {
+  $daypartPadding: $spacer;
+
+  background-color: $bgGray;
+  border-bottom: 1px solid $grayDark;
+  padding: $daypartPadding 0px;
+
+  h3 {
+    margin-bottom: 0px;
+    display: block;
+    width: 75%;
+    float: left;
+  }
+
+  .day-total {
+    width: 25%;
+    text-align: right;
+    float: right;
+    font-weight: $light;
+    font-style: italic;
+  }
+
+}

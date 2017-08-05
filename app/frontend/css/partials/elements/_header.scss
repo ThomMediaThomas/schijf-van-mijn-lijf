@@ -1,0 +1,44 @@
+$headerHeight: 40px;
+$headerPadding: 6px;
+$logoWidth: 54px;
+$headerButtonSize: 20px;
+$headerZ: 50;
+
+#main {
+  padding-top: $headerHeight;
+}
+
+#header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: $headerZ;
+
+  .header-wrapper {
+    padding: $headerPadding $baseMargin;
+    height: $headerHeight;
+    background-color: $cyan;
+  }
+
+  #logo {
+    width: $logoWidth;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    margin-left: -$logoWidth/2;
+  }
+
+  .header-button {
+    float: left;
+    color: White;
+    @include pxToRem($headerButtonSize);
+    margin: ($headerHeight - ($headerPadding * 2) - $headerButtonSize) / 2 0px;
+
+    &:last-child {
+      float: right;
+    }
+  }
+}

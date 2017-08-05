@@ -1,0 +1,11 @@
+#loading {
+  background: url('/files/images/loading.gif') no-repeat rgba(255, 255, 255, 0.8) center center;
+  opacity: 0;
+  top: 0%;
+  pointer-events: none;
+  @include transition(opacity 0.25s ease-in-out);
+
+  &.open {
+    opacity: 1;
+  }
+}
