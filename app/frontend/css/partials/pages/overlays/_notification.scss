@@ -18,6 +18,11 @@
   .content-wrapper {
     position: relative;
 
+    span {
+      padding-right: $baseMargin;
+      display: block;
+    }
+
     #close-notification {
       position: absolute;
       @include pxToRem(12px);

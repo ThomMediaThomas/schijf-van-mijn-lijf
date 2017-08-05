@@ -21,6 +21,10 @@ function isValid ($form) {
         }
     });
 
+    if (errors > 0 ) {
+        APP.notificator.show('Gelieve de rood gemarkeerde velden nog even te controleren.', 'error');
+    }
+
     return errors == 0;
 }
 

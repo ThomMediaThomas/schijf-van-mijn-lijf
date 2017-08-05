@@ -1766,6 +1766,9 @@ form select {
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3); }
   #notification .content-wrapper {
     position: relative; }
+    #notification .content-wrapper span {
+      padding-right: 20px;
+      display: block; }
     #notification .content-wrapper #close-notification {
       position: absolute;
       font-size: 12px;
