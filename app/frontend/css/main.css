@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, p, dl, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -1136,13 +1136,30 @@ h5 {
     border-bottom: 1px solid #bedb39;
     color: #bedb39; }
 
-p {
+p, dl {
   line-height: 1.5;
   margin-bottom: 20px; }
 
 a {
   text-decoration: none;
   color: inherit; }
+
+dl:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+dl dt, dl dd {
+  width: 50%;
+  float: left; }
+
+dl dt {
+  padding-right: 4px;
+  border-right: 1px solid #ededed; }
+
+dl dd {
+  padding-left: 4px;
+  font-weight: 700; }
 
 .content-wrapper {
   width: 100%;
@@ -1368,6 +1385,10 @@ form label {
   display: block;
   font-size: 12px;
   font-size: 1rem; }
+  form label span {
+    text-transform: none;
+    font-size: 0.8em;
+    font-style: italic; }
 
 form input,
 form select {

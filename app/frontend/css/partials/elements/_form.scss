@@ -39,6 +39,12 @@ form {
     margin-bottom: $spacer;
     display: block;
     @include pxToRem(12px);
+
+    span {
+      text-transform: none;
+      font-size: 0.8em;
+      font-style: italic;
+    }
   }
 
   input,

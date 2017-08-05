@@ -13,6 +13,10 @@ class User extends Model
         'email',
         'password',
         'gender',
+        'birthdate',
+        'weight',
+        'length',
+        'activity_level',
         'calories_goal',
         'calories_average',
     ];

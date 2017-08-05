@@ -49,6 +49,26 @@ a {
   color: inherit;
 }
 
+dl {
+  @include clearfix;
+  @extend p;
+
+  dt, dd {
+    width: 50%;
+    float: left;
+  }
+
+  dt {
+    padding-right: $spacer;
+    border-right: 1px solid $grayLight;
+  }
+
+  dd {
+    padding-left: $spacer;
+    font-weight: $bold;
+  }
+}
+
 .content-wrapper {
   width: 100%;
   padding: 0px $baseMargin;

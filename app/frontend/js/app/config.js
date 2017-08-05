@@ -15,7 +15,7 @@ var CONFIG = {
         MEAL_SEARCH: '/meals/search',
         BRAND_SEARCH: '/brands/search',
     },
-    HOME: 'entries',
+    HOME: 'calculator',
     DATE_FORMATS: {
         API: 'YYYY-MM-DD',
         HUMAN: 'dddd D MMMM YYYY',

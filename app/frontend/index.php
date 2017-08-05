@@ -72,6 +72,7 @@
         <script src="js/app/pages/overlays/add-entry.js"></script>
         <script src="js/app/pages/overlays/add-meal.js"></script>
         <script src="js/app/pages/entries.js"></script>
+        <script src="js/app/pages/calculator.js"></script>
         <script src="js/app/pages/progress.js"></script>
         <script src="js/app/pages/profile.js"></script>
         <script src="js/app/pages/add-product.js"></script>

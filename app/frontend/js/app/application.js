@@ -31,7 +31,8 @@ function Application(){
         'entries': new EntriesPage(),
         'addProduct': new AddProductPage(),
         'profile': new ProfilePage(),
-        'progress': new ProgressPage()
+        'progress': new ProgressPage(),
+        'calculator' : new CalculatorPage()
     };
 
     self.currentPage = ko.observable('splash');

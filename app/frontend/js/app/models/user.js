@@ -10,6 +10,10 @@ function User(data){
     self.lastname = ko.observable(data.lastname);
     self.email = ko.observable(data.email);
     self.gender = ko.observable(data.gender);
+    self.weight = ko.observable(data.weight);
+    self.length = ko.observable(data.length);
+    self.birthdate = ko.observable(data.birthdate);
+    self.activity_level = ko.observable(data.birthdate);
     self.calories_average = ko.observable(data.calories_average);
     self.calories_goal = ko.observable(data.calories_goal);
 }
