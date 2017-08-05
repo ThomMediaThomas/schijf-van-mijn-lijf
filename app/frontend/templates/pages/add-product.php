@@ -1,7 +1,7 @@
 <script id="addProduct" type="text/html">
     <div id="add-product-page" class="page" data-bind="with: $root.pages.addProduct">
         <div class="content-wrapper">
-            <form enctype="multipart/form-data">
+            <form id="add-product-form" enctype="multipart/form-data">
                 <div class="heading">
                     <h3>Product toevoegen</h3>
                 </div>
@@ -11,15 +11,15 @@
                 </div>
                 <div class="form-row">
                     <label for="name">Naam:</label>
-                    <input type="text" id="name" name="name" data-bind="value: name">
+                    <input class="required" type="text" id="name" name="name" data-bind="value: name">
                 </div>
                 <div class="form-row">
                     <label for="brand">Merk:</label>
-                    <input type="text" id="brand" name="brand" data-bind="value: brand">
+                    <input class="required" type="text" id="brand" name="brand" data-bind="value: brand">
                 </div>
                 <div class="form-row">
                     <label for="subcategory_id">Category:</label>
-                    <select id="subcategory_id" name="subcategory_id" data-bind="value: subcategory_id,
+                    <select class="required" id="subcategory_id" name="subcategory_id" data-bind="value: subcategory_id,
                         options: subcategories,
                         optionsText: function (subcategory) { return subcategory.name },
                         optionsValue: function (subcategory) { return subcategory.id },
@@ -35,19 +35,19 @@
                 </div>
                 <div class="form-row">
                     <label for="calories">Calorieën per 100gr:</label>
-                    <input type="text" id="calories" name="calories" data-bind="value: calories">
+                    <input class="required number" type="text" id="calories" name="calories" data-bind="value: calories">
                 </div>
                 <div class="form-row">
                     <label for="carbs">Koolhydraten per 100gr:</label>
-                    <input type="text" id="carbs" name="carbs" data-bind="value: carbs">
+                    <input class="required number" type="text" id="carbs" name="carbs" data-bind="value: carbs">
                 </div>
                 <div class="form-row">
                     <label for="proteins">Eiwitten per 100gr:</label>
-                    <input type="text" id="proteins" name="proteins" data-bind="value: proteins">
+                    <input class="required number" type="text" id="proteins" name="proteins" data-bind="value: proteins">
                 </div>
                 <div class="form-row">
                     <label for="fat">Vet per 100gr:</label>
-                    <input type="text" id="fat" name="fat" data-bind="value: fat">
+                    <input class="required number" type="text" id="fat" name="fat" data-bind="value: fat">
                 </div>
                 <div class="heading sub">
                     <h3>Porties</h3>
@@ -56,15 +56,15 @@
                     <div class="form-group">
                         <div class="form-row">
                             <label for="portion_name">Naam:</label>
-                            <input type="text" id="portion_name" name="portion_name" data-bind="value: name">
+                            <input class="number" type="text" id="portion_name" name="portion_name" data-bind="value: name">
                         </div>
                         <div class="form-row">
                             <label for="portion_unit">Hoeveelheid:</label>
                             <div class="form-row-inner three-quart">
-                                <input type="number" id="portion_unit" name="portion_unit" data-bind="value: size">
+                                <input class="required number" type="number" id="portion_unit" name="portion_unit" data-bind="value: size">
                             </div>
                             <div class="form-row-inner quart">
-                                <select id="portion_unit" name="portion_unit" data-bind="value: unit">
+                                <select class="required" id="portion_unit" name="portion_unit" data-bind="value: unit">
                                     <option>gr</option>
                                     <option>ml</option>
                                 </select>

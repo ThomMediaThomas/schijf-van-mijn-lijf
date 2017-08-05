@@ -1376,6 +1376,7 @@ form select {
   border: 0px;
   outline: 0px;
   border-bottom: 1px solid #c7c7c7;
+  border-left: 2px solid transparent;
   font-family: inherit;
   font-size: inherit;
   color: #989898;
@@ -1386,6 +1387,10 @@ form select {
   form input:disabled,
   form select:disabled {
     background-color: #ededed; }
+  form input.invalid,
+  form select.invalid {
+    border-bottom-color: #fa2444;
+    border-left: 2px solid #fa2444; }
 
 form select {
   padding-top: 3px; }

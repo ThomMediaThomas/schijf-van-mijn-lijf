@@ -5,6 +5,7 @@ function AddProductPage() {
     var self = this;
 
     self.$element = $('#add-product-page');
+    self.$form = $('#add-product-form');
 
     self.name = ko.observable('');
     self.brand = ko.observable('');
@@ -26,6 +27,7 @@ function AddProductPage() {
         }
 
         self.$element = $('#add-product-page');
+        self.$form = $('#add-product-form');
 
         self.initSubcategorySelect();
         self.initBrandsAutocomplete();
@@ -62,6 +64,10 @@ function AddProductPage() {
     };
 
     self.submit = function () {
+        if (!isValid(self.$form)) {
+            return false;
+        }
+
         self.submitImage(function (imageUrl) {
             AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.PRODUCTS, {
                 product: {

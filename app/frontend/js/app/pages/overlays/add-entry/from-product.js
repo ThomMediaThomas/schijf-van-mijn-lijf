@@ -79,6 +79,10 @@ function FromProductForm(){
     },
 
     self.submit = function () {
+        if (!isValid(this.$element)) {
+            return false;
+        }
+
         AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.ENTRIES, {
             entry: {
                 type: 'product',

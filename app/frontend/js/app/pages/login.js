@@ -4,10 +4,13 @@
 function LoginPage(){
     var self = this;
 
+    self.$form = $('#login-form');
     self.username = ko.observable();
     self.password = ko.observable();
 
     self.init = function () {
+        self.$form = $('#login-form');
+
         if (localStorage.getItem('username') && localStorage.getItem('password')) {
             self.performLogin(localStorage.getItem('username'), localStorage.getItem('password'));
         }

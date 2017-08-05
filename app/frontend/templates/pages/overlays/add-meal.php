@@ -1,13 +1,13 @@
 <div id="add-meal" class="page overlay" data-bind="with: addMeal, css: addMeal.state">
     <div class="content-wrapper">
-        <form>
+        <form id="add-meal-form">
             <form>
                 <div class="heading">
                     <h3>Maaltijd toevoegen</h3>
                 </div>
                 <div class="form-row">
                     <label for="username">Naam:</label>
-                    <input type="text" id="name" name="name" data-bind="value: name">
+                    <input class="required" type="text" id="name" name="name" data-bind="value: name">
                 </div>
                 <div class="form-row">
                     <label for="username">Producten:</label>

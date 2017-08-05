@@ -18,7 +18,6 @@
             <?php include(dirname(__DIR__).'/frontend/templates/elements/header.php'); ?>
             <div id="page" data-bind="template: { name: $root.pageTemplate }"></div>
             <?php include(dirname(__DIR__).'/frontend/templates/elements/footer.php'); ?>
-
         </div>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/splash.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/loading.php'); ?>
@@ -45,6 +44,7 @@
 
         <script src="js/app/helpers/authentication.js"></script>
         <script src="js/app/helpers/ajax.js"></script>
+        <script src="js/app/helpers/form-validator.js"></script>
         <script src="js/app/config.js"></script>
         <script src="js/app/loaded-config.js"></script>
         <script src="js/app/application.js"></script>

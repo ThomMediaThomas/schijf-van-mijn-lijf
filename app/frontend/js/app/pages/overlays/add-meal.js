@@ -5,6 +5,7 @@ function AddMealPage(){
     var self = this;
 
     self.$element = $('#add-meal');
+    self.$form = $('#add-meal-form');
     self.state = ko.observable('closed');
 
     self.name = ko.observable();
@@ -39,6 +40,10 @@ function AddMealPage(){
     };
 
     self.submit = function () {
+        if (!isValid(self.$form)) {
+            return false;
+        }
+
         var that = self;
 
         if (APP.currentPage() == 'entries') {

@@ -8,8 +8,8 @@ function FromQuickForm(){
 
     self.dayparts = ko.observableArray([]);
     self.daypart_id = ko.observable();
-    self.name = ko.observable();
-    self.calories = ko.observable();
+    self.name = ko.observable('');
+    self.calories = ko.observable('');
 
     self.init = function () {
         self.initDaypartsSelect();
@@ -29,6 +29,10 @@ function FromQuickForm(){
     };
 
     self.submit = function () {
+        if (!isValid(this.$element)) {
+            return false;
+        }
+
         AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.ENTRIES, {
             entry: {
                 type: 'quick',

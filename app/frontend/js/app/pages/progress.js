@@ -4,6 +4,8 @@
 function ProgressPage() {
     var self = this;
 
+    self.$form = $('#add-progress-form');
+
     self.progresses = ko.observableArray([]);
     self.max = ko.observable({ weight: 0, css: ''});
     self.min = ko.observable({ weight: 0, css: ''});
@@ -16,6 +18,7 @@ function ProgressPage() {
     self.init = function () {
         APP.isLoading(true);
         self.loadProgresses();
+        self.$form = $('#add-progress-form');
     };
 
     self.reload = function () {
@@ -85,6 +88,10 @@ function ProgressPage() {
     };
 
     self.submitProgress = function () {
+        if (!isValid(self.$form)) {
+            return false;
+        }
+
         AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.PROGRESS, {
             progress: {
                 weight: self.weight(),

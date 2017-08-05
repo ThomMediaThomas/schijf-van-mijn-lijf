@@ -26,11 +26,11 @@
             <div class="heading sub">
                 <h3>Voortgang toevoegen</h3>
             </div>
-            <form>
+            <form id="add-progress-form">
                 <div class="form-row">
                     <div class="form-row-inner half">
                         <label for="weight">Gewicht:</label>
-                        <input type="text" id="weight" name="weight" data-bind="value: weight">
+                        <input class="required number" type="number" id="weight" name="weight" data-bind="value: weight">
                     </div>
                     <div class="form-row-inner half">
                         <label>&nbsp;</label>
