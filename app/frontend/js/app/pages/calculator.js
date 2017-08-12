@@ -88,7 +88,7 @@ function CalculatorPage(){
     };
 
     self.createAdvice = function () {
-        if (self.program().goal_type == 'loose') {
+        if (self.program().goal_type() == 'loose') {
             //Set calories goal
             var caloriesGoal = parseFloat(self.user().calories_average()) * ((100 - parseFloat(self.goal_speed())) / 100);
             self.program().calories_goal(Math.floor(caloriesGoal));
@@ -101,13 +101,14 @@ function CalculatorPage(){
 
             self.program().goal_duration(daysForTotal);
             self.program().start_date(moment());
-        } else if (self.program().goal_type == 'stay') {
+        } else if (self.program().goal_type() == 'stay') {
             self.program().calories_goal(self.user().calories_average());
             self.program().start_date(moment());
-        } else if (self.program().goal_type == 'gain') {
+        } else if (self.program().goal_type() == 'gain') {
             //Set calories goal
             var caloriesGoal = parseFloat(self.user().calories_average()) * ((100 + parseFloat(self.goal_speed())) / 100);
             self.program().calories_goal(Math.floor(caloriesGoal));
+            console.log(caloriesGoal);
 
             //Set goal duration
             var weightToGain = parseFloat(self.program().preferred_weight()) - parseFloat(self.user().weight()),
@@ -123,17 +124,18 @@ function CalculatorPage(){
     };
 
     self.submitGoal = function () {
-        AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.USER + '/' + self.user().id, {
+        AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.PROGRAMS, {
             program: {
-                'goal_type': self.program.goal_type(),
-                'preferred_weight': self.program.preferred_weight(),
-                'calories_goal': self.program.calories_goal(),
-                'goal_duration': self.program.goal_duration(),
-                'start_date': self.program.start_date(),
-                'started': self.program.started(),
+                'goal_type': self.program().goal_type(),
+                'preferred_weight': self.program().preferred_weight(),
+                'calories_goal': self.program().calories_goal(),
+                'goal_duration': self.program().goal_duration(),
+                'start_date': moment().format(CONFIG.DATE_FORMATS.API),
+                'started': 1,
             }
         }, function () {
-            self.currentStep(self.currentStep() + 1);
+            APP.navigate('entries');
+            APP.notificator.show('Jouw doel is succesvol opgeslagen, succes!', 'success');
         });
     };
 

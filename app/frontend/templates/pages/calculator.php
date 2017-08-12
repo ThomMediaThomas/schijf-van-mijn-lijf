@@ -164,19 +164,21 @@
                         </form>
                     </div>
                 </div>
-                <div class="calculator-step" data-bind="if: currentStep() == 4">
+                <div class="calculator-step" data-bind="if: currentStep() == 5">
                     <div class="heading sub">
                         <h3>Jouw advies op maat</h3>
                     </div>
                     <div class="content">
                         <p>Let op; onderstaande is slechts een advies, gebaseerd op algemeen bekende gemiddeldes. Voor een écht advies op maat raden wij je altijd aan een diëtiste to consulteren.</p>
-                        <div id="calculator-advice">
+                        <div id="calculator-advice" data-bind="with: program">
                             <div class="heading">
                                 <h3>Jouw advies</h3>
                             </div>
                             <div id="calculator-advice-intro">
-                                <p>Je hebt aangegeven graag</p>
+                                <p>Om aan jouw doel te voldoen raden wij je aan ongeveer <strong data-bind="text: calories_goal()"></strong> calorieën per dag te gebruiken.</p>
+                                <p data-bind="if: goal_type() != 'stay'">Met dat doel zal het ongeveer <strong data-bind="text: goal_duration()"></strong> dagen duren om je doel te berekenen.</p>
                             </div>
+                            <a class="button" data-bind="click: $parent.submitGoal">Doel opslaan en starten</a>
                         </div>
                     </div>
                 </div>

@@ -8,6 +8,7 @@ class Program extends Model
 {
     protected $fillable = [
         'user_id',
+        'goal_type',
         'preferred_weight',
         'calories_goal',
         'goal_duration',

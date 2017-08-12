@@ -17,6 +17,7 @@ var CONFIG = {
         PRODUCT_SEARCH: '/products/search',
         MEAL_SEARCH: '/meals/search',
         BRAND_SEARCH: '/brands/search',
+        PROGRAMS: '/programs',
     },
     HOME: 'entries',
     DATE_FORMATS: {
