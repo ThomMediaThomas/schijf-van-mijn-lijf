@@ -12,30 +12,39 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <meta name="mobile-web-app-capable" content="yes">
+        <!-- Chrome, Firefox OS and Opera -->
+        <meta name="theme-color" content="#0c82f0">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#0c82f0">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#0c82f0">
     </head>
     <body>
         <div id="main">
-            <?php include(dirname(__DIR__).'/schijf/templates/elements/header.php'); ?>
+            <?php //replace /schijf/ to /frontend/ ?>
+            <?php include(dirname(__DIR__).'/frontend/templates/elements/header.php'); ?>
             <div id="page" data-bind="template: { name: $root.pageTemplate }"></div>
-            <?php include(dirname(__DIR__).'/schijf/templates/elements/footer.php'); ?>
+            <?php include(dirname(__DIR__).'/frontend/templates/elements/footer.php'); ?>
         </div>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/splash.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/loading.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/notification.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/elements/navigation.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/add-entry.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/add-meal.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/splash.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/loading.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/notification.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/elements/navigation.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/add-entry.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/add-meal.php'); ?>
 
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/login.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/entries.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/profile.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/progress.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/calculator.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/disclaimer.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/pages/add-product.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/elements/entries/product.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/elements/entries/meal.php'); ?>
-        <?php include(dirname(__DIR__).'/schijf/templates/elements/entries/quick.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/login.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/entries.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/profile.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/progress.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/calculator.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/disclaimer.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/add-product.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/product.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/meal.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/quick.php'); ?>
         <script src="js/vendor/jquery-3.2.1.min.js"></script>
         <script src="js/vendor/jquery-ui.min.js"></script>
         <script src="js/vendor/underscore-1.8.3.min.js"></script>

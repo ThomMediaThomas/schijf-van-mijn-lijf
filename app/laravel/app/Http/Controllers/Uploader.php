@@ -7,20 +7,19 @@ use Illuminate\Support\Facades\Input;
 
 class Uploader extends Base
 {
-    private $path = 'C:\dev\schijf-van-mijn-lijf\app\frontend';
-    private $folder = '\files\uploads\\';
-
     public function upload(Request $request)
     {
+        $folder = DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR;
+        $path = '..' . DIRECTORY_SEPARATOR . 'schijf-api';
         $image = Input::file('image');
 
         if ($image) {
             $fileName = uniqid('upload_') . '_' . strtolower($image->getClientOriginalName());
 
-            $image->move($this->path . $this->folder, $fileName);
+            $image->move($path . $folder, $fileName);
 
             return response()->json([
-                'url' => $this->folder . $fileName
+                'url' => $folder . $fileName
             ], 201);
         }
     }

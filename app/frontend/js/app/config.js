@@ -1,7 +1,7 @@
 var DEBUG = true;
 var CONFIG = {
-    //API: 'http://api.schijf-van-mijn-lijf.dev',
-    API: 'http://schijf-api.thommedia.nl',
+    API: 'http://api.schijf-van-mijn-lijf.dev',
+    //API: 'http://schijf-api.thommedia.nl',
     ENDPOINTS: {
         UPLOAD: '/upload',
         ME: '/user/me',
@@ -16,7 +16,7 @@ var CONFIG = {
         MEAL_SEARCH: '/meals/search',
         BRAND_SEARCH: '/brands/search',
     },
-    HOME: 'calculator',
+    HOME: 'entries',
     DATE_FORMATS: {
         API: 'YYYY-MM-DD',
         HUMAN: 'dddd D MMMM YYYY',

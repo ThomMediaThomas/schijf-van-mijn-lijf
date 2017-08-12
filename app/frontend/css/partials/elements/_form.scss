@@ -49,6 +49,8 @@ form {
 
   input,
   select{
+    -webkit-appearance: none;
+
     width: 100%;
     display: block;
 
@@ -79,5 +81,6 @@ form {
 
   select {
     padding-top: $spacer - 1px;
+    background: url('/files/images/select.png') no-repeat White center right;
   }
 }

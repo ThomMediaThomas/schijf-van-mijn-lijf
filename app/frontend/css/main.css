@@ -1395,6 +1395,7 @@ form label {
 
 form input,
 form select {
+  -webkit-appearance: none;
   width: 100%;
   display: block;
   border: 0px;
@@ -1417,7 +1418,8 @@ form select {
     border-left: 2px solid #fa2444; }
 
 form select {
-  padding-top: 3px; }
+  padding-top: 3px;
+  background: url("/files/images/select.png") no-repeat White center right; }
 
 .autocomplete-product-suggestion {
   color: #989898;

@@ -65,7 +65,7 @@ class Products extends Base
     }
 
     private function addPortions($data, Product $product) {
-        if ($data['portions']) {
+        if (isset($data['portions'])){
             foreach ($data['portions'] as $portion) {
                 Portion::create([
                     'name' => $portion['name'],
