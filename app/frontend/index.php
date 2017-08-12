@@ -53,6 +53,7 @@
 
         <script src="js/app/helpers/authentication.js"></script>
         <script src="js/app/helpers/ajax.js"></script>
+        <script src="js/app/helpers/general.js"></script>
         <script src="js/app/helpers/form-validator.js"></script>
         <script src="js/app/config.js"></script>
         <script src="js/app/loaded-config.js"></script>

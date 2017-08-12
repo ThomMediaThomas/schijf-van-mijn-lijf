@@ -67,7 +67,7 @@ function FromProductForm(){
             return $('<li class="autocomplete-product-suggestion">')
                 .append('<div class="entry-image">')
                     .find('div.entry-image')
-                    .append('<img title="' + item.label + '" alt="' + item.label + '" src="' + item.product.image + '" />')
+                    .append('<img title="' + item.label + '" alt="' + item.label + '" src="' + IMAGEHELPER.RESOLVE(item.product.image) + '" />')
                     .parent()
                 .append('<div class="entry-content">')
                     .find('div.entry-content')

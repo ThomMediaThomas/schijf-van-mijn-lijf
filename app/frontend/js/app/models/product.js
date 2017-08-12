@@ -6,7 +6,7 @@ function Product(data){
 
     self.id = data.id;
     self.name = data.name;
-    self.image = data.image;
+    self.image = IMAGEHELPER.RESOLVE(data.image);
     self.calories = data.calories;
     self.subcategory = ko.observable(new Subcategory(data.subcategory));
     self.category = ko.observable(new Category(data.subcategory.category));
