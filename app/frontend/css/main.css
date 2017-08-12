@@ -1135,6 +1135,9 @@ h5 {
   .heading.sub {
     border-bottom: 1px solid #bedb39;
     color: #bedb39; }
+    .heading.sub.sub {
+      border-bottom: 1px solid #989898;
+      color: #989898; }
 
 p, dl {
   line-height: 1.5;

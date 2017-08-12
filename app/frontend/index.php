@@ -59,6 +59,7 @@
         <script src="js/app/models/user.js"></script>
         <script src="js/app/models/meal.js"></script>
         <script src="js/app/models/page.js"></script>
+        <script src="js/app/models/program.js"></script>
 
         <script src="js/app/elements/navigation.js"></script>
 

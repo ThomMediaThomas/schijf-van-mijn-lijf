@@ -36,6 +36,11 @@ h5 {
   &.sub {
     border-bottom: 1px solid $green;
     color: $green;
+
+    &.sub {
+      border-bottom: 1px solid $bodyFontColor;
+      color: $bodyFontColor;
+    }
   }
 }
 

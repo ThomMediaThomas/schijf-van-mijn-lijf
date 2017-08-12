@@ -30,12 +30,12 @@
                                 </div>
                                 <div class="form-row">
                                     <label for="weight">Gewicht <span>(in kg)</span>:</label>
-                                    <input class="required" type="text" id="weight" name="weight"
+                                    <input class="number required" type="number" id="weight" name="weight"
                                            data-bind="value: weight">
                                 </div>
                                 <div class="form-row">
                                     <label for="length">Lengte <span>(in cm)</span>:</label>
-                                    <input class="required" type="text" id="length" name="length"
+                                    <input class="number required" type="number" id="length" name="length"
                                            data-bind="value: length">
                                 </div>
                                 <a class="button" data-bind="click: $parent.submitPersonal">Volgende stap</a>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="calculator-step" data-bind="if: currentStep() == 3">
                     <div class="heading sub">
-                        <h3>Jouw behoefte en doelen</h3>
+                        <h3>Jouw behoeftes</h3>
                     </div>
                     <div class="content">
                         <p>Goed zo! Op deze manier hebben we voor je kunnen berekenen wat jouw calorie-behoefte is.</p>
@@ -87,6 +87,97 @@
                             </div>
                             <a class="button" data-bind="click: submitNeeds">Energiebehoefte opslaan</a>
                         </form>
+                    </div>
+                </div>
+                <div class="calculator-step" data-bind="if: currentStep() == 4">
+                    <div class="heading sub">
+                        <h3>Jouw doel</h3>
+                    </div>
+                    <div class="content">
+                        <p>Nu we dit allemaal weten, kunnen we kijken naar jouw doel(en).</p>
+                        <form id="calculator-needs-form">
+                            <div data-bind="with: program">
+                                <div class="form-row">
+                                    <label for="goal_type">Wat wil je graag?</label>
+                                    <select class="required" id="goal_type" name="goal_type"
+                                            data-bind="value: goal_type">
+                                        <option value="stay">Ik wil graag op gewicht blijven.</option>
+                                        <option value="loose">Ik wil graag afvallen</option>
+                                        <option value="gain">Ik wil graag aankomen</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" data-bind="visible: goal_type() == 'stay'">
+                                    <div class="heading sub sub">
+                                        <h3>Je wilt op gewicht blijven</h3>
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="current_weight">Je huidige gewicht <span>(in kg)</span>:</label>
+                                        <input class="number required" disabled="disabled" type="number"
+                                               id="current_weight" name="current_weight"
+                                               data-bind="value: $parent.user().weight">
+                                    </div>
+                                    <a class="button" data-bind="click: $parent.createAdvice">Bereken advies</a>
+                                </div>
+                                <div class="form-group" data-bind="visible: goal_type() == 'loose'">
+                                    <div class="heading sub sub">
+                                        <h3>Je wilt afvallen</h3>
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="preferred_weight">Je ideale gewicht <span>(in kg)</span>:</label>
+                                        <input class="number required" type="number" id="preferred_weight"
+                                               name="preferred_weight"
+                                               data-bind="value: preferred_weight">
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="goal_speed">Hoe streng wil je lijnen?</span>:</label>
+                                        <select class="required" id="goal_speed" name="goal_speed"
+                                                data-bind="value: $parent.goal_speed">
+                                            <option value="15">Normaal, gezonder eten.</option>
+                                            <option value="20">Streng, kleinere porties en geen/minder snacks</option>
+                                            <option value="25">Heel streng, alles anders</option>
+                                        </select>
+                                    </div>
+                                    <a class="button" data-bind="click: $parent.createAdvice">Bereken advies</a>
+                                </div>
+                                <div class="form-group" data-bind="visible: goal_type() == 'gain'">
+                                    <div class="heading sub sub">
+                                        <h3>Je wilt aankomen</h3>
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="preferred_weight">Je ideale gewicht <span>(in kg)</span>:</label>
+                                        <input class="number required" type="number" id="preferred_weight"
+                                               name="preferred_weight"
+                                               data-bind="value: preferred_weight">
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="goal_speed">Hoe snel wil je aankomen?</span>:</label>
+                                        <select class="required" id="goal_speed" name="goal_speed"
+                                                data-bind="value: $parent.goal_speed">
+                                            <option value="15">Normaal, gezonder eten.</option>
+                                            <option value="20">Snel</option>
+                                            <option value="25">Heel snel</option>
+                                        </select>
+                                    </div>
+                                    <a class="button" data-bind="click: $parent.createAdvice">Bereken advies</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="calculator-step" data-bind="if: currentStep() == 4">
+                    <div class="heading sub">
+                        <h3>Jouw advies op maat</h3>
+                    </div>
+                    <div class="content">
+                        <p>Let op; onderstaande is slechts een advies, gebaseerd op algemeen bekende gemiddeldes. Voor een écht advies op maat raden wij je altijd aan een diëtiste to consulteren.</p>
+                        <div id="calculator-advice">
+                            <div class="heading">
+                                <h3>Jouw advies</h3>
+                            </div>
+                            <div id="calculator-advice-intro">
+                                <p>Je hebt aangegeven graag</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
