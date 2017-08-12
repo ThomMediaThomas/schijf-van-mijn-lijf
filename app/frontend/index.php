@@ -15,27 +15,27 @@
     </head>
     <body>
         <div id="main">
-            <?php include(dirname(__DIR__).'/frontend/templates/elements/header.php'); ?>
+            <?php include(dirname(__DIR__).'/schijf/templates/elements/header.php'); ?>
             <div id="page" data-bind="template: { name: $root.pageTemplate }"></div>
-            <?php include(dirname(__DIR__).'/frontend/templates/elements/footer.php'); ?>
+            <?php include(dirname(__DIR__).'/schijf/templates/elements/footer.php'); ?>
         </div>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/splash.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/loading.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/notification.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/elements/navigation.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/add-entry.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/add-meal.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/splash.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/loading.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/notification.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/elements/navigation.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/add-entry.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/overlays/add-meal.php'); ?>
 
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/login.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/entries.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/profile.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/progress.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/calculator.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/disclaimer.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/pages/add-product.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/product.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/meal.php'); ?>
-        <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/quick.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/login.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/entries.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/profile.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/progress.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/calculator.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/disclaimer.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/pages/add-product.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/elements/entries/product.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/elements/entries/meal.php'); ?>
+        <?php include(dirname(__DIR__).'/schijf/templates/elements/entries/quick.php'); ?>
         <script src="js/vendor/jquery-3.2.1.min.js"></script>
         <script src="js/vendor/jquery-ui.min.js"></script>
         <script src="js/vendor/underscore-1.8.3.min.js"></script>

@@ -34,6 +34,9 @@ $api->version(
         $api->post('products', 'App\Http\Controllers\Products@create');
         $api->get('products/search', 'App\Http\Controllers\Products@search');
 
+        $api->get('programs', 'App\Http\Controllers\Programs@index');
+        $api->post('programs', 'App\Http\Controllers\Programs@create');
+
         $api->post('upload', 'App\Http\Controllers\Uploader@upload');
     }
 );
