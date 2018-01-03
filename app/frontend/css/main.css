@@ -1604,15 +1604,15 @@ form select {
   .entry .content-wrapper, .autocomplete-product-suggestion .content-wrapper {
     position: relative; }
   .entry .entry-wrapper, .autocomplete-product-suggestion .entry-wrapper {
-    padding-top: 4px;
-    padding-bottom: 4px; }
+    padding-top: 6px;
+    padding-bottom: 6px; }
     .entry .entry-wrapper:after, .autocomplete-product-suggestion .entry-wrapper:after {
       content: "";
       display: table;
       clear: both; }
   .entry .entry-image, .autocomplete-product-suggestion .entry-image {
     width: 26px;
-    margin-right: 4px;
+    margin-right: 6px;
     float: left; }
     .entry .entry-image img, .autocomplete-product-suggestion .entry-image img {
       width: 100%;
@@ -1658,6 +1658,14 @@ form select {
       color: #0c82f0; }
   .entry.add, .add.autocomplete-product-suggestion {
     color: #c7c7c7; }
+    .entry.add h4, .add.autocomplete-product-suggestion h4 {
+      margin-bottom: 0px; }
+    .entry.add .entry-image i, .add.autocomplete-product-suggestion .entry-image i {
+      font-size: 12px;
+      font-size: 1rem;
+      height: 12px;
+      width: 12px;
+      margin: 1px auto; }
   .entry.meal, .meal.autocomplete-product-suggestion {
     background-color: #ededed; }
     .entry.meal .entry-category, .meal.autocomplete-product-suggestion .entry-category {

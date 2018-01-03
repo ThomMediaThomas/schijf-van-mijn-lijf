@@ -25,8 +25,8 @@
                         <i class="icon-plus"></i>
                     </div>
                     <div class="entry-content">
-                        <h4>Toevoegen</h4>
-                        <h5>Voeg iets toe aan <span data-bind="text: name.toLowerCase()"></span></h5>
+                        <h4><span data-bind="text: friendly_singular"></span> toevoegen</h4>
+                        <!--<h5>Voeg iets toe aan <span data-bind="text: name.toLowerCase()"></span></h5>-->
                     </div>
 
                 </div>

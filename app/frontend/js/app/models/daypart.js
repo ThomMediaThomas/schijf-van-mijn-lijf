@@ -8,6 +8,7 @@ function Daypart(data){
     self.name = data.name;
     self.from = data.from;
     self.until = data.until;
+    self.friendly_singular = data.friendly_singular;
 
     self.entries = ko.observableArray([]);
 

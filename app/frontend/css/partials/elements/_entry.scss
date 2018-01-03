@@ -1,6 +1,6 @@
 .entry {
   $entrySize: 26px;
-  $entryPadding: $spacer;
+  $entryPadding: 6px;
 
   border-bottom: 1px solid $grayDark;
   position: relative;
@@ -148,6 +148,19 @@
 
   &.add {
     color: $gray;
+
+    h4 {
+      margin-bottom: 0px;
+    }
+
+    .entry-image {
+      i {
+        @include pxToRem(12px);
+        height: 12px;
+        width: 12px;
+        margin: 1px auto;
+      }
+    }
   }
 
   &.meal {
