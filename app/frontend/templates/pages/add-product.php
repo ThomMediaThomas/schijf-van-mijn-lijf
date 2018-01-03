@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-row">
                     <label for="image-upload">Afbeelding:</label>
-                    <input type="file" id="image-upload" name="image"  />
+                    <input class="required" type="file" id="image-upload" name="image"  />
                 </div>
                 <div class="heading sub">
                     <h3>Voedingswaarde</h3>

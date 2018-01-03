@@ -26,11 +26,14 @@ function AddProductPage() {
             return false;
         }
 
+        self.reset();
+
         self.$element = $('#add-product-page');
         self.$form = $('#add-product-form');
 
         self.initSubcategorySelect();
         self.initBrandsAutocomplete();
+
     };
 
     self.initSubcategorySelect = function () {
@@ -100,4 +103,16 @@ function AddProductPage() {
             callback(imageUrl);
         });
     };
+
+    self.reset = function () {
+        self.name('');
+        self.brand('');
+        self.subcategory_id('');
+        self.subcategories([]);
+        self.calories('');
+        self.carbs('');
+        self.proteins('');
+        self.fat('');
+        self.portions([]);
+    }
 }

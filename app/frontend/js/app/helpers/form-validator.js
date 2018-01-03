@@ -14,6 +14,7 @@ function isValid ($form) {
         }
 
         if ($input.hasClass('number')) {
+            console.log(validateNumber($input));
             if (!validateNumber($input)) {
                 $input.addClass('invalid');
                 errors++;
@@ -33,6 +34,6 @@ function validateRequired ($input) {
 }
 
 function validateNumber ($input) {
-    return _.isNumber(parseInt($input.val()));
+    return $.isNumeric($input.val());
 }
 
