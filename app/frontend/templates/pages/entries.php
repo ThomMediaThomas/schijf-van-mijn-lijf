@@ -19,18 +19,16 @@
 
                 </div>
             </div>
-            <div data-bind="if: entries().length == 0">
-                <div class="entry add">
-                    <div class="content-wrapper entry-wrapper" data-bind="click: $parent.openAddEntry">
-                        <div class="entry-image">
-                            <i class="icon-plus"></i>
-                        </div>
-                        <div class="entry-content">
-                            <h4>Toevoegen</h4>
-                            <h5>Voeg iets toe aan <span data-bind="text: name.toLowerCase()"></span></h5>
-                        </div>
-
+            <div class="entry add">
+                <div class="content-wrapper entry-wrapper" data-bind="click: $parent.openAddEntry">
+                    <div class="entry-image">
+                        <i class="icon-plus"></i>
                     </div>
+                    <div class="entry-content">
+                        <h4>Toevoegen</h4>
+                        <h5>Voeg iets toe aan <span data-bind="text: name.toLowerCase()"></span></h5>
+                    </div>
+
                 </div>
             </div>
         </div>

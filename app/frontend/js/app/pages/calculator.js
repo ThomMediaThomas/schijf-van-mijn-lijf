@@ -108,7 +108,6 @@ function CalculatorPage(){
             //Set calories goal
             var caloriesGoal = parseFloat(self.user().calories_average()) * ((100 + parseFloat(self.goal_speed())) / 100);
             self.program().calories_goal(Math.floor(caloriesGoal));
-            console.log(caloriesGoal);
 
             //Set goal duration
             var weightToGain = parseFloat(self.program().preferred_weight()) - parseFloat(self.user().weight()),

@@ -29,6 +29,11 @@ function EntriesPage(){
             return (caloriesForToday / self.user().calories_goal()) * 100;
         }
     });
+    self.caloriesGoal = ko.computed(function () {
+        if (self.user()) {
+            return self.user().calories_goal();
+        }
+    });
 
     self.init = function () {
         APP.isLoading(true);

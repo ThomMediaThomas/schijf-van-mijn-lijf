@@ -1,8 +1,8 @@
 var DEBUG = true;
 var CONFIG = {
-    API: 'http://api.schijf-van-mijn-lijf.dev',
+    API: 'http://api.schijf-van-mijn-lijf.localhost',
     //API: 'http://schijf-api.thommedia.nl',
-    IMAGE_URL: 'http://api.schijf-van-mijn-lijf.dev',
+    IMAGE_URL: 'http://api.schijf-van-mijn-lijf.localhost',
     //IMAGE_URL: 'http://schijf-api.thommedia.nl',
     ENDPOINTS: {
         UPLOAD: '/upload',

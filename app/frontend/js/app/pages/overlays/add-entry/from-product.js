@@ -54,7 +54,7 @@ function FromProductForm(){
             select: function (evt, ui) {
                 that.portions(_.map(ui.item.product.portions, function (portion) {
                     return _.extend(portion, {
-                        friendlyName: portion.name + ' (' + portion.size + portion.unit + ')'
+                        friendlyName: portion.name + ' - ' + portion.size + portion.unit
                     });
                 }));
 

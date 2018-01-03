@@ -17,7 +17,19 @@ class User extends Model
         'weight',
         'length',
         'activity_level',
-        'calories_goal',
         'calories_average',
     ];
+
+    protected $with = [
+        'current_program'
+    ];
+
+    /**
+     * @return hasOne
+     */
+    public function current_program()
+    {
+        return $this->hasOne(Program::class)->latest();
+    }
+
 }
