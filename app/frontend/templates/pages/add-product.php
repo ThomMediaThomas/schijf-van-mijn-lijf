@@ -56,7 +56,7 @@
                     <div class="form-group">
                         <div class="form-row">
                             <label for="portion_name">Naam:</label>
-                            <input class="number" type="text" id="portion_name" name="portion_name" data-bind="value: name">
+                            <input class="required" type="text" id="portion_name" name="portion_name" data-bind="value: name">
                         </div>
                         <div class="form-row">
                             <label for="portion_unit">Hoeveelheid:</label>
