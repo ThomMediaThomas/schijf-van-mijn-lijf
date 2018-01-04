@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User as UserModel;
 
 class User extends Base
 {
@@ -20,6 +21,31 @@ class User extends Base
                 'error' => 'Not authenticated'
             ], 401);
         }
+    }
+
+    public function create(Request $request)
+    {
+        $this->validateAuthentication($request);
+
+        $data = $request->get($this->dataKey);
+
+        $existingUserByMail = UserModel::where('email', $data['email'])->first();
+        if ($existingUserByMail) {
+            return response()->json([
+                'error' => 'Email exists',
+                'friendly_message' => 'Wij hebben al een account met dit e-mailadres. Wil je toevallig liever inloggen?'
+            ], 401);
+        }
+
+        $existingUserByUsername = UserModel::where('username', $data['username'])->first();
+        if ($existingUserByUsername) {
+            return response()->json([
+                'error' => 'Username exists',
+                'friendly_message' => 'De gekozen gebruikersnaam is helaas niet uniek.'
+            ], 401);
+        }
+
+        return parent::create($request);
     }
 
     public function update(Request $request, $id)

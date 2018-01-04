@@ -5,8 +5,12 @@ var AJAXHELPER = {
                 data: extendWithCredentials(data),
                 type: 'GET',
                 success: callback,
-                error: function () {
-                    APP.notificator.show('Helaas ging er iets mis, probeer later nog een keer...', 'error');
+                error: function (data) {
+                    if (data.responseJSON && data.responseJSON.friendly_message) {
+                        APP.notificator.show(data.responseJSON.friendly_message, 'error');
+                    } else {
+                        APP.notificator.show('Helaas ging er iets mis, probeer later nog een keer...', 'error');
+                    }
                 }
             });
         },
@@ -16,8 +20,12 @@ var AJAXHELPER = {
                 data: extendWithCredentials(data),
                 type: 'POST',
                 success: callback,
-                error: function () {
-                    APP.notificator.show('Helaas ging er iets mis, probeer later nog een keer...', 'error');
+                error: function (data) {
+                    if (data.responseJSON && data.responseJSON.friendly_message) {
+                        APP.notificator.show(data.responseJSON.friendly_message, 'error');
+                    } else {
+                        APP.notificator.show('Helaas ging er iets mis, probeer later nog een keer...', 'error');
+                    }
                 }
             });
         },
@@ -27,8 +35,12 @@ var AJAXHELPER = {
                 data: extendWithCredentials(data),
                 type: 'DELETE',
                 success: callback,
-                error: function () {
-                    APP.notificator.show('Helaas ging er iets mis, probeer later nog een keer...', 'error');
+                error: function (data) {
+                    if (data.responseJSON && data.responseJSON.friendly_message) {
+                        APP.notificator.show(data.responseJSON.friendly_message, 'error');
+                    } else {
+                        APP.notificator.show('Helaas ging er iets mis, probeer later nog een keer...', 'error');
+                    }
                 }
             })
         },

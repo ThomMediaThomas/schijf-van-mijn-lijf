@@ -9,6 +9,7 @@ $api->version(
     'v1',
     function (Router $api) {
         $api->get('/user/me', 'App\Http\Controllers\User@me');
+        $api->post('/user', 'App\Http\Controllers\User@create');
         $api->post('/user/{id}', 'App\Http\Controllers\User@update');
         $api->get('/user/me/progress', 'App\Http\Controllers\Progress@index');
         $api->post('/user/me/progress', 'App\Http\Controllers\Progress@create');

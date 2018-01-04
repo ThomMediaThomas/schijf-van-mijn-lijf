@@ -36,6 +36,7 @@
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/add-meal.php'); ?>
 
         <?php include(dirname(__DIR__).'/frontend/templates/pages/login.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/register.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/entries.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/profile.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/progress.php'); ?>
@@ -74,6 +75,7 @@
         <script src="js/app/elements/navigation.js"></script>
 
         <script src="js/app/pages/login.js"></script>
+        <script src="js/app/pages/register.js"></script>
         <script src="js/app/pages/overlays/loading.js"></script>
         <script src="js/app/pages/overlays/notification.js"></script>
         <script src="js/app/pages/overlays/splash.js"></script>

@@ -12,6 +12,7 @@
                 </div>
                 <a class="button" data-bind="click: login">Inloggen</a>
             </form>
+            <p data-bind="click: function() { APP.navigate('register'); return false; }">Heb je nog geen account? Klik hier om te registreren.</p>
         </div>
     </div>
 </script>

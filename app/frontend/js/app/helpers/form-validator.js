@@ -14,8 +14,14 @@ function isValid ($form) {
         }
 
         if ($input.hasClass('number')) {
-            console.log(validateNumber($input));
             if (!validateNumber($input)) {
+                $input.addClass('invalid');
+                errors++;
+            }
+        }
+
+        if ($input.hasClass('email')) {
+            if (!validateEmail($input)) {
                 $input.addClass('invalid');
                 errors++;
             }
@@ -37,3 +43,7 @@ function validateNumber ($input) {
     return $.isNumeric($input.val());
 }
 
+function validateEmail ($input) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test($input.val());
+}

@@ -28,6 +28,7 @@ function Application(){
     self.pages = {
         'splash': new SplashScreen(),
         'login': new LoginPage(),
+        'register': new RegisterPage(),
         'entries': new EntriesPage(),
         'addProduct': new AddProductPage(),
         'profile': new ProfilePage(),
