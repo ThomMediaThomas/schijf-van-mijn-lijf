@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('/files/fonts/icomoon/icomoon.eot?221f45');
-  src:  url('/files/fonts/icomoon/icomoon.eot?221f45#iefix') format('embedded-opentype'),
-  url('/files/fonts/icomoon/icomoon.ttf?221f45') format('truetype'),
-  url('/files/fonts/icomoon/icomoon.woff?221f45') format('woff'),
-  url('/files/fonts/icomoon/icomoon.svg?221f45#icomoon') format('svg');
+  src:  url('/files/fonts/icomoon/icomoon.eot?84y46y');
+  src:  url('/files/fonts/icomoon/icomoon.eot?84y46y#iefix') format('embedded-opentype'),
+  url('/files/fonts/icomoon/icomoon.ttf?84y46y') format('truetype'),
+  url('/files/fonts/icomoon/icomoon.woff?84y46y') format('woff'),
+  url('/files/fonts/icomoon/icomoon.svg?84y46y#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,6 +22,16 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-candy:before {
+  content: "\e910";
+}
+.icon-food:before {
+  content: "\e911";
+}
+.icon-sandwich:before {
+  content: "\e912";
 }
 
 .icon-meal:before {

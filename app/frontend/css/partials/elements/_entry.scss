@@ -229,4 +229,16 @@
       color: $drinks;
     }
   }
+
+  &.mixed {
+    h4 {
+      color: $mixed;
+    }
+  }
+
+  &.unneeded {
+    h4 {
+      color: $unneeded;
+    }
+  }
 }

@@ -41,5 +41,10 @@ class CategoriesTableSeeder extends Seeder
             'name' => 'Niet in de schijf van vijf',
             'system_name' => 'unneeded'
         ]);
+        DB::table('categories')->insert([
+            'id' => 7,
+            'name' => 'Gemengd',
+            'system_name' => 'mixed'
+        ]);
     }
 }

@@ -101,5 +101,23 @@ class SubcategoriesTableSeeder extends Seeder
             'name' => 'Niet nodig',
             'system_name' => 'unneeded'
         ]);
+        DB::table('subcategories')->insert([
+            'id' => 16,
+            'category_id' => 6,
+            'name' => 'Snoep & snacks',
+            'system_name' => 'candy'
+        ]);
+        DB::table('subcategories')->insert([
+            'id' => 17,
+            'category_id' => 7,
+            'name' => 'Maaltijd',
+            'system_name' => 'food'
+        ]);
+        DB::table('subcategories')->insert([
+            'id' => 18,
+            'category_id' => 7,
+            'name' => 'Samengesteld broodbeleg',
+            'system_name' => 'sandwich'
+        ]);
     }
 }

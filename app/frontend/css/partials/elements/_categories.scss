@@ -35,4 +35,12 @@
   &.drinks {
     background-color: $drinks;
   }
+
+  &.mixed {
+    background-color: $mixed;
+  }
+
+  &.unneeded {
+    background-color: $unneeded;
+  }
 }
