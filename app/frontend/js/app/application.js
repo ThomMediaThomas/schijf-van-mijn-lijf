@@ -21,7 +21,9 @@ function Application(){
     /*region Header*/
     self.navigation = new Navigation();
     self.addEntry = new AddEntryPage();
+    self.addEntry = new AddEntryPage();
     self.addMeal = new AddMealPage();
+    self.entryPage = new EntryPage();
     /*endregion Header*/
 
     /*region Pages*/

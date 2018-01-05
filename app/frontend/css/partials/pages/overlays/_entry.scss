@@ -1,0 +1,19 @@
+#entry {
+  padding-top: 0px;
+
+  > .content-wrapper {
+    padding: 0px;
+  }
+}
+
+.entry-details{
+  .entry-details-image {
+    padding: $baseMargin;
+    height: 40vh;
+    background-color: red;
+  }
+
+  .content-wrapper {
+    padding: $baseMargin;
+  }
+}

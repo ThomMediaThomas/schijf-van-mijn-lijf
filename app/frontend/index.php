@@ -32,6 +32,7 @@
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/loading.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/notification.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/elements/navigation.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/entry.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/add-entry.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/add-meal.php'); ?>
 
@@ -79,6 +80,7 @@
         <script src="js/app/pages/overlays/loading.js"></script>
         <script src="js/app/pages/overlays/notification.js"></script>
         <script src="js/app/pages/overlays/splash.js"></script>
+        <script src="js/app/pages/overlays/entry.js"></script>
         <script src="js/app/pages/overlays/add-entry/from-product.js"></script>
         <script src="js/app/pages/overlays/add-entry/from-quick.js"></script>
         <script src="js/app/pages/overlays/add-entry/from-meal.js"></script>

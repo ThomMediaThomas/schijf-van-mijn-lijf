@@ -102,5 +102,10 @@ function Entry(data){
     self.toggle = function () {
         self.open(!self.open());
     };
+
+    self.openEntry = function (entry) {
+        console.log(entry);
+        APP.entryPage.toggle(entry);
+    };
     /*endregion: Methods*/
 }

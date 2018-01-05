@@ -12,4 +12,12 @@
   &.open {
     top: $headerHeight;
   }
+
+  .close-button {
+    position: absolute;
+    @include pxToRem($headerButtonSize);
+    top: $baseMargin;
+    right: $baseMargin;
+    color: $cyan;
+  }
 }

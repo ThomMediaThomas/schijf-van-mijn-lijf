@@ -1,6 +1,6 @@
 #splashscreen {
-  background: url('/files/images/logo-big.png') no-repeat $cyan center center;
-  background-size: 80% auto;
+  background: url('/files/images/logo-splash.png') no-repeat $cyan center center;
+  background-size: contain;
   position: fixed;
   width: 100%;
   height: 100%;
