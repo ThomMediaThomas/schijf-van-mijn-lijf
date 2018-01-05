@@ -110,6 +110,6 @@ function Navigation(){
     };
 
     self.setIntroCalories = function (total) {
-        self.intro('Fijn dat je er weer bent, je hebt vandaag <strong>' + total + ' calorieën</strong> (van de aanbevolen ' + self.user.calories_goal() + ') ingevoerd.');
+        self.intro('Fijn dat je er weer bent, je hebt vandaag <strong>' + total + ' kilocalorieën</strong> (van de aanbevolen ' + self.user.calories_goal() + ') ingevoerd.');
     }
 }

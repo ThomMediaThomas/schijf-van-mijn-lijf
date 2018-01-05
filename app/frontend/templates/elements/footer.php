@@ -4,7 +4,7 @@
             <span class="percentage" data-bind="attr: { style: 'width:' + caloriesForTodayPercentage() + '%' }"></span>
         </span>
         <span class="percentage-label">
-            <span data-bind="text: caloriesForToday"></span> calorieën gebruikt (van <span data-bind="text: caloriesGoal"></span>).
+            <span data-bind="text: caloriesForToday"></span> kilocalorieën gebruikt (van <span data-bind="text: caloriesGoal"></span>).
         </span>
     </div>
 </div>

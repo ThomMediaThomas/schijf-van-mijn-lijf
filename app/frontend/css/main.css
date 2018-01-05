@@ -1120,13 +1120,13 @@ h1 {
   font-weight: 700;
   font-size: 16px;
   font-size: 1.33333rem;
-  margin-bottom: 4px; }
+  margin-bottom: 8px; }
 
-h3 {
+h2 {
   font-weight: 700;
   font-size: 14px;
   font-size: 1.16667rem;
-  margin-bottom: 4px; }
+  margin-bottom: 8px; }
 
 h3 {
   font-weight: 600;
@@ -1908,3 +1908,10 @@ form select {
 
 .entry-details .content-wrapper {
   padding: 20px; }
+
+.entry-details dl dd, .entry-details dl dt {
+  border-right: 0px;
+  border-bottom: 1px solid #ededed; }
+
+.entry-details dl dd {
+  text-align: right; }

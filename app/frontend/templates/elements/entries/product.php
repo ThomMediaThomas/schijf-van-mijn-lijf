@@ -6,7 +6,7 @@
             </div>
             <div class="entry-content">
                 <h4 data-bind="text: product().name"></h4>
-                <h5><strong data-bind="text: friendlyAmount"></strong> - <span data-bind="text: calories"></span> calorieën
+                <h5><strong data-bind="text: friendlyAmount"></strong> - <span data-bind="text: calories"></span> kilocalorieën
                 </h5>
             </div>
             <div class="entry-category">

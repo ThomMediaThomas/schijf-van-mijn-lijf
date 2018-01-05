@@ -73,7 +73,7 @@
                         <h3>Jouw behoeftes</h3>
                     </div>
                     <div class="content">
-                        <p>Goed zo! Op deze manier hebben we voor je kunnen berekenen wat jouw calorie-behoefte is.</p>
+                        <p>Goed zo! Op deze manier hebben we voor je kunnen berekenen wat jouw behoefte is.</p>
                         <form id="calculator-needs-form">
                             <div class="form-group">
                                 <dl>
@@ -175,7 +175,7 @@
                                 <h3>Jouw advies</h3>
                             </div>
                             <div id="calculator-advice-intro">
-                                <p>Om aan jouw doel te voldoen raden wij je aan ongeveer <strong data-bind="text: calories_goal()"></strong> calorieën per dag te gebruiken.</p>
+                                <p>Om aan jouw doel te voldoen raden wij je aan ongeveer <strong data-bind="text: calories_goal()"></strong> kilocalorieën per dag te gebruiken.</p>
                                 <p data-bind="if: goal_type() != 'stay'">Met dat doel zal het ongeveer <strong data-bind="text: goal_duration()"></strong> dagen duren om je doel te berekenen.</p>
                             </div>
                             <a class="button" data-bind="click: $parent.submitGoal">Doel opslaan en starten</a>

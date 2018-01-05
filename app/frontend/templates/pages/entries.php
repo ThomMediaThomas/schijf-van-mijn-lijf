@@ -11,7 +11,7 @@
             <div class="daypart">
                 <div class="content-wrapper">
                     <h3 data-bind="text: name"></h3>
-                    <strong class="day-total" data-bind="html: calories() + ' cal'"></strong>
+                    <strong class="day-total" data-bind="html: calories() + ' kcal'"></strong>
                 </div>
             </div>
             <div data-bind="if: entries().length > 0">

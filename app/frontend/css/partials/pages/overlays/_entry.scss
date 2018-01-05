@@ -16,4 +16,15 @@
   .content-wrapper {
     padding: $baseMargin;
   }
+
+  dl {
+    dd, dt {
+      border-right: 0px;
+      border-bottom: 1px solid $grayLight;
+    }
+
+    dd {
+      text-align: right;
+    }
+  }
 }

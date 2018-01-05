@@ -6,7 +6,7 @@
             </div>
             <div class="entry-content">
                 <h4 data-bind="text: name"></h4>
-                <h5><span data-bind="text: calories"></span> calorieën</h5>
+                <h5><span data-bind="text: calories"></span> kilocalorieën</h5>
             </div>
         </div>
         <div class="content-wrapper entry-foldout" data-bind="css: openClass()">

@@ -7,7 +7,7 @@
         <input class="required" type="text" id="name" name="name" data-bind="value: name">
     </div>
     <div class="form-row">
-        <label for="username">Caloriën:</label>
+        <label for="calories">kilocalorieën:</label>
         <input class="number required" type="number" id="calories" name="calories" data-bind="value: calories">
     </div>
     <div class="form-row">

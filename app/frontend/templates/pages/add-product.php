@@ -34,7 +34,7 @@
                     <h3>Voedingswaarde</h3>
                 </div>
                 <div class="form-row">
-                    <label for="calories">Calorieën per 100gr:</label>
+                    <label for="calories">Kilocalorieën per 100gr:</label>
                     <input class="required number" type="text" id="calories" name="calories" data-bind="value: calories">
                 </div>
                 <div class="form-row">

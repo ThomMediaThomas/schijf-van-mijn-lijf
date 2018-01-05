@@ -6,6 +6,20 @@
             </div>
             <div class="content-wrapper">
                 <h1>Details product</h1>
+                <h2>Voedingswaarde per portie</h2>
+                <dl>
+                    <dt>Kilocalorieën</dt><dd>180</dd>
+                    <dt>Koolhydraten</dt><dd>180</dd>
+                    <dt>Eiwit</dt><dd>180</dd>
+                    <dt>Vet</dt><dd>180</dd>
+                </dl>
+                <h2>Voedingswaarde per 100gr</h2>
+                <dl>
+                    <dt>Kilocalorieën</dt><dd>180</dd>
+                    <dt>Koolhydraten</dt><dd>180</dd>
+                    <dt>Eiwit</dt><dd>180</dd>
+                    <dt>Vet</dt><dd>180</dd>
+                </dl>
             </div>
         </div>
     </div>
