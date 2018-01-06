@@ -25,12 +25,18 @@
 
   .entry-image {
     width: $entrySize;
+    height: $entrySize;
+    position: relative;
+    overflow: hidden;
     margin-right: $entryPadding;
     float: left;
 
     img {
       width: 100%;
       height: auto;
+      position: absolute;
+      left: 0px;
+      top: 0%;
     }
 
     i {

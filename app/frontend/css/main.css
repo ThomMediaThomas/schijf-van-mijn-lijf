@@ -1637,11 +1637,17 @@ form select {
       clear: both; }
   .entry .entry-image, .autocomplete-product-suggestion .entry-image {
     width: 26px;
+    height: 26px;
+    position: relative;
+    overflow: hidden;
     margin-right: 6px;
     float: left; }
     .entry .entry-image img, .autocomplete-product-suggestion .entry-image img {
       width: 100%;
-      height: auto; }
+      height: auto;
+      position: absolute;
+      left: 0px;
+      top: 0%; }
     .entry .entry-image i, .autocomplete-product-suggestion .entry-image i {
       font-size: 16px;
       font-size: 1.33333rem;
