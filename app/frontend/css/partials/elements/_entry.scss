@@ -160,6 +160,8 @@
     }
 
     .entry-image {
+      height: auto;
+
       i {
         @include pxToRem(12px);
         height: 12px;
