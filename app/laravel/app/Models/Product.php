@@ -15,6 +15,7 @@ class Product extends Model
         'proteins',
         'carbs',
         'fats',
+        'user_id'
     ];
 
     protected $with = [
