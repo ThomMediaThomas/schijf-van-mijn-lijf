@@ -1798,7 +1798,7 @@ form select {
   margin-bottom: 0px;
   position: fixed;
   width: 100%;
-  height: calc(100% - 40px);
+  height: calc(100% - 40px - 71px);
   z-index: 49;
   left: 0%;
   top: -100%;
@@ -1806,7 +1806,8 @@ form select {
   -moz-transition: top 0.5s ease-in-out;
   -o-transition: top 0.5s ease-in-out;
   -webkit-transition: top 0.5s ease-in-out;
-  transition: top 0.5s ease-in-out; }
+  transition: top 0.5s ease-in-out;
+  overflow-y: auto; }
   .page.overlay.open {
     top: 40px; }
   .page.overlay .close-button {
@@ -1904,7 +1905,62 @@ form select {
 .entry-details .entry-details-image {
   padding: 20px;
   height: 40vh;
-  background-color: red; }
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  position: relative; }
+  .entry-details .entry-details-image:after {
+    content: '';
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.1+99 */
+    background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.1) 99%, rgba(0, 0, 0, 0.1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.1) 99%, rgba(0, 0, 0, 0.1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(99%, rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1)));
+    background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.1) 99%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 99%, rgba(0, 0, 0, 0.1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0);
+    /* IE6-9 */ }
+
+.entry-details .entry-details-heading {
+  padding: 10px 20px;
+  position: relative;
+  background-color: #c7c7c7; }
+  .entry-details .entry-details-heading h1 {
+    color: white;
+    margin-bottom: 4px; }
+  .entry-details .entry-details-heading h2 {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0px; }
+  .entry-details .entry-details-heading i {
+    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -16px;
+    font-size: 32px;
+    font-size: 2.66667rem; }
+  .entry-details .entry-details-heading.vegetables {
+    background-color: #bedb39; }
+  .entry-details .entry-details-heading.fats {
+    background-color: #ffe14a; }
+  .entry-details .entry-details-heading.meats {
+    background-color: #fa2444; }
+  .entry-details .entry-details-heading.wheats {
+    background-color: #fd7400; }
+  .entry-details .entry-details-heading.drinks {
+    background-color: #0054cc; }
+  .entry-details .entry-details-heading.mixed {
+    background-color: #6b39db; }
+  .entry-details .entry-details-heading.unneeded {
+    background-color: #535353; }
 
 .entry-details .content-wrapper {
   padding: 20px; }
@@ -1915,3 +1971,6 @@ form select {
 
 .entry-details dl dd {
   text-align: right; }
+
+.entry-details .meal-products .entry .content-wrapper, .entry-details .meal-products .autocomplete-product-suggestion .content-wrapper {
+  padding: 4px 0px; }

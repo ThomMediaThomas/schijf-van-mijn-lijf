@@ -2,12 +2,13 @@
   margin-bottom: 0px;
   position: fixed;
   width: 100%;
-  height: calc(100% - #{$headerHeight});
+  height: calc(100% - #{$headerHeight} - #{$footerHeight});
   z-index: $headerZ - 1;
   left: 0%;
   top: -100%;
   background-color: White;
   @include transition(top 0.5s ease-in-out);
+  overflow-y: auto;
 
   &.open {
     top: $headerHeight;

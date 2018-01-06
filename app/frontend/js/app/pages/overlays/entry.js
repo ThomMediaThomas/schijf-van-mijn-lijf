@@ -7,6 +7,9 @@ function EntryPage() {
     self.$element = $('#entry');
     self.state = ko.observable('closed');
     self.entry = ko.observable();
+    self.entryType = ko.computed(function(){
+        return self.entry() ? self.entry().type : '';
+    });
 
     self.initialized = false;
 

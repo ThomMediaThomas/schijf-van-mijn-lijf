@@ -12,6 +12,8 @@ function FromQuickForm(){
     self.calories = ko.observable('');
 
     self.init = function () {
+        self.$element = $('#form-from-quick');
+
         self.initDaypartsSelect();
         self.reset();
 
@@ -29,6 +31,7 @@ function FromQuickForm(){
     };
 
     self.submit = function () {
+        alert('sumbit');
         if (!isValid(this.$element)) {
             return false;
         }

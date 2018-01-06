@@ -71,6 +71,54 @@ function Entry(data){
         }
     });
 
+    self.carbs = ko.computed(function () {
+        if (self.product() && self.portion()) {
+            return Math.round((self.product().carbs / 100) * self.portion().size() * self.amount);
+        } else if (self.meal()) {
+            var carbs = 0;
+
+            _.each(self.meal().products(), function (product) {
+                carbs += Math.round((product.product().carbs / 100) * product.portion().size() * product.amount);
+            });
+
+            return carbs * self.amount;
+        } else {
+            return data.carbs;
+        }
+    });
+
+    self.proteins = ko.computed(function () {
+        if (self.product() && self.portion()) {
+            return Math.round((self.product().proteins / 100) * self.portion().size() * self.amount);
+        } else if (self.meal()) {
+            var proteins = 0;
+
+            _.each(self.meal().products(), function (product) {
+                proteins += Math.round((product.product().proteins / 100) * product.portion().size() * product.amount);
+            });
+
+            return proteins * self.amount;
+        } else {
+            return data.proteins;
+        }
+    });
+
+    self.fats = ko.computed(function () {
+        if (self.product() && self.portion()) {
+            return Math.round((self.product().fats / 100) * self.portion().size() * self.amount);
+        } else if (self.meal()) {
+            var fats = 0;
+
+            _.each(self.meal().products(), function (product) {
+                fats += Math.round((product.product().fats / 100) * product.portion().size() * product.amount);
+            });
+
+            return fats * self.amount;
+        } else {
+            return data.fats;
+        }
+    });
+
     self.categories = ko.computed(function(){
         if (self.meal()) {
             var categories = [];
@@ -104,7 +152,6 @@ function Entry(data){
     };
 
     self.openEntry = function (entry) {
-        console.log(entry);
         APP.entryPage.toggle(entry);
     };
     /*endregion: Methods*/

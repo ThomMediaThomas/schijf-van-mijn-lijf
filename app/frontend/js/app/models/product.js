@@ -8,6 +8,9 @@ function Product(data){
     self.name = data.name;
     self.image = IMAGEHELPER.RESOLVE(data.image);
     self.calories = data.calories;
+    self.proteins = data.proteins;
+    self.carbs = data.carbs;
+    self.fats = data.fats;
     self.subcategory = ko.observable(new Subcategory(data.subcategory));
     self.category = ko.observable(new Category(data.subcategory.category));
     self.brand = ko.observable(new Brand(data.brand));

@@ -2,7 +2,7 @@
     <div class="entry" data-bind="css: className()">
         <div class="content-wrapper entry-wrapper" data-bind="click: toggle">
             <div class="entry-image">
-                <img data-bind="attr: { src: '/files/images/default.png', alt: name, title: name }"/>
+                <img data-bind="attr: { src: '/files/images/meal.png', alt: name, title: name }"/>
             </div>
             <div class="entry-content">
                 <h4 data-bind="text: meal().name"></h4>
