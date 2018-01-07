@@ -1442,25 +1442,33 @@ form select {
   padding-top: 3px;
   background: url("/files/images/select.png") no-repeat White center right; }
 
-.autocomplete-product-suggestion {
+.autocomplete-product-suggestion,
+.autocomplete-brand-suggestion {
   color: #989898;
   padding: 4px !important;
   border-bottom: 1px solid #ededed; }
-  .autocomplete-product-suggestion:after {
+  .autocomplete-product-suggestion:after,
+  .autocomplete-brand-suggestion:after {
     content: "";
     display: table;
     clear: both; }
-  .autocomplete-product-suggestion .ui-menu-item-wrapper {
+  .autocomplete-product-suggestion .ui-menu-item-wrapper,
+  .autocomplete-brand-suggestion .ui-menu-item-wrapper {
     padding: 0px; }
   .autocomplete-product-suggestion.ui-state-focus,
   .autocomplete-product-suggestion .ui-state-focus, .autocomplete-product-suggestion.ui-state-active,
-  .autocomplete-product-suggestion .ui-state-active {
+  .autocomplete-product-suggestion .ui-state-active,
+  .autocomplete-brand-suggestion.ui-state-focus,
+  .autocomplete-brand-suggestion .ui-state-focus,
+  .autocomplete-brand-suggestion.ui-state-active,
+  .autocomplete-brand-suggestion .ui-state-active {
     color: #bedb39;
     background: White;
     outline: 0px;
     border: 0px;
     margin: 0px; }
-  .autocomplete-product-suggestion:hover {
+  .autocomplete-product-suggestion:hover,
+  .autocomplete-brand-suggestion:hover {
     color: #bedb39; }
 
 .category {
@@ -1555,7 +1563,8 @@ form select {
     width: 50%;
     float: left; }
 
-.entry, .autocomplete-product-suggestion {
+.entry, .autocomplete-product-suggestion,
+.autocomplete-brand-suggestion {
   border-bottom: 1px solid #989898;
   position: relative;
   -moz-transition: all 0.25s ease-in-out;
@@ -1622,33 +1631,49 @@ form select {
       }
     }
   }*/ }
-  .entry .entry, .autocomplete-product-suggestion .entry, .entry .autocomplete-product-suggestion, .autocomplete-product-suggestion .autocomplete-product-suggestion {
+  .entry .entry, .autocomplete-product-suggestion .entry,
+  .autocomplete-brand-suggestion .entry, .entry .autocomplete-product-suggestion, .autocomplete-product-suggestion .autocomplete-product-suggestion,
+  .autocomplete-brand-suggestion .autocomplete-product-suggestion, .entry
+  .autocomplete-brand-suggestion, .autocomplete-product-suggestion
+  .autocomplete-brand-suggestion,
+  .autocomplete-brand-suggestion
+  .autocomplete-brand-suggestion {
     border-bottom: 0px;
     border-top: 1px solid #989898;
     background-color: White; }
-  .entry .content-wrapper, .autocomplete-product-suggestion .content-wrapper {
+  .entry .content-wrapper, .autocomplete-product-suggestion .content-wrapper,
+  .autocomplete-brand-suggestion .content-wrapper {
     position: relative; }
-  .entry .entry-wrapper, .autocomplete-product-suggestion .entry-wrapper {
+  .entry .entry-wrapper, .autocomplete-product-suggestion .entry-wrapper,
+  .autocomplete-brand-suggestion .entry-wrapper {
     padding-top: 6px;
     padding-bottom: 6px; }
-    .entry .entry-wrapper:after, .autocomplete-product-suggestion .entry-wrapper:after {
+    .entry .entry-wrapper:after, .autocomplete-product-suggestion .entry-wrapper:after,
+    .autocomplete-brand-suggestion .entry-wrapper:after {
       content: "";
       display: table;
       clear: both; }
-  .entry .entry-image, .autocomplete-product-suggestion .entry-image {
+  .entry .entry-image, .autocomplete-product-suggestion .entry-image,
+  .autocomplete-brand-suggestion .entry-image {
     width: 26px;
     height: 26px;
     position: relative;
     overflow: hidden;
     margin-right: 6px;
     float: left; }
-    .entry .entry-image img, .autocomplete-product-suggestion .entry-image img {
+    .entry .entry-image.small, .autocomplete-product-suggestion .entry-image.small,
+    .autocomplete-brand-suggestion .entry-image.small {
+      width: 13px;
+      height: 13px; }
+    .entry .entry-image img, .autocomplete-product-suggestion .entry-image img,
+    .autocomplete-brand-suggestion .entry-image img {
       width: 100%;
       height: auto;
       position: absolute;
       left: 0px;
       top: 0%; }
-    .entry .entry-image i, .autocomplete-product-suggestion .entry-image i {
+    .entry .entry-image i, .autocomplete-product-suggestion .entry-image i,
+    .autocomplete-brand-suggestion .entry-image i {
       font-size: 16px;
       font-size: 1.33333rem;
       height: 16px;
@@ -1656,16 +1681,19 @@ form select {
       display: block;
       text-align: center;
       margin: 5px auto; }
-  .entry .entry-content, .autocomplete-product-suggestion .entry-content {
+  .entry .entry-content, .autocomplete-product-suggestion .entry-content,
+  .autocomplete-brand-suggestion .entry-content {
     width: calc(100% - 46px);
     float: left; }
-  .entry .entry-category, .autocomplete-product-suggestion .entry-category {
+  .entry .entry-category, .autocomplete-product-suggestion .entry-category,
+  .autocomplete-brand-suggestion .entry-category {
     text-align: right;
     position: absolute;
     right: 20px;
     top: 50%;
     margin-top: -10px; }
-  .entry .entry-foldout, .autocomplete-product-suggestion .entry-foldout {
+  .entry .entry-foldout, .autocomplete-product-suggestion .entry-foldout,
+  .autocomplete-brand-suggestion .entry-foldout {
     border-top: 1px solid transparent;
     background-color: transparent;
     height: 0px;
@@ -1674,66 +1702,89 @@ form select {
     -o-transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out; }
-    .entry .entry-foldout.open, .autocomplete-product-suggestion .entry-foldout.open {
+    .entry .entry-foldout.open, .autocomplete-product-suggestion .entry-foldout.open,
+    .autocomplete-brand-suggestion .entry-foldout.open {
       background-color: #ededed;
       border-top: 1px solid #c7c7c7;
       height: 55px; }
-    .entry .entry-foldout ul:after, .autocomplete-product-suggestion .entry-foldout ul:after {
+    .entry .entry-foldout ul:after, .autocomplete-product-suggestion .entry-foldout ul:after,
+    .autocomplete-brand-suggestion .entry-foldout ul:after {
       content: "";
       display: table;
       clear: both; }
-    .entry .entry-foldout ul li, .autocomplete-product-suggestion .entry-foldout ul li {
+    .entry .entry-foldout ul li, .autocomplete-product-suggestion .entry-foldout ul li,
+    .autocomplete-brand-suggestion .entry-foldout ul li {
       width: 25%;
       float: left; }
-    .entry .entry-foldout ul i.icon-checkbox-checked, .autocomplete-product-suggestion .entry-foldout ul i.icon-checkbox-checked {
+    .entry .entry-foldout ul i.icon-checkbox-checked, .autocomplete-product-suggestion .entry-foldout ul i.icon-checkbox-checked,
+    .autocomplete-brand-suggestion .entry-foldout ul i.icon-checkbox-checked {
       color: #0c82f0; }
-  .entry.add, .add.autocomplete-product-suggestion {
+  .entry.add, .add.autocomplete-product-suggestion,
+  .add.autocomplete-brand-suggestion {
     color: #c7c7c7; }
-    .entry.add h4, .add.autocomplete-product-suggestion h4 {
+    .entry.add h4, .add.autocomplete-product-suggestion h4,
+    .add.autocomplete-brand-suggestion h4 {
       margin-bottom: 0px; }
-    .entry.add .entry-image, .add.autocomplete-product-suggestion .entry-image {
+    .entry.add .entry-image, .add.autocomplete-product-suggestion .entry-image,
+    .add.autocomplete-brand-suggestion .entry-image {
       height: auto; }
-      .entry.add .entry-image i, .add.autocomplete-product-suggestion .entry-image i {
+      .entry.add .entry-image i, .add.autocomplete-product-suggestion .entry-image i,
+      .add.autocomplete-brand-suggestion .entry-image i {
         font-size: 12px;
         font-size: 1rem;
         height: 12px;
         width: 12px;
         margin: 1px auto; }
-  .entry.meal, .meal.autocomplete-product-suggestion {
+  .entry.meal, .meal.autocomplete-product-suggestion,
+  .meal.autocomplete-brand-suggestion {
     background-color: #ededed; }
-    .entry.meal .entry-category, .meal.autocomplete-product-suggestion .entry-category {
+    .entry.meal .entry-category, .meal.autocomplete-product-suggestion .entry-category,
+    .meal.autocomplete-brand-suggestion .entry-category {
       margin-top: -7px; }
-      .entry.meal .entry-category .category, .meal.autocomplete-product-suggestion .entry-category .category {
+      .entry.meal .entry-category .category, .meal.autocomplete-product-suggestion .entry-category .category,
+      .meal.autocomplete-brand-suggestion .entry-category .category {
         display: inline-block;
         text-align: right; }
-    .entry.meal .meal-products, .meal.autocomplete-product-suggestion .meal-products {
+    .entry.meal .meal-products, .meal.autocomplete-product-suggestion .meal-products,
+    .meal.autocomplete-brand-suggestion .meal-products {
       max-height: 0px;
       overflow: hidden;
       -moz-transition: all 0.25s ease-in-out;
       -o-transition: all 0.25s ease-in-out;
       -webkit-transition: all 0.25s ease-in-out;
       transition: all 0.25s ease-in-out; }
-      .entry.meal .meal-products.open, .meal.autocomplete-product-suggestion .meal-products.open {
+      .entry.meal .meal-products.open, .meal.autocomplete-product-suggestion .meal-products.open,
+      .meal.autocomplete-brand-suggestion .meal-products.open {
         max-height: 200px; }
-  .entry.inset .entry-image, .inset.autocomplete-product-suggestion .entry-image {
+  .entry.inset .entry-image, .inset.autocomplete-product-suggestion .entry-image,
+  .inset.autocomplete-brand-suggestion .entry-image {
     margin-left: 13px; }
-  .entry.inset .entry-content, .inset.autocomplete-product-suggestion .entry-content {
+  .entry.inset .entry-content, .inset.autocomplete-product-suggestion .entry-content,
+  .inset.autocomplete-brand-suggestion .entry-content {
     width: calc(100% - 72px); }
-  .entry.selected, .selected.autocomplete-product-suggestion {
+  .entry.selected, .selected.autocomplete-product-suggestion,
+  .selected.autocomplete-brand-suggestion {
     border-left: 4px solid #0c82f0; }
-  .entry.vegetables h4, .vegetables.autocomplete-product-suggestion h4 {
+  .entry.vegetables h4, .vegetables.autocomplete-product-suggestion h4,
+  .vegetables.autocomplete-brand-suggestion h4 {
     color: #bedb39; }
-  .entry.fats h4, .fats.autocomplete-product-suggestion h4 {
+  .entry.fats h4, .fats.autocomplete-product-suggestion h4,
+  .fats.autocomplete-brand-suggestion h4 {
     color: #ffe14a; }
-  .entry.meats h4, .meats.autocomplete-product-suggestion h4 {
+  .entry.meats h4, .meats.autocomplete-product-suggestion h4,
+  .meats.autocomplete-brand-suggestion h4 {
     color: #fa2444; }
-  .entry.wheats h4, .wheats.autocomplete-product-suggestion h4 {
+  .entry.wheats h4, .wheats.autocomplete-product-suggestion h4,
+  .wheats.autocomplete-brand-suggestion h4 {
     color: #fd7400; }
-  .entry.drinks h4, .drinks.autocomplete-product-suggestion h4 {
+  .entry.drinks h4, .drinks.autocomplete-product-suggestion h4,
+  .drinks.autocomplete-brand-suggestion h4 {
     color: #0054cc; }
-  .entry.mixed h4, .mixed.autocomplete-product-suggestion h4 {
+  .entry.mixed h4, .mixed.autocomplete-product-suggestion h4,
+  .mixed.autocomplete-brand-suggestion h4 {
     color: #6b39db; }
-  .entry.unneeded h4, .unneeded.autocomplete-product-suggestion h4 {
+  .entry.unneeded h4, .unneeded.autocomplete-product-suggestion h4,
+  .unneeded.autocomplete-brand-suggestion h4 {
     color: #535353; }
 
 #page {
@@ -1980,5 +2031,6 @@ form select {
 .entry-details dl dd {
   text-align: right; }
 
-.entry-details .meal-products .entry .content-wrapper, .entry-details .meal-products .autocomplete-product-suggestion .content-wrapper {
+.entry-details .meal-products .entry .content-wrapper, .entry-details .meal-products .autocomplete-product-suggestion .content-wrapper, .entry-details .meal-products
+.autocomplete-brand-suggestion .content-wrapper {
   padding: 4px 0px; }

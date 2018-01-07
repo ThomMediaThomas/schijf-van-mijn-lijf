@@ -1,4 +1,5 @@
-.autocomplete-product-suggestion {
+.autocomplete-product-suggestion,
+.autocomplete-brand-suggestion{
   @extend .entry;
   @include clearfix();
   color: $bodyFontColor;

@@ -58,7 +58,19 @@ function AddProductPage() {
             select: function (evt, ui) {
                 that.brand(ui.item.brand.id);
             }
-        });
+        }).autocomplete('instance')._renderItem = function (ul, item) {
+            var imageUrl = item.brand.image ? item.brand.image : '/files/images/brands/default.jpg';
+            return $('<li class="autocomplete-brand-suggestion">')
+                .append('<div class="entry-image small">')
+                .find('div.entry-image')
+                .append('<img title="' + item.label + '" alt="' + item.label + '" src="' + imageUrl + '" />')
+                .parent()
+                .append('<div class="entry-content">')
+                .find('div.entry-content')
+                .append('<h4>' + item.label + '</h4>')
+                .parent()
+                .appendTo(ul);
+        };
     };
 
     self.addPortion = function () {
