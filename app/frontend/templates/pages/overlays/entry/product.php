@@ -1,6 +1,9 @@
 <div data-bind="with: entry">
     <div class="entry-details-image" data-bind="attr: { 'style': 'background-image: url(' + product().image + ');' }">
         <a class="close-button" data-bind="click: $parent.close"><i class="icon-close"></i></a>
+        <div class="entry-details-brand" data-bind="if: product().brand().image">
+            <img data-bind="attr: { src: product().brand().image, title: product().brand().name, alt: product().brand().name}" />
+        </div>
     </div>
     <div class="entry-details-heading" data-bind="css: categorySystemName">
         <h1 data-bind="text: product().name"></h1>

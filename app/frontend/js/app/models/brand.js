@@ -6,4 +6,5 @@ function Brand(data){
 
     self.id = data.id;
     self.name = data.name;
+    self.image = data.image;
 }
