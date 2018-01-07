@@ -14,9 +14,9 @@ class AddFoodValuesProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('proteins');
-            $table->integer('carbs');
-            $table->integer('fats');
+            $table->decimal('proteins', 8, 2);
+            $table->decimal('carbs', 8, 2);
+            $table->decimal('fats', 8, 2);
         });
     }
 

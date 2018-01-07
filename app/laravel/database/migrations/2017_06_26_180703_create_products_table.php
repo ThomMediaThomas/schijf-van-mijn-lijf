@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('image')->nullable();
 
-            $table->integer('calories');
+            $table->decimal('calories', 8, 2);
 
             $table->integer('subcategory_id')->unsigned()->index();
             $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
