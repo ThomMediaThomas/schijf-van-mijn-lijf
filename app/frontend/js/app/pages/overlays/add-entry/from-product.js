@@ -1,7 +1,7 @@
 /**
  * Created by Thomas on 26-6-2017.
  */
-function FromProductForm(){
+function FromProductForm() {
     var self = this;
 
     self.$element = $('#form-from-product');
@@ -15,6 +15,7 @@ function FromProductForm(){
     self.amount = ko.observable('');
 
     self.isEdit = false;
+    self.entry = null;
 
     self.init = function (entry) {
         self.$element = $('#form-from-product');
@@ -26,6 +27,7 @@ function FromProductForm(){
 
         if (entry) {
             self.isEdit = true;
+            self.entry = entry;
             self.fillInEntryData(entry);
         }
 
@@ -62,8 +64,8 @@ function FromProductForm(){
 
         self.$element.find('#product_id').autocomplete({
             source: function (request, response) {
-                AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PRODUCT_SEARCH, { name: request.term }, function (data) {
-                    response($.map(data, function(obj) {
+                AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PRODUCT_SEARCH, {name: request.term}, function (data) {
+                    response($.map(data, function (obj) {
                         return {
                             label: obj.name,
                             value: obj.name,
@@ -87,41 +89,72 @@ function FromProductForm(){
         }).autocomplete('instance')._renderItem = function (ul, item) {
             return $('<li class="autocomplete-product-suggestion">')
                 .append('<div class="entry-image">')
-                    .find('div.entry-image')
-                    .append('<img title="' + item.label + '" alt="' + item.label + '" src="' + IMAGEHELPER.RESOLVE(item.product.image) + '" />')
-                    .parent()
+                .find('div.entry-image')
+                .append('<img title="' + item.label + '" alt="' + item.label + '" src="' + IMAGEHELPER.RESOLVE(item.product.image) + '" />')
+                .parent()
                 .append('<div class="entry-content">')
-                    .find('div.entry-content')
-                    .append('<h4>' + item.label + '</h4>')
-                    .append('<h5>' + item.product.brand.name + '</h5>')
+                .find('div.entry-content')
+                .append('<h4>' + item.label + '</h4>')
+                .append('<h5>' + item.product.brand.name + '</h5>')
                 .parent()
                 .appendTo(ul);
         };
-    },
+    };
 
     self.submit = function () {
         if (!isValid(this.$element)) {
             return false;
         }
 
-        AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.ENTRIES, {
-            entry: {
-                type: 'product',
-                entry_date: APP.pages.entries.date().format(CONFIG.DATE_FORMATS.API),
-                daypart_id: self.daypart_id(),
-                product_id: self.product().id,
-                portion_id: self.portion_id(),
-                amount: self.amount()
-            },
-        }, function (data) {
-            APP.addEntry.close();
-            self.isEdit = false;
+        if (!self.isEdit) {
+            self.saveNew();
+        } else {
+            self.saveEdit();
+        }
+    };
 
-            if (APP.currentPage() == 'entries') {
-                APP.pages.entries.reload();
-            }
+    self.saveNew = function () {
+        var endpoint = CONFIG.API + CONFIG.ENDPOINTS.ENTRIES,
+            postData = {
+                entry: {
+                    type: 'product',
+                    entry_date: APP.pages.entries.date().format(CONFIG.DATE_FORMATS.API),
+                    daypart_id: self.daypart_id(),
+                    product_id: self.product().id,
+                    portion_id: self.portion_id(),
+                    amount: self.amount()
+                }
+            };
 
+        AJAXHELPER.POST(endpoint, postData, self.afterSave);
+    };
+
+    self.saveEdit = function () {
+        var endpoint = CONFIG.API + CONFIG.ENDPOINTS.ENTRIES + '/' + self.entry.id,
+            postData = {
+                entry: {
+                    daypart_id: self.daypart_id(),
+                    portion_id: self.portion_id(),
+                    amount: self.amount()
+                }
+            };
+
+        AJAXHELPER.POST(endpoint, postData, self.afterSave);
+    };
+
+    self.afterSave = function (data) {
+        APP.addEntry.close();
+
+        if (APP.currentPage() == 'entries') {
+            APP.pages.entries.reload();
+        }
+
+        if (self.isEdit) {
+            APP.notificator.show('Je wijzigingen zijn succesvol opgeslagen.', 'success');
+        } else {
             APP.notificator.show(self.product().name + ' is succesvol toegevoegd.', 'success');
-        });
+        }
+
+        self.isEdit = false;
     }
 }

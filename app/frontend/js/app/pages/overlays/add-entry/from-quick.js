@@ -11,7 +11,8 @@ function FromQuickForm(){
     self.name = ko.observable('');
     self.calories = ko.observable('');
 
-    self.isEdit = false;
+    self.isEdit = false
+    self.entry = null;
 
     self.init = function (entry) {
         self.$element = $('#form-from-quick');
@@ -20,7 +21,8 @@ function FromQuickForm(){
         self.reset();
 
         if (entry) {
-            self.isEdit = true;
+            self.isEdit = true
+            self.entry = entry;
             self.fillInEntryData(entry);
         }
 

@@ -14,7 +14,11 @@ function AddEntryPage() {
 
     self.currentTab = ko.observable();
 
-    self.initialized = false;
+    self.initialized = false
+
+    self.buttonName = ko.computed(function () {
+       return self.isEdit() ? 'Wijzigingen opslaan' : 'Toevoegen';
+    });
 
     self.toggle = function (options) {
         self.isEdit(false);

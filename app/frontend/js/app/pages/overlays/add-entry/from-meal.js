@@ -14,6 +14,7 @@ function FromMealForm() {
     self.amount = ko.observable('');
 
     self.isEdit = false;
+    self.entry = null;
 
     self.init = function (entry) {
         self.$element = $('#form-from-meal');
@@ -24,7 +25,8 @@ function FromMealForm() {
         self.reset();
 
         if (entry) {
-            self.isEdit = true;
+            self.isEdit = true
+            self.entry = entry;
             self.fillInEntryData(entry);
         }
 
