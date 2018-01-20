@@ -29,6 +29,11 @@ function ProgressPage() {
         self.progresses([]);
 
         AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PROGRESS, {}, function (progresses) {//get min and max
+            if (!progresses || progresses.length <= 0) {
+                APP.isLoading(false);
+                return false;
+            }
+
             var max = 0, min = 200;
             _.each(progresses, function (date) {
                 max = date.progress.weight > max ? date.progress.weight : max;
