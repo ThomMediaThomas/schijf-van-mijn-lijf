@@ -50,23 +50,53 @@ function FromQuickForm(){
             return false;
         }
 
-        AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.ENTRIES, {
-            entry: {
-                type: 'quick',
-                entry_date: APP.pages.entries.date().format(CONFIG.DATE_FORMATS.API),
-                daypart_id: self.daypart_id(),
-                name: self.name(),
-                calories: self.calories()
-            }
-        }, function (data) {
-            APP.addEntry.close();
-            self.isEdit = false;
+        if (!self.isEdit) {
+            self.saveNew();
+        } else {
+            self.saveEdit();
+        }
+    };
 
-            if (APP.currentPage() == 'entries') {
-                APP.pages.entries.reload();
-            }
+    self.saveNew = function () {
+        var endpoint = CONFIG.API + CONFIG.ENDPOINTS.ENTRIES,
+            postData = {
+                entry: {
+                    type: 'quick',
+                    entry_date: APP.pages.entries.date().format(CONFIG.DATE_FORMATS.API),
+                    daypart_id: self.daypart_id(),
+                    name: self.name(),
+                    calories: self.calories()
+                }
+            };
 
+        AJAXHELPER.POST(endpoint, postData, self.afterSave);
+    };
+
+    self.saveEdit = function () {
+        var endpoint = CONFIG.API + CONFIG.ENDPOINTS.ENTRIES + '/' + self.entry.id,
+            postData = {
+                entry: {
+                    daypart_id: self.daypart_id(),
+                    calories: self.calories(),
+                }
+            };
+
+        AJAXHELPER.POST(endpoint, postData, self.afterSave);
+    };
+
+    self.afterSave = function (data) {
+        APP.addEntry.close();
+
+        if (APP.currentPage() == 'entries') {
+            APP.pages.entries.reload();
+        }
+
+        if (self.isEdit) {
+            APP.notificator.show('Je wijzigingen zijn succesvol opgeslagen.', 'success');
+        } else {
             APP.notificator.show(self.name() + ' is succesvol toegevoegd.', 'success');
-        });
-    }
+        }
+
+        self.isEdit = false;
+    };
 }
