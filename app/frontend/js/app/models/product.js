@@ -14,4 +14,5 @@ function Product(data){
     self.subcategory = ko.observable(new Subcategory(data.subcategory));
     self.category = ko.observable(new Category(data.subcategory.category));
     self.brand = ko.observable(new Brand(data.brand));
+    self.portions = ko.observableArray(data.portions);
 }

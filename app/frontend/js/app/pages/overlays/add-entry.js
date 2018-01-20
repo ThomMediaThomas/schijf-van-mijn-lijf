@@ -65,16 +65,22 @@ function AddEntryPage() {
 
     self.openFromProduct = function (entry) {
         self.currentTab('product');
-        _.delay(self.fromProduct.init, 500);
+        _.delay($.proxy(function() {
+            self.fromProduct.init(entry);
+        }, self, entry), 500);
     };
 
-    self.openFromMeal = function () {
+    self.openFromMeal = function (entry) {
         self.currentTab('meal');
-        _.delay(self.fromMeal.init, 500);
+        _.delay($.proxy(function() {
+            self.fromMeal.init(entry);
+        }, self, entry), 500);
     };
 
-    self.openFromQuick = function () {
+    self.openFromQuick = function (entry) {
         self.currentTab('quick');
-        _.delay(self.fromQuick.init, 500);
+        _.delay($.proxy(function() {
+            self.fromQuick.init(entry);
+        }, self, entry), 500);
     };
 }

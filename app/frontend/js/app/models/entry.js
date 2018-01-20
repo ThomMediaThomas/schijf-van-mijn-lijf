@@ -11,6 +11,7 @@ function Entry(data){
     self.meal = ko.observable(data.meal ? new Meal(data.meal) : null);
     self.portion = ko.observable(data.portion ? new Portion(data.portion) : null);
     self.amount = data.amount;
+    self.daypart_id = data.daypart_id;
 
     self.selected = ko.observable(false);
     self.selectedClass = ko.computed(function () {

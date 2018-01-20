@@ -11,11 +11,17 @@ function FromQuickForm(){
     self.name = ko.observable('');
     self.calories = ko.observable('');
 
-    self.init = function () {
+    self.init = function (entry) {
         self.$element = $('#form-from-quick');
 
         self.initDaypartsSelect();
         self.reset();
+
+        if (entry) {
+            self.name(entry.name);
+            self.calories(entry.calories());
+            self.daypart_id(entry.daypart_id);
+        }
 
         self.$element.find('#name').focus();
     };
@@ -31,7 +37,6 @@ function FromQuickForm(){
     };
 
     self.submit = function () {
-        alert('sumbit');
         if (!isValid(this.$element)) {
             return false;
         }

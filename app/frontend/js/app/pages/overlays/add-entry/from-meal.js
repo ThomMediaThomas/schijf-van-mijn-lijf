@@ -13,13 +13,21 @@ function FromMealForm(){
     self.meal = ko.observable();
     self.amount = ko.observable('');
 
-    self.init = function () {
+    self.init = function (entry) {
         self.$element = $('#form-from-meal');
 
         self.initDaypartsSelect();
         self.initMealsAutocomplete();
 
         self.reset();
+
+        if (entry) {
+            var meal = entry.meal();
+            self.meal_id(product.id);
+            self.$element.find('#meal_id').val(meal.name);
+            self.amount(entry.amount);
+            self.daypart_id(entry.daypart_id);
+        }
 
         self.$element.find('#meal_id').focus();
     };

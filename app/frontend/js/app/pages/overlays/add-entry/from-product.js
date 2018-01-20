@@ -14,13 +14,27 @@ function FromProductForm(){
     self.portion_id = ko.observable('');
     self.amount = ko.observable('');
 
-    self.init = function () {
+    self.init = function (entry) {
         self.$element = $('#form-from-product');
 
         self.initDaypartsSelect();
         self.initProductAutocomplete();
 
         self.reset();
+
+        if (entry) {
+            var product = entry.product();
+            self.product_id(product.id);
+            self.$element.find('#product_id').val(product.name);
+            self.portions(_.map(product.portions(), function (portion) {
+                return _.extend(portion, {
+                    friendlyName: portion.name + ' - ' + portion.size + portion.unit
+                });
+            }));
+            self.portion_id(entry.portion().id);
+            self.amount(entry.amount);
+            self.daypart_id(entry.daypart_id);
+        }
 
         self.$element.find('#product_id').focus();
     };
