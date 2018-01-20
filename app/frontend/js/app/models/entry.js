@@ -154,5 +154,9 @@ function Entry(data){
     self.openEntry = function (entry) {
         APP.entryPage.toggle(entry);
     };
+
+    self.editEntry = function (entry) {
+        APP.addEntry.edit(entry);
+    };
     /*endregion: Methods*/
 }

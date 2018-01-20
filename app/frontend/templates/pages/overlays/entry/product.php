@@ -1,7 +1,7 @@
 <div data-bind="with: entry">
     <div class="entry-details-image" data-bind="attr: { 'style': 'background-image: url(' + product().image + ');' }">
         <a class="close-button" data-bind="click: $parent.close"><i class="icon-close"></i></a>
-        <div class="entry-details-brand" data-bind="if: product().brand().image">
+        <div class="entry-details-brand" data-bind="visible: product().brand().image">
             <img data-bind="attr: { src: product().brand().image, title: product().brand().name, alt: product().brand().name}" />
         </div>
     </div>
@@ -11,7 +11,7 @@
         <i class="icon" data-bind="css: icon()"></i>
     </div>
     <div class="content-wrapper">
-        <h3>Voedingswaarde per <span data-bind="text: portion().friendlyName"></span></h3>
+        <h3>Voedingswaarde per <span data-bind="text: friendlyAmount()"></span></h3>
         <dl>
             <dt>Kilocalorieën</dt><dd data-bind="text: calories">...</dd>
             <dt>Koolhydraten</dt><dd data-bind="text: carbs">...</dd>

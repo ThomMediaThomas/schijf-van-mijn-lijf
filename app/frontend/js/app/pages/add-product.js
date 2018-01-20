@@ -119,8 +119,8 @@ function AddProductPage() {
     self.reset = function () {
         self.name('');
         self.brand('');
-        self.subcategory_id('');
-        self.subcategories([]);
+        //self.subcategory_id('');
+        //self.subcategories([]);
         self.calories('');
         self.carbs('');
         self.proteins('');

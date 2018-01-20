@@ -1,5 +1,5 @@
 <div id="add-entry" class="page overlay" data-bind="with: addEntry, css: addEntry.state">
-    <div class="add-entry-type">
+    <div class="add-entry-type" data-bind="visible: !isEdit">
         <ul>
             <li data-bind="css: currentTab() == 'product' ? 'active' : ''">
                 <a class="button-icon" href="#" data-bind="click: openFromProduct">

@@ -5,7 +5,8 @@ function AddEntryPage() {
     var self = this;
 
     self.$element = $('#add-entry');
-    self.state = ko.observable('closed')
+    self.state = ko.observable('closed');
+    self.isEdit = ko.observable(false);
 
     self.fromProduct = new FromProductForm();
     self.fromMeal = new FromMealForm();
@@ -16,6 +17,7 @@ function AddEntryPage() {
     self.initialized = false;
 
     self.toggle = function (options) {
+        self.isEdit(false);
         if (self.state() == 'open') {
             self.close(options ? options : null);
         } else {
@@ -34,6 +36,23 @@ function AddEntryPage() {
         self.openFromProduct();
     };
 
+    self.edit = function (entry) {
+        self.state('open');
+        self.isEdit(true);
+
+        if (entry.type == 'product') {
+            self.openFromProduct(entry);
+        }
+
+        if (entry.type == 'meal') {
+            self.openFromMeal(entry);
+        }
+
+        if (entry.type == 'quick') {
+            self.openFromQuick(entry);
+        }
+    };
+
     self.close = function (options) {
         self.state('closed');
     };
@@ -44,7 +63,7 @@ function AddEntryPage() {
         }
     };
 
-    self.openFromProduct = function () {
+    self.openFromProduct = function (entry) {
         self.currentTab('product');
         _.delay(self.fromProduct.init, 500);
     };

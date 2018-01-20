@@ -19,11 +19,12 @@
                 </div>
                 <div class="form-row">
                     <label for="subcategory_id">Category:</label>
-                    <select class="required" id="subcategory_id" name="subcategory_id" data-bind="value: subcategory_id,
+                    <select class="required" id="subcategory_id" name="subcategory_id" data-bind="
                         options: subcategories,
                         optionsText: function (subcategory) { return subcategory.name },
                         optionsValue: function (subcategory) { return subcategory.id },
-                        optionsCaption: 'Kies een categorie...'">
+                        optionsCaption: 'Kies een categorie...',
+                        value: subcategory_id">
                     </select>
                 </div>
                 <div class="form-row">
@@ -35,19 +36,19 @@
                 </div>
                 <div class="form-row">
                     <label for="calories">Kilocalorieën per 100gr:</label>
-                    <input class="required number" type="text" id="calories" name="calories" data-bind="value: calories">
+                    <input class="required number" type="number" id="calories" name="calories" data-bind="value: calories">
                 </div>
                 <div class="form-row">
                     <label for="carbs">Koolhydraten per 100gr:</label>
-                    <input class="required number" type="text" id="carbs" name="carbs" data-bind="value: carbs">
+                    <input class="required number" type="number" id="carbs" name="carbs" data-bind="value: carbs">
                 </div>
                 <div class="form-row">
                     <label for="proteins">Eiwitten per 100gr:</label>
-                    <input class="required number" type="text" id="proteins" name="proteins" data-bind="value: proteins">
+                    <input class="required number" type="number" id="proteins" name="proteins" data-bind="value: proteins">
                 </div>
                 <div class="form-row">
                     <label for="fat">Vet per 100gr:</label>
-                    <input class="required number" type="text" id="fat" name="fat" data-bind="value: fat">
+                    <input class="required number" type="number" id="fat" name="fat" data-bind="value: fat">
                 </div>
                 <div class="heading sub">
                     <h3>Porties</h3>
