@@ -11,6 +11,8 @@ function FromQuickForm(){
     self.name = ko.observable('');
     self.calories = ko.observable('');
 
+    self.isEdit = false;
+
     self.init = function (entry) {
         self.$element = $('#form-from-quick');
 
@@ -18,9 +20,8 @@ function FromQuickForm(){
         self.reset();
 
         if (entry) {
-            self.name(entry.name);
-            self.calories(entry.calories());
-            self.daypart_id(entry.daypart_id);
+            self.isEdit = true;
+            self.fillInEntryData(entry);
         }
 
         self.$element.find('#name').focus();
@@ -30,7 +31,13 @@ function FromQuickForm(){
         self.daypart_id(APP.loadedConfig.getCurrentDaypart().id);
         self.name('');
         self.calories('');
-    },
+    };
+
+    self.fillInEntryData = function (entry) {
+        self.name(entry.name);
+        self.calories(entry.calories());
+        self.daypart_id(entry.daypart_id);
+    };
 
     self.initDaypartsSelect = function () {
         self.dayparts(APP.loadedConfig.dayparts);
@@ -51,6 +58,7 @@ function FromQuickForm(){
             }
         }, function (data) {
             APP.addEntry.close();
+            self.isEdit = false;
 
             if (APP.currentPage() == 'entries') {
                 APP.pages.entries.reload();

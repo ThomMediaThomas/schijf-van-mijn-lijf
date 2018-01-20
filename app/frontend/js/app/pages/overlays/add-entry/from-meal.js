@@ -1,7 +1,7 @@
 /**
  * Created by Thomas on 26-6-2017.
  */
-function FromMealForm(){
+function FromMealForm() {
     var self = this;
 
     self.$element = $('#form-from-meal');
@@ -13,6 +13,8 @@ function FromMealForm(){
     self.meal = ko.observable();
     self.amount = ko.observable('');
 
+    self.isEdit = false;
+
     self.init = function (entry) {
         self.$element = $('#form-from-meal');
 
@@ -22,11 +24,8 @@ function FromMealForm(){
         self.reset();
 
         if (entry) {
-            var meal = entry.meal();
-            self.meal_id(product.id);
-            self.$element.find('#meal_id').val(meal.name);
-            self.amount(entry.amount);
-            self.daypart_id(entry.daypart_id);
+            self.isEdit = true;
+            self.fillInEntryData(entry);
         }
 
         self.$element.find('#meal_id').focus();
@@ -37,7 +36,16 @@ function FromMealForm(){
         self.meals([]);
         self.meal_id('');
         self.amount('');
-    },
+    };
+
+    self.fillInEntryData = function (entry) {
+        var meal = entry.meal();
+        self.meal_id(product.id);
+        self.$element.find('#meal_id').val(meal.name);
+        self.amount(entry.amount);
+        self.daypart_id(entry.daypart_id);
+
+    };
 
     self.initDaypartsSelect = function () {
         self.dayparts(APP.loadedConfig.dayparts);
@@ -48,8 +56,8 @@ function FromMealForm(){
 
         self.$element.find('#meal_id').autocomplete({
             source: function (request, response) {
-                AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.MEAL_SEARCH, { name: request.term }, function (data) {
-                    response($.map(data, function(obj) {
+                AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.MEAL_SEARCH, {name: request.term}, function (data) {
+                    response($.map(data, function (obj) {
                         return {
                             label: obj.name,
                             value: obj.name,
@@ -80,6 +88,7 @@ function FromMealForm(){
             },
         }, function (data) {
             APP.addEntry.close();
+            self.isEdit = false;
 
             if (APP.currentPage() == 'entries') {
                 APP.pages.entries.reload();

@@ -14,6 +14,8 @@ function FromProductForm(){
     self.portion_id = ko.observable('');
     self.amount = ko.observable('');
 
+    self.isEdit = false;
+
     self.init = function (entry) {
         self.$element = $('#form-from-product');
 
@@ -23,17 +25,8 @@ function FromProductForm(){
         self.reset();
 
         if (entry) {
-            var product = entry.product();
-            self.product_id(product.id);
-            self.$element.find('#product_id').val(product.name);
-            self.portions(_.map(product.portions(), function (portion) {
-                return _.extend(portion, {
-                    friendlyName: portion.name + ' - ' + portion.size + portion.unit
-                });
-            }));
-            self.portion_id(entry.portion().id);
-            self.amount(entry.amount);
-            self.daypart_id(entry.daypart_id);
+            self.isEdit = true;
+            self.fillInEntryData(entry);
         }
 
         self.$element.find('#product_id').focus();
@@ -44,7 +37,21 @@ function FromProductForm(){
         self.product_id('');
         self.amount('');
         self.portion_id('');
-    },
+    };
+
+    self.fillInEntryData = function (entry) {
+        var product = entry.product();
+        self.product_id(product.id);
+        self.$element.find('#product_id').val(product.name);
+        self.portions(_.map(product.portions(), function (portion) {
+            return _.extend(portion, {
+                friendlyName: portion.name + ' - ' + portion.size + portion.unit
+            });
+        }));
+        self.portion_id(entry.portion().id);
+        self.amount(entry.amount);
+        self.daypart_id(entry.daypart_id);
+    };
 
     self.initDaypartsSelect = function () {
         self.dayparts(APP.loadedConfig.dayparts);
@@ -108,6 +115,7 @@ function FromProductForm(){
             },
         }, function (data) {
             APP.addEntry.close();
+            self.isEdit = false;
 
             if (APP.currentPage() == 'entries') {
                 APP.pages.entries.reload();
