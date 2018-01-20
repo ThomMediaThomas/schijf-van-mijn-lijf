@@ -31,5 +31,7 @@
         <div data-bind="if: currentTab() == 'quick'">
             <?php include('add-entry/from-quick.php'); ?>
         </div>
+
+        <a class="button small" data-bind="click: close">Annuleren</a>
     </div>
 </div>
