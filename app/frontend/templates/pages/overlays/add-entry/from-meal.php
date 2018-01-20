@@ -19,6 +19,5 @@
                         optionsCaption: 'Kies een dagdeel...'">
         </select>
     </div>
-
-    <a class="button" data-bind="click: submit">Toevoegen</a>
+    <a class="button" data-bind="click: submit, text: $parent.buttonName()"></a>
 </form>
