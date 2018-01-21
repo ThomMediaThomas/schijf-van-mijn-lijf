@@ -16,6 +16,10 @@ function FromProductForm() {
 
     self.isEdit = false;
     self.entry = null;
+    self.isLoading = ko.observable(false);
+    self.loadingClass = ko.computed(function () {
+        return self.isLoading() ? 'is-loading' : '';
+    });
 
     self.init = function (entry) {
         self.$element = $('#form-from-product');
@@ -106,6 +110,8 @@ function FromProductForm() {
             return false;
         }
 
+        self.isLoading(true);
+
         if (!self.isEdit) {
             self.saveNew();
         } else {
@@ -155,6 +161,7 @@ function FromProductForm() {
             APP.notificator.show(self.product().name + ' is succesvol toegevoegd.', 'success');
         }
 
+        self.isLoading(false);
         self.isEdit = false;
     }
 }
