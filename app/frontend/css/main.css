@@ -1111,40 +1111,40 @@ a.ui-button:active,
   box-shadow: 0px 0px 5px #666666; }
 
 html {
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Open Sans", sans-serif;
   color: #989898;
   line-height: 1; }
 
 h1 {
   font-weight: 700;
-  font-size: 16px;
-  font-size: 1.33333rem;
+  font-size: 18px;
+  font-size: 1.28571rem;
   margin-bottom: 8px; }
 
 h2 {
   font-weight: 700;
-  font-size: 14px;
-  font-size: 1.16667rem;
+  font-size: 16px;
+  font-size: 1.14286rem;
   margin-bottom: 8px; }
 
 h3 {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   font-size: 1rem;
   margin-bottom: 4px; }
 
 h4 {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   font-size: 1rem;
   margin-bottom: 4px; }
 
 h5 {
   font-weight: 300;
   font-style: italic;
-  font-size: 10px;
-  font-size: 0.83333rem; }
+  font-size: 12px;
+  font-size: 0.85714rem; }
   h5 strong {
     font-weight: 600;
     font-style: normal; }
@@ -1221,7 +1221,7 @@ dl dd {
     float: left;
     color: White;
     font-size: 20px;
-    font-size: 1.66667rem;
+    font-size: 1.42857rem;
     margin: 4px 0px; }
     #header .header-button:last-child {
       float: right; }
@@ -1293,7 +1293,7 @@ dl dd {
     transition: background 0.25s ease-in-out; }
     #nav #nav-bg i {
       font-size: 20px;
-      font-size: 1.66667rem;
+      font-size: 1.42857rem;
       display: block;
       width: 20px;
       height: 20px;
@@ -1314,14 +1314,14 @@ dl dd {
     cursor: pointer;
     font-weight: bold;
     font-size: 12px;
-    font-size: 1rem;
+    font-size: 0.85714rem;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
     #nav li i {
       font-size: 20px;
-      font-size: 1.66667rem;
+      font-size: 1.42857rem;
       margin-right: 4px;
       width: 20px;
       text-align: center;
@@ -1374,7 +1374,7 @@ dl dd {
   }*/ }
   .button-icon i {
     font-size: 16px;
-    font-size: 1.33333rem;
+    font-size: 1.14286rem;
     display: block;
     margin-bottom: 10px; }
   .button-icon span {
@@ -1382,7 +1382,7 @@ dl dd {
     font-weight: bold;
     display: block;
     font-size: 8px;
-    font-size: 0.66667rem; }
+    font-size: 0.57143rem; }
 
 .info-box {
   background-color: #ededed;
@@ -1424,7 +1424,7 @@ form label {
   margin-bottom: 4px;
   display: block;
   font-size: 12px;
-  font-size: 1rem; }
+  font-size: 0.85714rem; }
   form label span {
     text-transform: none;
     font-size: 0.8em;
@@ -1495,14 +1495,14 @@ form select {
   border-radius: 10px;
   color: White;
   font-size: 12px;
-  font-size: 1rem; }
+  font-size: 0.85714rem; }
   .category.small {
     width: 10px;
     height: 10px;
     padding: 2px;
     border-radius: 5px;
     font-size: 6px;
-    font-size: 0.5rem; }
+    font-size: 0.42857rem; }
   .category.vegetables {
     background-color: #bedb39; }
   .category.fats {
@@ -1554,8 +1554,8 @@ form select {
   color: #0c82f0;
   border-bottom: 1px solid #0c82f0; }
   .date-nav .content-wrapper {
-    padding-top: 17px;
-    padding-bottom: 7px; }
+    padding-top: 13px;
+    padding-bottom: 11px; }
   .date-nav .datenav-button {
     position: absolute;
     font-size: 20px;
@@ -1662,8 +1662,8 @@ form select {
     position: relative; }
   .entry .entry-wrapper, .autocomplete-product-suggestion .entry-wrapper,
   .autocomplete-brand-suggestion .entry-wrapper {
-    padding-top: 6px;
-    padding-bottom: 6px; }
+    padding-top: 8px;
+    padding-bottom: 8px; }
     .entry .entry-wrapper:after, .autocomplete-product-suggestion .entry-wrapper:after,
     .autocomplete-brand-suggestion .entry-wrapper:after {
       content: "";
@@ -1671,16 +1671,16 @@ form select {
       clear: both; }
   .entry .entry-image, .autocomplete-product-suggestion .entry-image,
   .autocomplete-brand-suggestion .entry-image {
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     position: relative;
     overflow: hidden;
-    margin-right: 6px;
+    margin-right: 8px;
     float: left; }
     .entry .entry-image.small, .autocomplete-product-suggestion .entry-image.small,
     .autocomplete-brand-suggestion .entry-image.small {
-      width: 13px;
-      height: 13px; }
+      width: 15px;
+      height: 15px; }
     .entry .entry-image img, .autocomplete-product-suggestion .entry-image img,
     .autocomplete-brand-suggestion .entry-image img {
       width: 100%;
@@ -1691,15 +1691,15 @@ form select {
     .entry .entry-image i, .autocomplete-product-suggestion .entry-image i,
     .autocomplete-brand-suggestion .entry-image i {
       font-size: 16px;
-      font-size: 1.33333rem;
+      font-size: 1.14286rem;
       height: 16px;
       width: 16px;
       display: block;
       text-align: center;
-      margin: 5px auto; }
+      margin: 7px auto; }
   .entry .entry-content, .autocomplete-product-suggestion .entry-content,
   .autocomplete-brand-suggestion .entry-content {
-    width: calc(100% - 46px);
+    width: calc(100% - 60px);
     float: left; }
   .entry .entry-category, .autocomplete-product-suggestion .entry-category,
   .autocomplete-brand-suggestion .entry-category {
@@ -1747,7 +1747,7 @@ form select {
       .entry.add .entry-image i, .add.autocomplete-product-suggestion .entry-image i,
       .add.autocomplete-brand-suggestion .entry-image i {
         font-size: 12px;
-        font-size: 1rem;
+        font-size: 0.85714rem;
         height: 12px;
         width: 12px;
         margin: 1px auto; }
@@ -1774,10 +1774,10 @@ form select {
         max-height: 200px; }
   .entry.inset .entry-image, .inset.autocomplete-product-suggestion .entry-image,
   .inset.autocomplete-brand-suggestion .entry-image {
-    margin-left: 13px; }
+    margin-left: 15px; }
   .entry.inset .entry-content, .inset.autocomplete-product-suggestion .entry-content,
   .inset.autocomplete-brand-suggestion .entry-content {
-    width: calc(100% - 72px); }
+    width: calc(100% - 80px); }
   .entry.selected, .selected.autocomplete-product-suggestion,
   .selected.autocomplete-brand-suggestion {
     border-left: 4px solid #0c82f0; }
@@ -1888,7 +1888,7 @@ form select {
   .page.overlay .close-button {
     position: absolute;
     font-size: 20px;
-    font-size: 1.66667rem;
+    font-size: 1.42857rem;
     top: 20px;
     right: 20px;
     color: #0c82f0; }
@@ -1918,7 +1918,7 @@ form select {
     #notification .content-wrapper #close-notification {
       position: absolute;
       font-size: 12px;
-      font-size: 1rem;
+      font-size: 0.85714rem;
       top: 50%;
       margin-top: -6px;
       right: 20px; }
@@ -2032,7 +2032,7 @@ form select {
     top: 50%;
     margin-top: -16px;
     font-size: 32px;
-    font-size: 2.66667rem; }
+    font-size: 2.28571rem; }
   .entry-details .entry-details-heading.vegetables {
     background-color: #bedb39; }
   .entry-details .entry-details-heading.fats {

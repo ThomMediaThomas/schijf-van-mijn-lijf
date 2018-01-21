@@ -26,8 +26,8 @@ $datenavPadding: $spacer*3;
   border-bottom: 1px solid $cyan;
 
   .content-wrapper {
-    padding-top: $datenavPadding + 5;
-    padding-bottom: $datenavPadding - 5;
+    padding-top: $datenavPadding + 1;
+    padding-bottom: $datenavPadding - 1;
   }
 
   .datenav-button {

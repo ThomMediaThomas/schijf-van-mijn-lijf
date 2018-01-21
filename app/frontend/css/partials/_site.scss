@@ -7,32 +7,32 @@ html {
 
 h1 {
   font-weight: $bold;
-  @include pxToRem(16px);
+  @include pxToRem(18px);
   margin-bottom: $spacer*2;
 }
 
 h2 {
   font-weight: $bold;
-  @include pxToRem(14px);
+  @include pxToRem(16px);
   margin-bottom: $spacer*2;
 }
 
 h3 {
   font-weight: $semibold;
-  @include pxToRem(12px);
+  @include pxToRem(14px);
   margin-bottom: $spacer;
 }
 
 h4 {
   font-weight: $semibold;
-  @include pxToRem(12px);
+  @include pxToRem(14px);
   margin-bottom: $spacer;
 }
 
 h5 {
   font-weight: $light;
   font-style: italic;
-  @include pxToRem(10px);
+  @include pxToRem(12px);
 
   strong {
     font-weight: $semibold;
