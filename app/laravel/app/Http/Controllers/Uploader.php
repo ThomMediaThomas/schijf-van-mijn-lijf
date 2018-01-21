@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Intervention\Image\Facades\Image;
 
 class Uploader extends Base
 {
@@ -15,8 +16,12 @@ class Uploader extends Base
 
         if ($image) {
             $fileName = uniqid('upload_') . '_' . strtolower($image->getClientOriginalName());
+            $fullPath = $path . $folder . $fileName;
 
-            $image->move($path . $folder, $fileName);
+            Image::make($image->getRealPath())->resize(600, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($fullPath);
 
             return response()->json([
                 'url' => $folder . $fileName
