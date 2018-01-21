@@ -20,6 +20,10 @@ function AddProductPage() {
     self.portions = ko.observableArray([]);
 
     self.initialized = false;
+    self.isLoading = ko.observable(false);
+    self.loadingClass = ko.computed(function () {
+        return self.isLoading() ? 'is-loading' : '';
+    });
 
     self.init = function () {
         if (self.initialized) {
@@ -83,6 +87,8 @@ function AddProductPage() {
             return false;
         }
 
+        self.isLoading(true);
+
         self.submitImage(function (imageUrl) {
             AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.PRODUCTS, {
                 product: {
@@ -105,6 +111,7 @@ function AddProductPage() {
             }, function (data) {
                 APP.navigate('entries');
                 APP.notificator.show(self.name() + ' is succesvol toegevoegd en klaar voor gebruik.', 'success');
+                self.isLoading(false);
             });
         });
     };

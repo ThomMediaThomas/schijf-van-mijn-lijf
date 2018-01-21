@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <a class="button small" data-bind="click: addPortion">Portie toevoegen</a>
-                <a class="button" data-bind="click: submit">Toevoegen</a>
+                <a class="button" data-bind="click: submit, css: loadingClass">Toevoegen</a>
             </form>
         </div>
     </div>

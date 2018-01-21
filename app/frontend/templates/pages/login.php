@@ -10,7 +10,7 @@
                     <label for="password">Wachtwoord:</label>
                     <input class="required" type="password" id="password" name="password" data-bind="value: password">
                 </div>
-                <a class="button" data-bind="click: login">Inloggen</a>
+                <a class="button" data-bind="click: login, css: loadingClass">Inloggen</a>
             </form>
             <p data-bind="click: function() { APP.navigate('register'); return false; }">Heb je nog geen account? Klik hier om te registreren.</p>
         </div>

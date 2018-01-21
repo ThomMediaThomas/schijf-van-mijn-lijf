@@ -19,6 +19,13 @@
     border: 1px solid $green;
     color: $green;
   }
+
+  &.is-loading {
+    pointer-events: none;
+    color: transparent;
+    background: url('/files/images/loading-white.gif') no-repeat $green center center;
+    opacity: 0.8;
+  }
 }
 
 $buttonIconSize: 16px;

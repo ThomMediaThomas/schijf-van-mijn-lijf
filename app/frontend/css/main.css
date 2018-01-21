@@ -1356,6 +1356,11 @@ dl dd {
     background-color: transparent;
     border: 1px solid #bedb39;
     color: #bedb39; }
+  .button.is-loading {
+    pointer-events: none;
+    color: transparent;
+    background: url("/files/images/loading-white.gif") no-repeat #bedb39 center center;
+    opacity: 0.8; }
 
 .button-icon {
   display: block;
