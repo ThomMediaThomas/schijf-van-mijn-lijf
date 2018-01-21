@@ -31,7 +31,9 @@
         <div data-bind="if: currentTab() == 'quick'">
             <?php include('add-entry/from-quick.php'); ?>
         </div>
-
         <a class="button small" data-bind="click: close">Annuleren</a>
+        <div class="info-box">
+            <p>Kan je niet vinden wat je zoekt? <a href="#" data-bind="click: function() { $root.navigate('addProduct') }">Klik dan hier</a> om een nieuw product toe te voegen.</p>
+        </div>
     </div>
 </div>

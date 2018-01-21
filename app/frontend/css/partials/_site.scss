@@ -59,6 +59,11 @@ h5 {
 p {
   line-height: $baseLineHeight;
   margin-bottom: $baseMargin;
+
+  a {
+    color: $cyan;
+    text-decoration: underline;
+  }
 }
 
 a {

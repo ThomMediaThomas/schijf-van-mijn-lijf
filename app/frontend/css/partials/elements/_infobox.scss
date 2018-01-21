@@ -1,0 +1,10 @@
+.info-box {
+  background-color: $bgGrayLight;
+  padding: $spacer;
+  margin-bottom: $baseMargin;
+  border-radius: $radius;
+
+  p:last-child {
+    margin-bottom: 0px;
+  }
+}

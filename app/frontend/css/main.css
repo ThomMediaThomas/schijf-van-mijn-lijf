@@ -1163,6 +1163,9 @@ h5 {
 p, dl {
   line-height: 1.5;
   margin-bottom: 20px; }
+  p a, dl a {
+    color: #0c82f0;
+    text-decoration: underline; }
 
 a {
   text-decoration: none;
@@ -1380,6 +1383,14 @@ dl dd {
     display: block;
     font-size: 8px;
     font-size: 0.66667rem; }
+
+.info-box {
+  background-color: #ededed;
+  padding: 4px;
+  margin-bottom: 20px;
+  border-radius: 4px; }
+  .info-box p:last-child, .info-box dl:last-child {
+    margin-bottom: 0px; }
 
 form .form-row {
   width: 100%;
