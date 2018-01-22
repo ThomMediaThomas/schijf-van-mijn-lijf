@@ -70,21 +70,21 @@ function AddEntryPage() {
     self.openFromProduct = function (entry) {
         self.currentTab('product');
         _.delay($.proxy(function() {
-            self.fromProduct.init(entry);
+            self.fromProduct.init(entry ? entry : null);
         }, self, entry), 500);
     };
 
     self.openFromMeal = function (entry) {
         self.currentTab('meal');
         _.delay($.proxy(function() {
-            self.fromMeal.init(entry);
+            self.fromMeal.init(entry ? entry : null);
         }, self, entry), 500);
     };
 
     self.openFromQuick = function (entry) {
         self.currentTab('quick');
         _.delay($.proxy(function() {
-            self.fromQuick.init(entry);
+            self.fromQuick.init(entry ? entry : null);
         }, self, entry), 500);
     };
 }

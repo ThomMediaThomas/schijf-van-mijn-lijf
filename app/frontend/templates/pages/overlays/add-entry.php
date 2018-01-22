@@ -2,19 +2,19 @@
     <div class="add-entry-type" data-bind="visible: !isEdit()">
         <ul>
             <li data-bind="css: currentTab() == 'product' ? 'active' : ''">
-                <a class="button-icon" href="#" data-bind="click: openFromProduct">
+                <a class="button-icon" href="#" data-bind="click: function () { openFromProduct(); }">
                     <i class="icon-fruits"></i>
                     <span>Product</span>
                 </a>
             </li>
             <li data-bind="css: currentTab() == 'meal' ? 'active' : ''">
-                <a class="button-icon" href="#" data-bind="click: openFromMeal">
+                <a class="button-icon" href="#" data-bind="click: function () {  openFromMeal(); }">
                     <i class="icon-meal"></i>
                     <span>Maaltijd</span>
                 </a>
             </li>
             <li data-bind="css: currentTab() == 'quick' ? 'active' : ''">
-                <a class="button-icon" href="#" data-bind="click: openFromQuick">
+                <a class="button-icon" href="#" data-bind="click: function () {  openFromQuick(); }">
                     <i class="icon-quick"></i>
                     <span>Snel toevoegen</span>
                 </a>
