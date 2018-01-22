@@ -14,6 +14,9 @@ function FromProductForm() {
     self.portion_id = ko.observable('');
     self.amount = ko.observable('');
 
+    self.savePortion = ko.observable(false);
+    self.portionName = ko.observable('');
+
     self.isEdit = false;
     self.entry = null;
     self.isLoading = ko.observable(false);

@@ -1401,6 +1401,12 @@ form .form-row {
     content: "";
     display: table;
     clear: both; }
+  form .form-row.group {
+    border: 1px solid #ededed;
+    border-radius: 4px;
+    padding: 4px 4px 0 4px; }
+  form .form-row .form-row {
+    margin-bottom: 4px; }
 
 form .form-group {
   padding: 10px;
@@ -1432,7 +1438,11 @@ form label {
     font-size: 0.8em;
     font-style: italic; }
 
-form input,
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form input[type="password"],
+form input[type="email"],
 form select {
   -webkit-appearance: none;
   width: 100%;
@@ -1445,13 +1455,25 @@ form select {
   font-size: inherit;
   color: #989898;
   padding: 4px; }
-  form input:focus,
+  form input[type="text"]:focus,
+  form input[type="number"]:focus,
+  form input[type="date"]:focus,
+  form input[type="password"]:focus,
+  form input[type="email"]:focus,
   form select:focus {
     border-color: #0c82f0; }
-  form input:disabled,
+  form input[type="text"]:disabled,
+  form input[type="number"]:disabled,
+  form input[type="date"]:disabled,
+  form input[type="password"]:disabled,
+  form input[type="email"]:disabled,
   form select:disabled {
     background-color: #ededed; }
-  form input.invalid,
+  form input[type="text"].invalid,
+  form input[type="number"].invalid,
+  form input[type="date"].invalid,
+  form input[type="password"].invalid,
+  form input[type="email"].invalid,
   form select.invalid {
     border-bottom-color: #fa2444;
     border-left: 2px solid #fa2444; }

@@ -3,6 +3,16 @@ form {
     width: 100%;
     margin-bottom: $baseMargin;
     @include clearfix();
+
+    &.group {
+      border: 1px solid $grayLight;
+      border-radius: $radius;
+      padding: $spacer $spacer 0 $spacer;
+    }
+
+    .form-row {
+      margin-bottom: $spacer;
+    }
   }
 
   .form-group {
@@ -47,7 +57,11 @@ form {
     }
   }
 
-  input,
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="password"],
+  input[type="email"],
   select{
     -webkit-appearance: none;
 
