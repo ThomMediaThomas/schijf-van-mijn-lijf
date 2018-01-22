@@ -33,9 +33,12 @@
                         <input class="required number" type="number" id="weight" name="weight" data-bind="value: weight">
                     </div>
                     <div class="form-row-inner half">
-                        <label>&nbsp;</label>
-                        <a class="button" data-bind="click: submitProgress">Opslaan</a>
+                        <label for="date">Datum:</label>
+                        <input class="required" type="text" id="date" name="date" data-bind="value: date">
                     </div>
+                </div>
+                <div class="form-row">
+                    <a class="button" data-bind="click: submitProgress">Opslaan</a>
                 </div>
             </form>
         </div>

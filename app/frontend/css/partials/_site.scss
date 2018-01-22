@@ -94,5 +94,7 @@ dl {
 .content-wrapper {
   width: 100%;
   padding: 0px $baseMargin;
+  max-width: 640px;
+  margin: 0 auto;
   @include clearfix();
 }
