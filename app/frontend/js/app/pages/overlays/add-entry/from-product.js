@@ -46,6 +46,8 @@ function FromProductForm() {
         self.product_id('');
         self.amount('');
         self.portion_id('');
+        self.savePortion(false);
+        self.portionName('');
     };
 
     self.fillInEntryData = function (entry) {
@@ -136,6 +138,10 @@ function FromProductForm() {
                     amount: self.amount()
                 }
             };
+
+        if (self.savePortion()) {
+            postData.entry.portion_name = self.portionName();
+        }
 
         AJAXHELPER.POST(endpoint, postData, self.afterSave);
     };

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Entry;
+use App\Models\Portion;
 use Illuminate\Http\Request;
 
 class Entries extends Base
@@ -30,6 +31,19 @@ class Entries extends Base
         $data = array_merge($data, [
             'user_id' => $this->user->id
         ]);
+
+        if (isset($data['portion_name'])) {
+            $usedPortion = Portion::find($data['portion_id']);
+            $portion = Portion::create([
+                'name' => $data['portion_name'],
+                'unit' => $usedPortion->unit,
+                'size' => (float)$data['amount'] * $usedPortion->size,
+                'product_id' => $data['product_id']
+            ]);
+
+            $data['portion_id'] = $portion->id;
+            $data['amount'] = 1;
+        }
 
         $entry = Entry::create($data);
 
