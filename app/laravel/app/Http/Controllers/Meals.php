@@ -43,7 +43,7 @@ class Meals extends Base
         $this->validateAuthentication($request);
 
         if ($request->name) {
-            $collection = Meal::where('name', 'LIKE', '%'. $request->name .'%')->get();
+            $collection = Meal::where('name', 'LIKE', '%'. $request->name .'%')->where('user_id', $this->user->id)->get();
         }
 
         return response()->json($collection, 201);
