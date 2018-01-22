@@ -57,6 +57,15 @@
   .entry-content {
     width: calc(100% - #{$entrySize + $baseSize + 10});
     float: left;
+
+    h5 {
+      img {
+        display: inline-block;
+        margin-right: $spacer;
+        width: 10px;
+        height: 10px;
+      }
+    }
   }
 
   .entry-category {

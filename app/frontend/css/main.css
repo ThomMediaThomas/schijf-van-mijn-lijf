@@ -1703,6 +1703,12 @@ form select {
   .autocomplete-brand-suggestion .entry-content {
     width: calc(100% - 60px);
     float: left; }
+    .entry .entry-content h5 img, .autocomplete-product-suggestion .entry-content h5 img,
+    .autocomplete-brand-suggestion .entry-content h5 img {
+      display: inline-block;
+      margin-right: 4px;
+      width: 10px;
+      height: 10px; }
   .entry .entry-category, .autocomplete-product-suggestion .entry-category,
   .autocomplete-brand-suggestion .entry-category {
     text-align: right;

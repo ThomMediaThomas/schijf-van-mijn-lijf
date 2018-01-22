@@ -91,15 +91,17 @@ function FromProductForm() {
                 that.product(new Product(ui.item.product));
             }
         }).autocomplete('instance')._renderItem = function (ul, item) {
+            var productImage = '<img title="' + item.label + '" alt="' + item.label + '" src="' + IMAGEHELPER.RESOLVE(item.product.image) + '" />',
+                brandImage = item.product.brand.image ? '<img title="' + item.product.brand.name + '" alt="' + item.product.brand.name + '" src="' + item.product.brand.image + '" />' : '';
             return $('<li class="autocomplete-product-suggestion">')
                 .append('<div class="entry-image">')
                 .find('div.entry-image')
-                .append('<img title="' + item.label + '" alt="' + item.label + '" src="' + IMAGEHELPER.RESOLVE(item.product.image) + '" />')
+                .append(productImage)
                 .parent()
                 .append('<div class="entry-content">')
                 .find('div.entry-content')
                 .append('<h4>' + item.label + '</h4>')
-                .append('<h5>' + item.product.brand.name + '</h5>')
+                .append('<h5>' + brandImage + item.product.brand.name + '</h5>')
                 .parent()
                 .appendTo(ul);
         };
