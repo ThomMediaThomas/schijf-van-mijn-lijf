@@ -2,7 +2,7 @@ function isValid ($form) {
     var errors = 0;
 
     //validate inputs
-    _.each($form.find('input, select'), function (input) {
+    _.each($form.find('input:visible, select:visible'), function (input) {
         var $input = $(input);
         $input.removeClass('invalid');
 
