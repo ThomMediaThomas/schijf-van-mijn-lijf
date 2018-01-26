@@ -25,6 +25,11 @@ var CONFIG = {
         HUMAN: 'dddd D MMMM YYYY',
         HUMAN_SHORT: 'DD-MM-YYYY',
     },
+    KCAL_PER_GRAM: {
+        carbs: 4,
+        proteins: 4,
+        fats: 9
+    },
     MACRONUTRIENTS: {
         gain: {
             carbs: 60,

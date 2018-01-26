@@ -44,7 +44,7 @@ function EntriesPage(){
                 total += entry.calories();
             });
 
-            return Math.round((total / carbsCalories) * 100);
+            return Math.round((total / (carbsCalories/CONFIG.KCAL_PER_GRAM.carbs)) * 100);
         }
     });
 
@@ -57,7 +57,7 @@ function EntriesPage(){
                 total += entry.proteins();
             });
 
-            return Math.round((total / proteinsCalories) * 100);
+            return Math.round((total / (proteinsCalories/CONFIG.KCAL_PER_GRAM.proteins)) * 100);
         }
     });
 
@@ -70,7 +70,7 @@ function EntriesPage(){
                 total += entry.fats();
             });
 
-            return Math.round((total / fatsCalories) * 100);
+            return Math.round((total / (fatsCalories/CONFIG.KCAL_PER_GRAM.fats)) * 100);
         }
     });
 

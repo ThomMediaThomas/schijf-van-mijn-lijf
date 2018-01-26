@@ -23,7 +23,6 @@ function User(data){
     });
 
     self.macronutrients = ko.computed(function () {
-        console.log(CONFIG.MACRONUTRIENTS[self.current_program().goal_type()]);
         return CONFIG.MACRONUTRIENTS[self.current_program().goal_type()];
     });
 }
