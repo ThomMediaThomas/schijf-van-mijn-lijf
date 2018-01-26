@@ -1,0 +1,17 @@
+50 energieprocent koolhydraten
+20 energieprocent eiwit
+30 energieprocent vet
+
+-----
+
+* Koolhydraten leveren 4kcal per gram
+* Eiwitten leveren 4kcal per gram
+* Vetten leveren 9kcal per gram
+
+Je wilt dus 2000kcal eten, waarvan 50% koolhydraten moet zijn. Dit zijn dus 2000 x 0,5 = 1000kcal aan koolhydraten. Dit
+komt overeen met 1000/4= 250g koolhydraten.
+
+Van eiwitten wil je 20% binnenkrijgen, dit zijn 2000 x 0,2 = 400kcal eiwitten. Wat 400/4 = 100g eiwit is.
+
+Tenslotte de vetten, hiervan wil je 30% binnen krijgen. 2000 x 0,3 = 600kcal. 600/9= 67g vet. In verhouding kun je dus
+veel minder vetrijke producten eten, omdat vet per gram veel meer calorieën aan je lichaam levert!
