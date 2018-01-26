@@ -27,7 +27,7 @@
         <div data-bind="visible: savePortion">
             <div class="form-row">
                 <label for="portion_name">Naam portie:</label>
-                <input class="required" type="text" id="portion_name" name="portion_name" data-bind="value: portionName">
+                <input class="" type="text" id="portion_name" name="portion_name" data-bind="value: portionName">
             </div>
         </div>
     </div>
