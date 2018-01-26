@@ -35,6 +35,45 @@ function EntriesPage(){
         }
     });
 
+    self.macronutrients = {
+        carbs: 50,
+        proteins: 30,
+        fats: 20
+    };
+
+    self.carbsForTodayPercentage = ko.computed(function () {
+        var total = 0,
+            carbsCalories = self.caloriesGoal() * (self.macronutrients.carbs/100);
+
+        _.each(self.entries(), function (entry) {
+            total += entry.calories();
+        });
+
+        return Math.round((total/carbsCalories) * 100);
+    });
+
+    self.proteinsForTodayPercentage = ko.computed(function () {
+        var total = 0,
+            proteinsCalories = self.caloriesGoal() * (self.macronutrients.proteins/100);
+
+        _.each(self.entries(), function (entry) {
+            total += entry.proteins();
+        });
+
+        return Math.round((total/proteinsCalories) * 100);
+    });
+
+    self.fatsForTodayPercentage = ko.computed(function () {
+        var total = 0,
+            fatsCalories = self.caloriesGoal() * (self.macronutrients.fats/100);
+
+        _.each(self.entries(), function (entry) {
+            total += entry.fats();
+        });
+
+        return Math.round((total/fatsCalories) * 100);
+    });
+
     self.init = function () {
         APP.isLoading(true);
         self.setDate(moment());

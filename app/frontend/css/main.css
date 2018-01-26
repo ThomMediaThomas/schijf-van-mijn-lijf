@@ -1235,7 +1235,26 @@ dl dd {
   width: 100%;
   z-index: 50;
   background-color: #0c82f0;
-  padding: 20px 0; }
+  color: White; }
+  #footer #footer-inner {
+    padding: 20px 0;
+    position: relative; }
+  #footer #footer-handle {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -20px;
+    background-color: #0c82f0; }
+    #footer #footer-handle i {
+      display: block;
+      text-align: center;
+      font-size: 26px;
+      font-size: 1.85714rem;
+      margin: 7px 0px;
+      color: #6db4f6; }
   #footer .percentage-wrapper {
     border-radius: 2px;
     height: 15px;
@@ -1244,6 +1263,8 @@ dl dd {
     overflow: hidden;
     display: block;
     margin-bottom: 4px; }
+    #footer .percentage-wrapper.big {
+      height: 25px; }
     #footer .percentage-wrapper .percentage {
       border-radius: 2px;
       background-color: White;
@@ -1257,9 +1278,77 @@ dl dd {
       -o-transition: all 0.5s ease-in-out;
       -webkit-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out; }
+  #footer .percentage-wrapper-vertical {
+    height: 50px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 4px; }
+    #footer .percentage-wrapper-vertical .percentage {
+      border-radius: 2px;
+      background-color: White;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      display: block;
+      height: 0%;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      -webkit-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+    #footer .percentage-wrapper-vertical strong {
+      display: block;
+      font-size: 24px;
+      font-size: 1.71429rem;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      padding: 13px; }
+    #footer .percentage-wrapper-vertical.carbs {
+      background-color: rgba(253, 116, 0, 0.6); }
+      #footer .percentage-wrapper-vertical.carbs .percentage {
+        background-color: #fd7400; }
+    #footer .percentage-wrapper-vertical.proteins {
+      background-color: rgba(250, 36, 68, 0.6); }
+      #footer .percentage-wrapper-vertical.proteins .percentage {
+        background-color: #fa2444; }
+    #footer .percentage-wrapper-vertical.fats {
+      background-color: rgba(255, 225, 74, 0.6); }
+      #footer .percentage-wrapper-vertical.fats .percentage {
+        background-color: #ffe14a; }
   #footer .percentage-label {
-    color: White;
     font-style: italic; }
+  #footer .footer-element {
+    border-radius: 2px; }
+    #footer .footer-element:after {
+      content: "";
+      display: table;
+      clear: both; }
+    #footer .footer-element.show-on-open {
+      display: none; }
+    #footer .footer-element.bordered {
+      background-color: #6db4f6;
+      padding: 8px 4px; }
+  #footer .footer-element-header {
+    font-weight: 600;
+    border-bottom: 1px solid White;
+    padding: 0px 4px 4px 4px;
+    margin-bottom: 8px;
+    display: block; }
+  #footer.open .footer-element.show-on-open {
+    display: block;
+    margin-top: 20px; }
+  #footer .footer-element-column {
+    width: 33.33%;
+    float: left;
+    padding: 0px 4px;
+    text-align: center; }
 
 #nav {
   position: fixed;

@@ -8,7 +8,33 @@ $footerHeight: 71px;
   width: 100%;
   z-index: $footerZ;
   background-color: $cyan;
-  padding: $baseMargin 0;
+  color: White;
+
+  #footer-inner {
+    padding: $baseMargin 0;
+    position: relative;
+  }
+
+  #footer-handle {
+    $footerHandleSize: 40px;
+
+    width: $footerHandleSize;
+    height: $footerHandleSize;
+    border-radius: $footerHandleSize/2;
+    position: absolute;
+    top: -$footerHandleSize/2;
+    left: 50%;
+    margin-left: -$footerHandleSize/2;
+    background-color: $cyan;
+
+    i {
+      display: block;
+      text-align: center;
+      @include pxToRem(26px);
+      margin: 7px 0px;
+      color: $cyanLight;
+    }
+  }
 
   .percentage-wrapper {
     border-radius: 2px;
@@ -18,6 +44,10 @@ $footerHeight: 71px;
     overflow: hidden;
     display: block;
     margin-bottom: $spacer;
+
+    &.big {
+      height: 25px;
+    }
 
     .percentage {
       border-radius: 2px;
@@ -32,8 +62,99 @@ $footerHeight: 71px;
     }
   }
 
+  .percentage-wrapper-vertical {
+    height: 50px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin-bottom: $spacer;
+
+    .percentage {
+      border-radius: 2px;
+      background-color: White;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      display: block;
+      height: 0%;
+      @include transition(all 0.5s ease-in-out);
+    }
+
+    strong {
+      display: block;
+      @include pxToRem(24px);
+      font-weight: $semibold;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      padding: 13px;
+    }
+
+    &.carbs {
+      background-color: transparentize($orange, 0.4);
+
+      .percentage {
+        background-color: $orange;
+      }
+    }
+
+    &.proteins {
+      background-color: transparentize($red, 0.4);
+
+      .percentage {
+        background-color: $red;
+      }
+    }
+
+    &.fats {
+      background-color: transparentize($yellow, 0.4);
+
+      .percentage {
+        background-color: $yellow;
+      }
+    }
+  }
+
   .percentage-label {
-    color: White;
     font-style: italic;
+  }
+
+  .footer-element {
+    @include clearfix();
+    border-radius: 2px;
+
+    &.show-on-open {
+      display: none;
+    }
+
+    &.bordered {
+      background-color: $cyanLight;
+      padding: $spacer*2 $spacer;
+    }
+  }
+
+  .footer-element-header {
+    font-weight: $semibold;
+    border-bottom: 1px solid White;
+    padding: 0px $spacer $spacer $spacer;
+    margin-bottom: $spacer*2;
+    display: block;
+  }
+
+  &.open .footer-element.show-on-open {
+    display: block;
+    margin-top: $baseMargin;
+  }
+
+  .footer-element-column{
+    width: 33.33%;
+    float: left;
+    padding: 0px $spacer;
+    text-align: center;
   }
 }

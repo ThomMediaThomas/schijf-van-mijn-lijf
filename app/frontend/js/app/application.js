@@ -20,6 +20,7 @@ function Application(){
 
     /*region Header*/
     self.navigation = new Navigation();
+    self.footer = new Footer();
     self.addEntry = new AddEntryPage();
     self.addEntry = new AddEntryPage();
     self.addMeal = new AddMealPage();

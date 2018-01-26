@@ -74,6 +74,7 @@
         <script src="js/app/models/program.js"></script>
 
         <script src="js/app/elements/navigation.js"></script>
+        <script src="js/app/elements/footer.js"></script>
 
         <script src="js/app/pages/login.js"></script>
         <script src="js/app/pages/register.js"></script>
