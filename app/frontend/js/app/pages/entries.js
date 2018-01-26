@@ -36,36 +36,42 @@ function EntriesPage(){
     });
 
     self.carbsForTodayPercentage = ko.computed(function () {
-        var total = 0,
-            carbsCalories = self.caloriesGoal() * (CONFIG.MACRONUTRIENTS.carbs/100);
+        if (self.user()) {
+            var total = 0,
+                carbsCalories = self.caloriesGoal() * (self.user().macronutrients().carbs / 100);
 
-        _.each(self.entries(), function (entry) {
-            total += entry.calories();
-        });
+            _.each(self.entries(), function (entry) {
+                total += entry.calories();
+            });
 
-        return Math.round((total/carbsCalories) * 100);
+            return Math.round((total / carbsCalories) * 100);
+        }
     });
 
     self.proteinsForTodayPercentage = ko.computed(function () {
-        var total = 0,
-            proteinsCalories = self.caloriesGoal() * (CONFIG.MACRONUTRIENTS.proteins/100);
+        if (self.user()) {
+            var total = 0,
+                proteinsCalories = self.caloriesGoal() * (self.user().macronutrients().proteins / 100);
 
-        _.each(self.entries(), function (entry) {
-            total += entry.proteins();
-        });
+            _.each(self.entries(), function (entry) {
+                total += entry.proteins();
+            });
 
-        return Math.round((total/proteinsCalories) * 100);
+            return Math.round((total / proteinsCalories) * 100);
+        }
     });
 
     self.fatsForTodayPercentage = ko.computed(function () {
-        var total = 0,
-            fatsCalories = self.caloriesGoal() * (CONFIG.MACRONUTRIENTS.fats/100);
+        if (self.user()) {
+            var total = 0,
+                fatsCalories = self.caloriesGoal() * (self.user().macronutrients().fats / 100);
 
-        _.each(self.entries(), function (entry) {
-            total += entry.fats();
-        });
+            _.each(self.entries(), function (entry) {
+                total += entry.fats();
+            });
 
-        return Math.round((total/fatsCalories) * 100);
+            return Math.round((total / fatsCalories) * 100);
+        }
     });
 
     self.init = function () {

@@ -20,5 +20,10 @@ function User(data){
 
     self.calories_goal = ko.computed(function () {
         return self.current_program().calories_goal();
-    })
+    });
+
+    self.macronutrients = ko.computed(function () {
+        console.log(CONFIG.MACRONUTRIENTS[self.current_program().goal_type()]);
+        return CONFIG.MACRONUTRIENTS[self.current_program().goal_type()];
+    });
 }

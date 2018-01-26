@@ -26,8 +26,20 @@ var CONFIG = {
         HUMAN_SHORT: 'DD-MM-YYYY',
     },
     MACRONUTRIENTS: {
-        carbs: 50,
-        proteins: 30,
-        fats: 20
+        gain: {
+            carbs: 60,
+            proteins: 35,
+            fats: 25
+        },
+        loose: {
+            carbs: 30,
+            proteins: 40,
+            fats: 20
+        },
+        stay: {
+            carbs: 50,
+            proteins: 35,
+            fats: 35
+        }
     }
 };
