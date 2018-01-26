@@ -25,6 +25,11 @@ var CONFIG = {
         HUMAN: 'dddd D MMMM YYYY',
         HUMAN_SHORT: 'DD-MM-YYYY',
     },
+    GOAL_TYPES_FRIENDLY: {
+        'stay': 'Op gewicht blijven',
+        'loose': 'Afvallen',
+        'gain': 'Aankomen',
+    },
     KCAL_PER_GRAM: {
         carbs: 4,
         proteins: 4,

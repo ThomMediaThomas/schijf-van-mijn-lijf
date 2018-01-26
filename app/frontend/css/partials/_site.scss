@@ -64,6 +64,10 @@ p {
     color: $cyan;
     text-decoration: underline;
   }
+
+  strong {
+    font-weight: $bold;
+  }
 }
 
 a {

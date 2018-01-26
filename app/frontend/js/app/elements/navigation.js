@@ -47,6 +47,14 @@ function Navigation(){
             }
         }),
         new Page({
+            icon: 'profile',
+            name: 'program',
+            title: 'Programma',
+            action: function () {
+                APP.navigate('program');
+            }
+        }),
+        new Page({
             icon: 'user',
             name: 'profile',
             title: 'Profiel',

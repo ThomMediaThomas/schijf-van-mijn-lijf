@@ -1184,6 +1184,8 @@ p, dl {
   p a, dl a {
     color: #0c82f0;
     text-decoration: underline; }
+  p strong, dl strong {
+    font-weight: 700; }
 
 a {
   text-decoration: none;
