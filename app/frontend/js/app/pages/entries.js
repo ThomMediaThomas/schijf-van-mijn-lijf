@@ -41,10 +41,23 @@ function EntriesPage(){
                 carbsCalories = self.caloriesGoal() * (self.user().macronutrients().carbs / 100);
 
             _.each(self.entries(), function (entry) {
-                total += entry.calories();
+                total += entry.carbs();
             });
 
             return Math.round((total / (carbsCalories/CONFIG.KCAL_PER_GRAM.carbs)) * 100);
+        }
+    });
+
+    self.carbsForTodayText = ko.computed(function () {
+        if (self.user()) {
+            var total = 0,
+                carbsCalories = self.caloriesGoal() * (self.user().macronutrients().carbs / 100);
+
+            _.each(self.entries(), function (entry) {
+                total += entry.carbs();
+            });
+
+            return Math.round(total) + 'gr van de aanbevolen ' + Math.round(carbsCalories/CONFIG.KCAL_PER_GRAM.carbs) + 'gr.';
         }
     });
 
@@ -61,6 +74,19 @@ function EntriesPage(){
         }
     });
 
+    self.proteinsForTodayText = ko.computed(function () {
+        if (self.user()) {
+            var total = 0,
+                proteinsCalories = self.caloriesGoal() * (self.user().macronutrients().proteins / 100);
+
+            _.each(self.entries(), function (entry) {
+                total += entry.proteins();
+            });
+
+            return Math.round(total) + 'gr van de aanbevolen ' + Math.round(proteinsCalories/CONFIG.KCAL_PER_GRAM.proteins) + 'gr.';
+        }
+    });
+
     self.fatsForTodayPercentage = ko.computed(function () {
         if (self.user()) {
             var total = 0,
@@ -71,6 +97,19 @@ function EntriesPage(){
             });
 
             return Math.round((total / (fatsCalories/CONFIG.KCAL_PER_GRAM.fats)) * 100);
+        }
+    });
+
+    self.fatsForTodayText = ko.computed(function () {
+        if (self.user()) {
+            var total = 0,
+                fatsCalories = self.caloriesGoal() * (self.user().macronutrients().fats / 100);
+
+            _.each(self.entries(), function (entry) {
+                total += entry.fats();
+            });
+
+            return Math.round(total) + 'gr van de aanbevolen ' + Math.round(fatsCalories/CONFIG.KCAL_PER_GRAM.fats) + 'gr.';
         }
     });
 

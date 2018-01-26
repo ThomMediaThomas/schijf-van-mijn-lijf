@@ -1345,7 +1345,13 @@ dl dd {
       #footer .percentage-wrapper-vertical.fats .percentage {
         background-color: #ffe14a; }
   #footer .percentage-label {
-    font-style: italic; }
+    font-style: italic;
+    display: block; }
+    #footer .percentage-label.sub {
+      font-size: 10px;
+      font-size: 0.71429rem;
+      font-style: normal;
+      font-weight: 600; }
   #footer .footer-element {
     border-radius: 2px; }
     #footer .footer-element:after {

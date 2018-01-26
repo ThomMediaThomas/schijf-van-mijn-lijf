@@ -122,6 +122,13 @@ $footerHeight: 71px;
 
   .percentage-label {
     font-style: italic;
+    display: block;
+
+    &.sub {
+      @include pxToRem(10px);
+      font-style: normal;
+      font-weight: $semibold;
+    }
   }
 
   .footer-element {

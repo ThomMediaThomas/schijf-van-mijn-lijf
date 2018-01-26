@@ -22,6 +22,9 @@
                     <span class="percentage-label">
                         koolhydraten
                     </span>
+                    <span class="percentage-label sub" data-bind="text: carbsForTodayText()">
+                        koolhydraten
+                    </span>
                 </div>
                 <div class="footer-element-column">
                     <span class="percentage-wrapper-vertical proteins">
@@ -31,6 +34,9 @@
                     <span class="percentage-label">
                         eiwitten
                     </span>
+                    <span class="percentage-label sub" data-bind="text: proteinsForTodayText()">
+                        eiwitten
+                    </span>
                 </div>
                 <div class="footer-element-column">
                     <span class="percentage-wrapper-vertical fats">
@@ -38,6 +44,9 @@
                         <strong data-bind="text: fatsForTodayPercentage() + '%'"></strong>
                     </span>
                     <span class="percentage-label">
+                        vetten
+                    </span>
+                    <span class="percentage-label sub" data-bind="text: fatsForTodayText()">
                         vetten
                     </span>
                 </div>
