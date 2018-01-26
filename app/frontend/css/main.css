@@ -1206,11 +1206,13 @@ dl dd {
   top: 0px;
   left: 0px;
   width: 100%;
-  z-index: 50; }
+  z-index: 50;
+  background-color: #0c82f0; }
   #header .header-wrapper {
     padding: 6px 20px;
     height: 40px;
-    background-color: #0c82f0; }
+    max-width: 640px;
+    margin: 0 auto; }
   #header #logo {
     width: 54px;
     height: auto;
