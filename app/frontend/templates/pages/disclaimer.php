@@ -5,9 +5,14 @@
                 <h3>Disclaimer</h3>
             </div>
             <div class="heading sub">
-                <h3>Productgegevens</h3>
+                <h3>Methodiek</h3>
             </div>
-            <p>Gebaseerd op gegevens van NEVO-online versie 2016/5.0, RIVM, Bilthoven", c.q. gebaseerd op gegevens van NEVO-online versie 2016/5.0, RIVM, Bilthoven en andere gegevens</p>
+            <p>De methodiek die gebruikt wordt in deze applicatie is een combinatie van verschillende bewezen reeds bestaande methodieken.</p>
+            <p>Je kan - indien gewenst - de formules opvragen door te mailen naar info@thommedia.nl.</p>
+            <div class="heading sub">
+                <h3>Gezondheid</h3>
+            </div>
+            <p>Twijfel je aan de uitkomst van de calculator in deze applicatie? Raadpleeg dan altijd een diëtist voor een persoonlijk advies.</p>
         </div>
     </div>
 </script>

@@ -43,6 +43,7 @@
         <?php include(dirname(__DIR__).'/frontend/templates/pages/progress.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/calculator.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/disclaimer.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/help.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/add-product.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/product.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/meal.php'); ?>

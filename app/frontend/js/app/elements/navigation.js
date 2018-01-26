@@ -63,6 +63,14 @@ function Navigation(){
             }
         }),
         new Page({
+            icon: 'question',
+            name: 'help',
+            title: 'Hulp',
+            action: function () {
+                APP.navigate('help');
+            }
+        }),
+        new Page({
             icon: 'logout',
             name: 'logout',
             title: 'Uitloggen',
