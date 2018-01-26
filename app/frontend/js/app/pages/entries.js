@@ -35,15 +35,9 @@ function EntriesPage(){
         }
     });
 
-    self.macronutrients = {
-        carbs: 50,
-        proteins: 30,
-        fats: 20
-    };
-
     self.carbsForTodayPercentage = ko.computed(function () {
         var total = 0,
-            carbsCalories = self.caloriesGoal() * (self.macronutrients.carbs/100);
+            carbsCalories = self.caloriesGoal() * (CONFIG.MACRONUTRIENTS.carbs/100);
 
         _.each(self.entries(), function (entry) {
             total += entry.calories();
@@ -54,7 +48,7 @@ function EntriesPage(){
 
     self.proteinsForTodayPercentage = ko.computed(function () {
         var total = 0,
-            proteinsCalories = self.caloriesGoal() * (self.macronutrients.proteins/100);
+            proteinsCalories = self.caloriesGoal() * (CONFIG.MACRONUTRIENTS.proteins/100);
 
         _.each(self.entries(), function (entry) {
             total += entry.proteins();
@@ -65,7 +59,7 @@ function EntriesPage(){
 
     self.fatsForTodayPercentage = ko.computed(function () {
         var total = 0,
-            fatsCalories = self.caloriesGoal() * (self.macronutrients.fats/100);
+            fatsCalories = self.caloriesGoal() * (CONFIG.MACRONUTRIENTS.fats/100);
 
         _.each(self.entries(), function (entry) {
             total += entry.fats();

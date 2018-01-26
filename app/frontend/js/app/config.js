@@ -24,5 +24,10 @@ var CONFIG = {
         API: 'YYYY-MM-DD',
         HUMAN: 'dddd D MMMM YYYY',
         HUMAN_SHORT: 'DD-MM-YYYY',
+    },
+    MACRONUTRIENTS: {
+        carbs: 50,
+        proteins: 30,
+        fats: 20
     }
 };
