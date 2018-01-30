@@ -35,5 +35,12 @@
     right: $spacer;
     @include pxToRem(18px);
   }
+
+  .entry {
+    .content-wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
 }
 

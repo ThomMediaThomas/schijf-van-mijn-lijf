@@ -50,7 +50,11 @@ function ProductFinder() {
 
             if (term.length > 2) {
                 AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PRODUCT_SEARCH, {name: term}, function (data) {
-                    self.results(data);
+                    var results = _.map(data, function (result) {
+                        result.image = IMAGEHELPER.RESOLVE(result.image);
+                        return result;
+                    });
+                    self.results(results);
                 });
             }
         });

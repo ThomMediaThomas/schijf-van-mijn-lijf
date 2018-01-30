@@ -1976,6 +1976,10 @@ select {
     right: 4px;
     font-size: 18px;
     font-size: 1.28571rem; }
+  #product-finder .entry .content-wrapper, #product-finder .autocomplete-product-suggestion .content-wrapper, #product-finder
+  .autocomplete-brand-suggestion .content-wrapper {
+    padding-left: 0px;
+    padding-right: 0px; }
 
 #page {
   -moz-transition: all 0.3s ease-in-out;
