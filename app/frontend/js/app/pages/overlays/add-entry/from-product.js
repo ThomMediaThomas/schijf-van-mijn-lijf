@@ -38,7 +38,7 @@ function FromProductForm() {
             self.fillInEntryData(entry);
         }
 
-        self.$element.find('#product_id').focus();
+        //self.$element.find('#product_id').focus();
     };
 
     self.reset = function () {
