@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Welcome;
 use Illuminate\Http\Request;
 use App\Models\User as UserModel;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Base
 {
@@ -45,7 +47,9 @@ class User extends Base
             ], 401);
         }
 
-        return parent::create($request);
+        $response = parent::create($request);
+        //Mail::to($this->user->email)->send(new Welcome());
+        return $response;
     }
 
     public function update(Request $request, $id)
