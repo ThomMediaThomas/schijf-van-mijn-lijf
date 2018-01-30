@@ -18,7 +18,11 @@ class Products extends Base
         $this->validateAuthentication($request);
 
         if ($request->name) {
-            $collection = Product::where('name', 'LIKE', '%' . $request->name . '%')->get();
+            $collection = Product::join('brands', 'products.brand_id', 'brands.id')
+                ->where('products.name', 'LIKE', '%' . $request->name . '%')
+                ->orWhere('brands.name', 'LIKE', '%' . $request->name . '%')
+                ->select('products.*')
+                ->get();
         }
 
         return response()->json($collection, 201);
