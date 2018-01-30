@@ -1,0 +1,39 @@
+#product-finder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: $headerZ + 100;
+  background-color: white;
+  overflow-y: auto;
+
+  &.open {
+    display: block;
+  }
+
+  .inner {
+    position: relative;
+  }
+
+  #product-finder-input {
+    position: relative;
+
+    input {
+      width: 100%;
+
+      &:focus {
+        border-left: 0px;
+      }
+    }
+  }
+
+  #product-finder-close {
+    position: absolute;
+    top: $spacer;
+    right: $spacer;
+    @include pxToRem(18px);
+  }
+}
+

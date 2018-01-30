@@ -6,6 +6,7 @@ function Application(){
 
     /*region General*/
     self.loadingPage = new LoadingPage();
+    self.productFinder = new ProductFinder();
     self.loading = ko.observable(false);
     self.isLoading = function (loading) {
         self.loadingPage.isLoading(loading);

@@ -56,45 +56,45 @@ form {
       font-style: italic;
     }
   }
+}
 
-  input[type="text"],
-  input[type="number"],
-  input[type="date"],
-  input[type="password"],
-  input[type="email"],
-  select{
-    -webkit-appearance: none;
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+input[type="email"],
+select{
+  -webkit-appearance: none;
 
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
 
-    border: 0px;
-    outline: 0px;
-    border-bottom: 1px solid $gray;
-    border-left: 2px solid transparent;
+  border: 0px;
+  outline: 0px;
+  border-bottom: 1px solid $gray;
+  border-left: 2px solid transparent;
 
-    font-family: inherit;
-    font-size: inherit;
-    color: $bodyFontColor;
+  font-family: inherit;
+  font-size: inherit;
+  color: $bodyFontColor;
 
-    padding: $spacer;
+  padding: $spacer;
 
-    &:focus {
-      border-color: $cyan;
-    }
-
-    &:disabled {
-      background-color: $grayLight;
-    }
-
-    &.invalid {
-      border-bottom-color: $red;
-      border-left: 2px solid $red;
-    }
+  &:focus {
+    border-color: $cyan;
   }
 
-  select {
-    padding-top: $spacer - 1px;
-    background: url('/files/images/select.png') no-repeat White center right;
+  &:disabled {
+    background-color: $grayLight;
   }
+
+  &.invalid {
+    border-bottom-color: $red;
+    border-left: 2px solid $red;
+  }
+}
+
+select {
+  padding-top: $spacer - 1px;
+  background: url('/files/images/select.png') no-repeat White center right;
 }

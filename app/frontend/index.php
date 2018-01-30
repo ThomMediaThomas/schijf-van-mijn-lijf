@@ -49,6 +49,7 @@
         <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/product.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/meal.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/elements/entries/quick.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/elements/product-finder.php'); ?>
         <script src="js/vendor/jquery-3.2.1.min.js"></script>
         <script src="js/vendor/jquery-ui.min.js"></script>
         <script src="js/vendor/underscore-1.8.3.min.js"></script>
@@ -77,6 +78,7 @@
 
         <script src="js/app/elements/navigation.js"></script>
         <script src="js/app/elements/footer.js"></script>
+        <script src="js/app/elements/product-finder.js"></script>
 
         <script src="js/app/pages/login.js"></script>
         <script src="js/app/pages/register.js"></script>

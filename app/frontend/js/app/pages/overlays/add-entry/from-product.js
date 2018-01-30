@@ -69,47 +69,34 @@ function FromProductForm() {
     };
 
     self.initProductAutocomplete = function () {
-        var that = self;
+        self.$element.find('#product_id')
+            .off('focus')
+            .on('focus', function () {
+                APP.productFinder.setCallback(self.productSelected);
+                APP.productFinder.open();
+            })
+            .off('blur')
+            .on('blur', function () {
+                //APP.productFinder.close();
+            });
+    };
 
-        self.$element.find('#product_id').autocomplete({
-            source: function (request, response) {
-                AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PRODUCT_SEARCH, {name: request.term}, function (data) {
-                    response($.map(data, function (obj) {
-                        return {
-                            label: obj.name,
-                            value: obj.name,
-                            product: obj
-                        };
-                    }));
-                });
-            },
-            select: function (evt, ui) {
-                that.portions(_.map(ui.item.product.portions, function (portion) {
-                    return _.extend(portion, {
-                        friendlyName: portion.name + ' - ' + portion.size + portion.unit
-                    });
-                }));
+    self.productSelected = function (product) {
+        self.portions(_.map(product.portions, function (portion) {
+            return _.extend(portion, {
+                friendlyName: portion.name + ' - ' + portion.size + portion.unit
+            });
+        }));
 
-                if (_.first(ui.item.product.portions)) {
-                    that.portion_id(_.first(ui.item.product.portions).id);
-                }
-                that.product(new Product(ui.item.product));
-            }
-        }).autocomplete('instance')._renderItem = function (ul, item) {
-            var productImage = '<img title="' + item.label + '" alt="' + item.label + '" src="' + IMAGEHELPER.RESOLVE(item.product.image) + '" />',
-                brandImage = item.product.brand.image ? '<img title="' + item.product.brand.name + '" alt="' + item.product.brand.name + '" src="' + item.product.brand.image + '" />' : '';
-            return $('<li class="autocomplete-product-suggestion">')
-                .append('<div class="entry-image">')
-                .find('div.entry-image')
-                .append(productImage)
-                .parent()
-                .append('<div class="entry-content">')
-                .find('div.entry-content')
-                .append('<h4>' + item.label + '</h4>')
-                .append('<h5>' + brandImage + item.product.brand.name + '</h5>')
-                .parent()
-                .appendTo(ul);
-        };
+        if (_.first(product.portions)) {
+            self.portion_id(_.first(product.portions).id);
+        }
+
+        self.product(new Product(product));
+        self.product_id(product.id);
+        self.$element.find('#product_id').val(product.name);
+
+        APP.productFinder.close();
     };
 
     self.submit = function () {

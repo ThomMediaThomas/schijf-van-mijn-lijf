@@ -4,7 +4,7 @@
     </div>
     <div class="form-row">
         <label for="username">Product:</label>
-        <input class="required" type="text" id="product_id" name="product_id" data-bind="value: product_id, disable: $parent.isEdit">
+        <input class="required" type="text" id="product_id" name="product_id" data-bind="disable: $parent.isEdit">
     </div>
     <div class="form-row">
         <label for="username">Hoeveelheid:</label>

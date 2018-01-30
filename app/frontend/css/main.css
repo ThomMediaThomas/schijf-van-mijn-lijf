@@ -1555,12 +1555,12 @@ form label {
     font-size: 0.8em;
     font-style: italic; }
 
-form input[type="text"],
-form input[type="number"],
-form input[type="date"],
-form input[type="password"],
-form input[type="email"],
-form select {
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+input[type="email"],
+select {
   -webkit-appearance: none;
   width: 100%;
   display: block;
@@ -1572,30 +1572,30 @@ form select {
   font-size: inherit;
   color: #989898;
   padding: 4px; }
-  form input[type="text"]:focus,
-  form input[type="number"]:focus,
-  form input[type="date"]:focus,
-  form input[type="password"]:focus,
-  form input[type="email"]:focus,
-  form select:focus {
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="date"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  select:focus {
     border-color: #0c82f0; }
-  form input[type="text"]:disabled,
-  form input[type="number"]:disabled,
-  form input[type="date"]:disabled,
-  form input[type="password"]:disabled,
-  form input[type="email"]:disabled,
-  form select:disabled {
+  input[type="text"]:disabled,
+  input[type="number"]:disabled,
+  input[type="date"]:disabled,
+  input[type="password"]:disabled,
+  input[type="email"]:disabled,
+  select:disabled {
     background-color: #ededed; }
-  form input[type="text"].invalid,
-  form input[type="number"].invalid,
-  form input[type="date"].invalid,
-  form input[type="password"].invalid,
-  form input[type="email"].invalid,
-  form select.invalid {
+  input[type="text"].invalid,
+  input[type="number"].invalid,
+  input[type="date"].invalid,
+  input[type="password"].invalid,
+  input[type="email"].invalid,
+  select.invalid {
     border-bottom-color: #fa2444;
     border-left: 2px solid #fa2444; }
 
-form select {
+select {
   padding-top: 3px;
   background: url("/files/images/select.png") no-repeat White center right; }
 
@@ -1949,6 +1949,33 @@ form select {
   .entry.unneeded h4, .unneeded.autocomplete-product-suggestion h4,
   .unneeded.autocomplete-brand-suggestion h4 {
     color: #535353; }
+
+#product-finder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 150;
+  background-color: white;
+  overflow-y: auto; }
+  #product-finder.open {
+    display: block; }
+  #product-finder .inner {
+    position: relative; }
+  #product-finder #product-finder-input {
+    position: relative; }
+    #product-finder #product-finder-input input {
+      width: 100%; }
+      #product-finder #product-finder-input input:focus {
+        border-left: 0px; }
+  #product-finder #product-finder-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 18px;
+    font-size: 1.28571rem; }
 
 #page {
   -moz-transition: all 0.3s ease-in-out;
