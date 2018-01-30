@@ -74,10 +74,6 @@ function FromProductForm() {
             .on('focus', function () {
                 APP.productFinder.setCallback(self.productSelected);
                 APP.productFinder.open();
-            })
-            .off('blur')
-            .on('blur', function () {
-                //APP.productFinder.close();
             });
     };
 
