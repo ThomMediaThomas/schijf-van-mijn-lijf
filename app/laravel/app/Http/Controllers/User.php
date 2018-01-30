@@ -47,9 +47,11 @@ class User extends Base
             ], 401);
         }
 
-        $response = parent::create($request);
-        //Mail::to($this->user->email)->send(new Welcome());
-        return $response;
+        $model = call_user_func('App\\Models\\' . $this->modelClass . '::create', $data);
+
+        Mail::to($this->user->email)->send(new Welcome($model));
+
+        return response()->json($model, 201);
     }
 
     public function update(Request $request, $id)
