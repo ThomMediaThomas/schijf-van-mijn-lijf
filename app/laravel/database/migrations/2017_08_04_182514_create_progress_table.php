@@ -21,7 +21,7 @@ class CreateProgressTable extends Migration
 
             $table->date('progress_date');
 
-            $table->integer('weight');
+            $table->decimal('weight', 8, 2);
 
             $table->timestamps();
         });
