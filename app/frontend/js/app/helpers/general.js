@@ -1,5 +1,5 @@
 var IMAGEHELPER = {
     RESOLVE: function (url) {
-        return CONFIG.IMAGE_URL + url.replace(/\\/g,"/");
+        return url ? CONFIG.IMAGE_URL + url.replace(/\\/g,"/") : url;
     }
 };
