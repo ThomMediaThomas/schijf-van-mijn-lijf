@@ -13,6 +13,11 @@ function AddMealPage(){
 
     self.initialized = false;
 
+    self.isLoading = ko.observable(false);
+    self.loadingClass = ko.computed(function () {
+        return self.isLoading() ? 'is-loading' : '';
+    });
+
     self.toggle = function () {
         if (self.state() == 'open') {
             self.close();
@@ -44,6 +49,8 @@ function AddMealPage(){
             return false;
         }
 
+        self.isLoading(true);
+
         var that = self;
 
         if (APP.currentPage() == 'entries') {
@@ -64,6 +71,8 @@ function AddMealPage(){
                 if (APP.currentPage() == 'entries') {
                     APP.pages.entries.reload();
                 }
+            }, function () {
+                self.isLoading(false);
             });
         }
     }

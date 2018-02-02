@@ -1,5 +1,5 @@
 var AJAXHELPER = {
-        GET: function (url, data, callback) {
+        GET: function (url, data, callback, error) {
             $.ajax({
                 url: url,
                 data: extendWithCredentials(data),
@@ -11,10 +11,14 @@ var AJAXHELPER = {
                     } else {
                         APP.notificator.show('Helaas ging er iets mis, probeer later nog een keer...', 'error');
                     }
+
+                    if (error) {
+                        error();
+                    }
                 }
             });
         },
-        POST: function (url, data, callback) {
+        POST: function (url, data, callback, error) {
             $.ajax({
                 url: url,
                 data: extendWithCredentials(data),
@@ -26,10 +30,14 @@ var AJAXHELPER = {
                     } else {
                         APP.notificator.show('Helaas ging er iets mis, probeer later nog een keer...', 'error');
                     }
+
+                    if (error) {
+                        error();
+                    }
                 }
             });
         },
-        DELETE: function (url, data, callback) {
+        DELETE: function (url, data, callback, error) {
             $.ajax({
                 url: url,
                 data: extendWithCredentials(data),
@@ -40,6 +48,10 @@ var AJAXHELPER = {
                         APP.notificator.show(data.responseJSON.friendly_message, 'error');
                     } else {
                         APP.notificator.show('Helaas ging er iets mis, probeer later nog een keer...', 'error');
+                    }
+
+                    if (error) {
+                        error();
                     }
                 }
             })

@@ -75,7 +75,9 @@ function FromQuickForm(){
                 }
             };
 
-        AJAXHELPER.POST(endpoint, postData, self.afterSave);
+        AJAXHELPER.POST(endpoint, postData, self.afterSave, function () {
+            self.isLoading(false);
+        });
     };
 
     self.saveEdit = function () {
@@ -87,7 +89,9 @@ function FromQuickForm(){
                 }
             };
 
-        AJAXHELPER.POST(endpoint, postData, self.afterSave);
+        AJAXHELPER.POST(endpoint, postData, self.afterSave, function () {
+            self.isLoading(false);
+        });
     };
 
     self.afterSave = function (data) {

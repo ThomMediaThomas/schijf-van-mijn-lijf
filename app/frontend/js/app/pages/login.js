@@ -47,6 +47,8 @@ function LoginPage() {
             AUTHENTICATION.set(username, password);
             self.isLoading(false);
             APP.navigate(CONFIG.HOME);
+        }, function () {
+            self.isLoading(false);
         });
     }
 }

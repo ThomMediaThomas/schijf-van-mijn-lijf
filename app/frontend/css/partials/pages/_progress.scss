@@ -5,6 +5,7 @@
 #progress-stat {
   width: 100%;
   height: calc(100vw -  #{$baseMargin*2});
+  max-height: 320px;
   border-left: 1px solid $gray;
   border-bottom: 1px solid $gray;
   position: relative;

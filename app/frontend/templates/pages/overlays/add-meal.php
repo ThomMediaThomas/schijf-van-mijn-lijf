@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 </div>
-                <a class="button" data-bind="click: submit">Toevoegen</a>
+                <a class="button" data-bind="click: submit, css: loadingClass">Toevoegen</a>
             </form>
         </form>
     </div>

@@ -126,7 +126,9 @@ function FromProductForm() {
             postData.entry.portion_name = self.portionName();
         }
 
-        AJAXHELPER.POST(endpoint, postData, self.afterSave);
+        AJAXHELPER.POST(endpoint, postData, self.afterSave, function () {
+            self.isLoading(false);
+        });
     };
 
     self.saveEdit = function () {
@@ -139,7 +141,9 @@ function FromProductForm() {
                 }
             };
 
-        AJAXHELPER.POST(endpoint, postData, self.afterSave);
+        AJAXHELPER.POST(endpoint, postData, self.afterSave, function () {
+            self.isLoading(false);
+        });
     };
 
     self.afterSave = function (data) {
