@@ -44,6 +44,8 @@ function FromProductForm() {
     self.reset = function () {
         self.daypart_id(APP.loadedConfig.getCurrentDaypart().id);
         self.product_id('');
+        self.product(null);
+        self.$element.find('#product_id').val('');
         self.amount('');
         self.portion_id('');
         self.savePortion(false);

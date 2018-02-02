@@ -22,7 +22,8 @@ function ProductFinder() {
 
     self.open = function () {
         self.state('open');
-        self.$element.find('#term').focus();
+        self.$element.find('#term').val('').focus();
+        self.results([]);
         self.init();
     };
 
@@ -48,7 +49,7 @@ function ProductFinder() {
         $productAutocomplete.off('keyup').on('keyup', function () {
             var term = $productAutocomplete.val();
 
-            if (term.length > 2) {
+            if (term.length >= 2) {
                 AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PRODUCT_SEARCH, {name: term}, function (data) {
                     var results = _.map(data, function (result) {
                         result.image = IMAGEHELPER.RESOLVE(result.image);
