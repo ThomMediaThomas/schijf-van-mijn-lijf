@@ -8,7 +8,7 @@
     <div class="content-wrapper">
         <h1>Voedingswaarde <span data-bind="text: name"></span></h1>
         <dl>
-            <dt>Kilocalorieën</dt><dd data-bind="text: calories">...</dd>
+            <dt>Kilocalorieën</dt><dd data-bind="text: DISPLAYHELPER.ROUND(calories)">...</dd>
         </dl>
     </div>
 </div>
