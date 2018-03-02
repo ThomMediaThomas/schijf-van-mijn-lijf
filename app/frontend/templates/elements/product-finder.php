@@ -16,7 +16,7 @@
                     <div class="entry-content">
                         <h4 data-bind="text: name"></h4>
                         <h5>
-                            <img data-bind="attr: { alt: brand.name, title: brand.name, src: brand.image }"/>
+                            <img data-bind="visible: brand.image, attr: { alt: brand.name, title: brand.name, src: brand.image }"/>
                             <span data-bind="text: brand.name"></span>
                         </h5>
                     </div>
