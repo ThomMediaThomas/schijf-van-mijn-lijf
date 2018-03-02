@@ -41,7 +41,7 @@ function FromMealForm() {
         self.daypart_id(APP.loadedConfig.getCurrentDaypart().id);
         self.meals([]);
         self.meal_id('');
-        self.amount('');
+        self.amount(1);
     };
 
     self.fillInEntryData = function (entry) {
