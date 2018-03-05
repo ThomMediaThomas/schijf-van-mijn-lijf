@@ -154,7 +154,7 @@ function EntriesPage(){
             _.each(self.dayparts(), function (daypart) {
                 daypart.entries([]);
                 daypart.entries(_.map(_.filter(entries, function (entry) {
-                    return daypart.id === entry.daypart_id;
+                    return daypart.id == entry.daypart_id;
                 }), function (entryData) {
                     var entry = new Entry(entryData);
                     self.entries.push(entry)
