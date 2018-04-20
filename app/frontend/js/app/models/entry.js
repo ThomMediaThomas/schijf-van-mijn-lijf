@@ -68,7 +68,7 @@ function Entry(data){
 
             return calories * self.amount;
         } else {
-            return data.calories;
+            return parseInt(data.calories);
         }
     });
 
