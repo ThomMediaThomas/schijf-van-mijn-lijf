@@ -25,10 +25,10 @@ function FromProductForm() {
     });
 
     self.showPortionInfo = ko.computed(function () {
-        return (self.product_id() && self.portion_id() && self.amount());
+        return !self.isEdit && (self.product_id() && self.portion_id() && self.amount());
     });
     self.calories = ko.computed(function () {
-        if (self.product_id() && self.portion_id() && self.amount()) {
+        if (self.product_id() && self.portion_id() && self.amount() && self.product()) {
             var portion = _.first(_.filter(self.portions(), function (portion) {
                 return portion.id == self.portion_id();
             }));
