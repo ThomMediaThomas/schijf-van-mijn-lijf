@@ -84,7 +84,7 @@ function Entry(data){
 
             return carbs * self.amount;
         } else {
-            return data.carbs;
+            return 0;
         }
     });
 
@@ -100,7 +100,7 @@ function Entry(data){
 
             return proteins * self.amount;
         } else {
-            return data.proteins;
+            return 0;
         }
     });
 
@@ -116,7 +116,7 @@ function Entry(data){
 
             return fats * self.amount;
         } else {
-            return data.fats;
+            return 0;
         }
     });
 
