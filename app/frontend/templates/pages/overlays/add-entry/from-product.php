@@ -31,6 +31,13 @@
             </div>
         </div>
     </div>
+    <div data-bind="if: showPortionInfo()">
+        <div class="info-box subtle">
+            <p><i class="icon icon-info"></i>
+                Deze hoeveelheid "<strong data-bind="text: product().name"></strong>" bevat <strong data-bind="text: calories()"></strong> kilocalorieën.
+            </p>
+        </div>
+    </div>
     <div class="form-row">
         <label for="username">Dagdeel:</label>
         <select class="required" id="daypart_id" name="daypart_id" data-bind="value: daypart_id,

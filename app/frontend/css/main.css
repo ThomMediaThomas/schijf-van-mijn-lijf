@@ -1510,6 +1510,12 @@ dl dd {
   border-radius: 4px; }
   .info-box p:last-child, .info-box dl:last-child {
     margin-bottom: 0px; }
+  .info-box i {
+    font-size: 12px;
+    font-size: 0.85714rem; }
+  .info-box.subtle {
+    border: 1px solid #ededed;
+    background-color: transparent; }
 
 form .form-row {
   width: 100%;

@@ -24,6 +24,19 @@ function FromProductForm() {
         return self.isLoading() ? 'is-loading' : '';
     });
 
+    self.showPortionInfo = ko.computed(function () {
+        return (self.product_id() && self.portion_id() && self.amount());
+    });
+    self.calories = ko.computed(function () {
+        if (self.product_id() && self.portion_id() && self.amount()) {
+            var portion = _.first(_.filter(self.portions(), function (portion) {
+                return portion.id == self.portion_id();
+            }));
+
+            return Math.round((self.product().calories / 100) * parseInt(portion.size) * parseInt(self.amount()));
+        }
+    });
+
     self.init = function (entry) {
         self.$element = $('#form-from-product');
 

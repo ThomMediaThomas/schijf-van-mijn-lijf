@@ -7,4 +7,13 @@
   p:last-child {
     margin-bottom: 0px;
   }
+
+  i {
+    @include pxToRem(12px);
+  }
+
+  &.subtle {
+    border: 1px solid $bgGrayLight;
+    background-color: transparent;
+  }
 }
