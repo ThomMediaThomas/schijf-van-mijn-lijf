@@ -6,7 +6,12 @@ function Navigation(){
 
     self.state = ko.observable('closed');
 
-    self.user = null;
+    self.user = ko.observable(null);
+    self.avatar = ko.computed(function () {
+        if (self.user() && self.user().avatar()) {
+            return IMAGEHELPER.RESOLVE(self.user().avatar())
+        }
+    });
 
     self.heading = ko.observable('Welkom');
     self.intro = ko.observable('Fijn dat je er weer bent.');
@@ -121,11 +126,11 @@ function Navigation(){
     };
 
     self.setUser = function (user) {
-        self.user = user;
-        self.heading('Welkom terug, ' + self.user.firstname() + '!');
+        self.user(user);
+        self.heading('Welkom terug, ' + self.user().firstname() + '!');
     };
 
     self.setIntroCalories = function (total) {
-        self.intro('Fijn dat je er weer bent, je hebt vandaag <strong>' + total + ' kilocalorieën</strong> (van de aanbevolen ' + self.user.calories_goal() + ') ingevoerd.');
+        self.intro('Fijn dat je er weer bent, je hebt vandaag <strong>' + total + ' kilocalorieën</strong> (van de aanbevolen ' + self.user().calories_goal() + ') ingevoerd.');
     }
 }

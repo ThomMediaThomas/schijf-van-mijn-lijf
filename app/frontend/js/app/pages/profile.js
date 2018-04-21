@@ -17,14 +17,40 @@ function ProfilePage(){
             return false;
         }
 
-        AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.USER + '/' + self.user().id, {
-            user: {
+        self.submitImage(function (imageUrl) {
+            var data = {
                 firstname: self.user().firstname(),
                 lastname: self.user().lastname(),
                 gender: self.user().gender(),
                 email: self.user().email()
+            };
+
+            if (imageUrl) {
+                data.avatar = imageUrl;
             }
+
+            AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.USER + '/' + self.user().id, {
+                user: data
+            }, function (data) {
+                APP.navigate('profile');
+                self.user(new User(data));
+                APP.notificator.show(self.user().firstname() + ' is succesvol gewijzigd.', 'success');
+                APP.navigation.setUser(self.user());
+            });
         });
-    }
+    };
+
+    self.submitImage = function (callback) {
+        var files = document.getElementById('avatar-upload').files;
+
+        if (!files) {
+            return false;
+        }
+
+        IMAGE_UPLOADER.UPLOAD(files, function (response) {
+            var imageUrl = response.url;
+            callback(imageUrl);
+        });
+    };
 
 }

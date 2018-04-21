@@ -1427,6 +1427,27 @@ dl dd {
     color: White;
     padding: 20px 0px;
     line-height: 1.5; }
+    #nav #user-info .content-wrapper {
+      position: relative; }
+    #nav #user-info .user-info-right {
+      padding-left: 64px; }
+    #nav #user-info .user-info-left {
+      position: absolute;
+      top: 0px;
+      left: 20px; }
+    #nav #user-info .avatar {
+      width: 60px;
+      height: 60px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 2px solid white; }
+      #nav #user-info .avatar img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 0px;
+        top: 0%; }
   #nav li {
     border-bottom: 1px solid #c7c7c7;
     padding: 10px 0px;

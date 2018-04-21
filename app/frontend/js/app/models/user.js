@@ -15,6 +15,7 @@ function User(data){
     self.birthdate = ko.observable(data.birthdate);
     self.activity_level = ko.observable(data.birthdate);
     self.calories_average = ko.observable(data.calories_average);
+    self.avatar = ko.observable(data.avatar);
 
     self.current_program = ko.observable(new Program(data.current_program));
 

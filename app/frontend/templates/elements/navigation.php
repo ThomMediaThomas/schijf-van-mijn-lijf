@@ -2,8 +2,15 @@
     <div id="nav-menu">
         <div id="user-info">
             <div class="content-wrapper">
-                <h4 data-bind="text: heading"></h4>
-                <h5 data-bind="html: intro"></h5>
+                <div class="user-info-left">
+                    <div class="avatar">
+                        <img data-bind="attr: { src: avatar() }" />
+                    </div>
+                </div>
+                <div class="user-info-right">
+                    <h4 data-bind="text: heading"></h4>
+                    <h5 data-bind="html: intro"></h5>
+                </div>
             </div>
         </div>
         <ul data-bind="foreach: pages">

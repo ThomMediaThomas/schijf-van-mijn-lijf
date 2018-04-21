@@ -14,6 +14,10 @@
                         <label for="email">E-mail:</label>
                         <input class="required email" type="email" id="email" name="email" data-bind="value: email">
                     </div>
+                    <div class="form-row">
+                        <label for="email">Profiel-foto:</label>
+                        <input type="file" id="avatar-upload" name="image"  />
+                    </div>
                     <div class="heading sub">
                         <h3>Jouw gegevens</h3>
                     </div>

@@ -45,10 +45,43 @@
   }
 
   #user-info{
+    $avatarsize: 60px;
+
     background-color: $green;
     color: White;
     padding: $baseMargin 0px;
     line-height: $baseLineHeight;
+
+    .content-wrapper {
+      position: relative;
+    }
+
+    .user-info-right {
+      padding-left: $avatarsize + $spacer;
+    }
+
+    .user-info-left {
+      position: absolute;
+      top: 0px;
+      left: 20px;
+    }
+
+    .avatar {
+      width: $avatarsize;
+      height: $avatarsize;
+      position: relative;
+      overflow: hidden;
+      border-radius: $avatarsize/2;
+      border: 2px solid white;
+
+      img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 0px;
+        top: 0%;
+      }
+    }
   }
 
   li {

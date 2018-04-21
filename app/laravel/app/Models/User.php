@@ -18,6 +18,7 @@ class User extends Model
         'length',
         'activity_level',
         'calories_average',
+        'avatar'
     ];
 
     protected $with = [
