@@ -77,7 +77,7 @@ function Application(){
         self.loadedConfig.init();
 
         setTimeout(function () {
-            self.navigate('login');
+            //self.navigate('login');
             self.isLoading(false);
         }, DEBUG ? 500 : 2000);
     };

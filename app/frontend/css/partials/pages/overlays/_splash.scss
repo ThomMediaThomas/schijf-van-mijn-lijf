@@ -1,15 +1,31 @@
 #splashscreen {
-  background: url('/files/images/logo-splash.png') no-repeat $cyan center center;
-  background-size: contain;
+  $logoSize: 300px;
+
+  background: $cyan;
   position: fixed;
   width: 100%;
   height: 100%;
   left: 0px;
   top: 0px;
   z-index: $headerZ + 1;
+  margin: 0px;
+  padding: 0px;
+
+  .content-wrapper {
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
 
   img {
-    width: 100%;
-    height: auto;
+    width: $logoSize;
+    height: $logoSize;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -$logoSize/2;
+    right: 50%;
+    margin-right: -$logoSize/2;
   }
 }
