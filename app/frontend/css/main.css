@@ -1540,46 +1540,46 @@ dl dd {
     border: 1px solid #ededed;
     background-color: transparent; }
 
-form .form-row {
+form .form-row, .form .form-row {
   width: 100%;
   margin-bottom: 20px; }
-  form .form-row:after {
+  form .form-row:after, .form .form-row:after {
     content: "";
     display: table;
     clear: both; }
-  form .form-row.group {
+  form .form-row.group, .form .form-row.group {
     border: 1px solid #ededed;
     border-radius: 4px;
     padding: 4px 4px 0 4px; }
-  form .form-row .form-row {
+  form .form-row .form-row, .form .form-row .form-row {
     margin-bottom: 4px; }
 
-form .form-group {
+form .form-group, .form .form-group {
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #c7c7c7;
   margin-bottom: 20px; }
 
-form .form-row-inner {
+form .form-row-inner, .form .form-row-inner {
   display: block;
   float: left;
   padding-right: 4px; }
-  form .form-row-inner:last-child {
+  form .form-row-inner:last-child, .form .form-row-inner:last-child {
     padding-right: 0px; }
-  form .form-row-inner.quart {
+  form .form-row-inner.quart, .form .form-row-inner.quart {
     width: 25%; }
-  form .form-row-inner.half {
+  form .form-row-inner.half, .form .form-row-inner.half {
     width: 50%; }
-  form .form-row-inner.three-quart {
+  form .form-row-inner.three-quart, .form .form-row-inner.three-quart {
     width: 75%; }
 
-form label {
+form label, .form label {
   text-transform: uppercase;
   margin-bottom: 4px;
   display: block;
   font-size: 12px;
   font-size: 0.85714rem; }
-  form label span {
+  form label span, .form label span {
     text-transform: none;
     font-size: 0.8em;
     font-style: italic; }
@@ -2032,6 +2032,9 @@ select {
   margin-bottom: 200px; }
   .page.no-padding {
     padding: 0; }
+
+#period-selector {
+  margin-bottom: 40px; }
 
 #progress-stat {
   width: 100%;

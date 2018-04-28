@@ -22,6 +22,12 @@ class Progress extends Base
         $collection = ProgressModel::where('user_id', $this->user->id)
             ->orderBy('progress_date', 'asc');
 
+\Log::debug($request->start_date);
+
+        if ($request->start_date) {
+            $collection->whereDate('progress_date', '>=', $request->start_date);
+        }
+
         if ($collection->get()->first()) {
             $firstDate = $this->createDateFromString($collection->get()->first()->progress_date);
             $lastDate = $this->createDateFromString($collection->get()->last()->progress_date);

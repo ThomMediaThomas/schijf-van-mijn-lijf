@@ -6,6 +6,30 @@ function ProgressPage() {
 
     self.$form = $('#add-progress-form');
 
+    self.period = ko.observable(0);
+    self.period.subscribe(function (value) {
+        var today = new moment();
+        switch(value) {
+            case '0':
+                today = null;
+                break;
+            case '1':
+                break;
+            case '7':
+                today.subtract(7, 'days');
+                break;
+            case '30':
+                today.subtract(30, 'days');
+                break;
+            case '365':
+                today.subtract(365, 'days');
+                break;
+        }
+        self.start_date(today ? today.format(CONFIG.DATE_FORMATS.API) : '');
+        self.loadProgresses();
+    });
+    self.start_date = ko.observable();
+
     self.progresses = ko.observableArray([]);
     self.max = ko.observable({ weight: 0, css: ''});
     self.min = ko.observable({ weight: 0, css: ''});
@@ -29,7 +53,7 @@ function ProgressPage() {
     self.loadProgresses = function () {
         self.progresses([]);
 
-        AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PROGRESS, {}, function (progresses) {//get min and max
+        AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PROGRESS, {start_date: self.start_date()}, function (progresses) {//get min and max
             if (!progresses || progresses.length <= 0) {
                 APP.isLoading(false);
                 return false;
