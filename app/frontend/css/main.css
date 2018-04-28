@@ -1446,8 +1446,10 @@ dl dd {
         width: 100%;
         height: auto;
         position: absolute;
-        left: 0px;
-        top: 0%; }
+        left: 50%;
+        top: 50%;
+        margin-top: -28px;
+        margin-left: -28px; }
   #nav li {
     border-bottom: 1px solid #c7c7c7;
     padding: 10px 0px;
