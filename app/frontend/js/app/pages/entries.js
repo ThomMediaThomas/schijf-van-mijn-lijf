@@ -115,8 +115,23 @@ function EntriesPage(){
 
     self.init = function () {
         APP.isLoading(true);
+        self.initSwipe();
         self.setDate(moment());
         self.user(APP.user());
+    };
+
+    self.initSwipe = function () {
+        //Enable swiping...
+        $("#todays-entries").swipe( {
+            swipe:function(event, direction) {
+                if (direction == 'left') {
+                    self.nextDate();
+                }
+                if (direction == 'right') {
+                    self.previousDate();
+                }
+            }
+        });
     };
 
     self.previousDate = function () {

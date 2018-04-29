@@ -52,6 +52,7 @@
         <?php include(dirname(__DIR__).'/frontend/templates/elements/product-finder.php'); ?>
         <script src="js/vendor/jquery-3.2.1.min.js"></script>
         <script src="js/vendor/jquery-ui.min.js"></script>
+        <script src="js/vendor/jquery.touchSwipe.min.js"></script>
         <script src="js/vendor/underscore-1.8.3.min.js"></script>
         <script src="js/vendor/knockout-3.4.2.js"></script>
         <script src="js/vendor/moment.js"></script>

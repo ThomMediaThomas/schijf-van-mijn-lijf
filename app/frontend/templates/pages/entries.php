@@ -7,7 +7,7 @@
                 <a class="datenav-button next" data-bind="click: nextDate"><i class="icon-circle-right"></i></a>
             </div>
         </div>
-        <div class="entries" data-bind="foreach: dayparts()">
+        <div class="entries" id="todays-entries" data-bind="foreach: dayparts()">
             <div class="daypart">
                 <div class="content-wrapper">
                     <h3 data-bind="text: name"></h3>
