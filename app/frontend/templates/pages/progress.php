@@ -7,12 +7,7 @@
             <div class="form">
                 <div class="form-row" id="period-selector">
                     <label for="period">Periode:</label>
-                    <select name="period" id="periode" data-bind="value: period">
-                        <option value="0">Sinds eerste invoer</option>
-                        <!--<option value="1">Sinds start huidige programma</option>-->
-                        <option value="7">Afgelopen week</option>
-                        <option value="30">Afgelopen maand</option>
-                        <option value="365">Afgelopen jaar</option>
+                    <select name="period" id="periode" data-bind="value: period, options: periods(), optionsText: 'label', optionsValue: 'value'">
                     </select>
                 </div>
             </div>

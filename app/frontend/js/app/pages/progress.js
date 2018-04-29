@@ -7,25 +7,9 @@ function ProgressPage() {
     self.$form = $('#add-progress-form');
 
     self.period = ko.observable(0);
+    self.periods = ko.observableArray([]);
     self.period.subscribe(function (value) {
-        var today = new moment();
-        switch(value) {
-            case '0':
-                today = null;
-                break;
-            case '1':
-                break;
-            case '7':
-                today.subtract(7, 'days');
-                break;
-            case '30':
-                today.subtract(30, 'days');
-                break;
-            case '365':
-                today.subtract(365, 'days');
-                break;
-        }
-        self.start_date(today ? today.format(CONFIG.DATE_FORMATS.API) : '');
+        self.start_date(value);
         self.loadProgresses();
     });
     self.start_date = ko.observable();
@@ -42,6 +26,7 @@ function ProgressPage() {
 
     self.init = function () {
         APP.isLoading(true);
+        self.fillPeriodSelector();
         self.loadProgresses();
         self.$form = $('#add-progress-form');
     };
@@ -50,7 +35,40 @@ function ProgressPage() {
         self.loadProgresses();
     };
 
+    self.fillPeriodSelector = function () {
+        var forever = (new moment()).subtract(10, 'years').format(CONFIG.DATE_FORMATS.API),
+            periods = [
+                {
+                    label: 'Sinds eerste invoer',
+                    value: forever
+                },
+                {
+                    label: 'Afgelopen jaar',
+                    value: (new moment()).subtract(365, 'days').format(CONFIG.DATE_FORMATS.API)
+                },
+                {
+                    label: 'Afgelopen maand',
+                    value: (new moment()).subtract(30, 'days').format(CONFIG.DATE_FORMATS.API)
+                },
+                {
+                    label: 'Afgelopen week',
+                    value: (new moment()).subtract(7, 'days').format(CONFIG.DATE_FORMATS.API)
+                }
+            ];
+
+        if (APP.user() && APP.user().current_program() && APP.user().current_program().start_date()) {
+            periods.push({
+                label: 'Vanaf start huidige programma',
+                value: APP.user().current_program().start_date()
+            });
+        }
+
+        self.periods(periods);
+        self.start_date(forever);
+    };
+
     self.loadProgresses = function () {
+        APP.isLoading(true);
         self.progresses([]);
 
         AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PROGRESS, {start_date: self.start_date()}, function (progresses) {//get min and max
