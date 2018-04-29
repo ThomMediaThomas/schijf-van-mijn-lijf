@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-row-inner half">
                         <label for="date">Datum:</label>
-                        <input class="required" type="text" id="date" name="date" data-bind="value: date">
+                        <input class="required" type="date" id="date" name="date" data-bind="value: date">
                     </div>
                 </div>
                 <div class="form-row">

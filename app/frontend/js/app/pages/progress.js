@@ -22,7 +22,7 @@ function ProgressPage() {
     self.progresses = ko.observableArray([]);
     self.progressesByDate = ko.observableArray([]);
     self.weight = ko.observable();
-    self.date = ko.observable(moment().format(CONFIG.DATE_FORMATS.HUMAN_SHORT));
+    self.date = ko.observable(moment().format(CONFIG.DATE_FORMATS.API));
 
     self.init = function () {
         APP.isLoading(true);
@@ -143,7 +143,7 @@ function ProgressPage() {
         AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.PROGRESS, {
             progress: {
                 weight: self.weight(),
-                progress_date: moment(self.date(), CONFIG.DATE_FORMATS.HUMAN_SHORT).format(CONFIG.DATE_FORMATS.API)
+                progress_date: self.date()
             },
         }, function (data) {
             self.reload();

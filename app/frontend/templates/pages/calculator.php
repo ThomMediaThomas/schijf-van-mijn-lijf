@@ -17,8 +17,8 @@
                         <form id="calculator-personal-form">
                             <div data-bind="with: user">
                                 <div class="form-row">
-                                    <label for="birthdate">Geboortedatum <span>(jjjj-mm-dd)</span>:</label>
-                                    <input class="required" type="text" id="birthdate" name="birthdate"
+                                    <label for="birthdate">Geboortedatum:</label>
+                                    <input class="required" type="date" id="birthdate" name="birthdate"
                                            data-bind="value: birthdate">
                                 </div>
                                 <div class="form-row">
