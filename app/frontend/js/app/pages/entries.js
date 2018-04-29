@@ -123,6 +123,7 @@ function EntriesPage(){
     self.initSwipe = function () {
         //Enable swiping...
         $("#todays-entries").swipe( {
+            allowPageScroll: 'vertical',
             swipe:function(event, direction) {
                 if (direction == 'left') {
                     self.nextDate();
