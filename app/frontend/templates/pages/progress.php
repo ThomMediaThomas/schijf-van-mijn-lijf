@@ -11,24 +11,9 @@
                     </select>
                 </div>
             </div>
-            <div id="progress-stat">
-                <!-- ko with: max -->
-                <div data-bind="attr : { style: css }" class="progress-stat-bound max">
-                    <strong data-bind="text: weight"></strong>
-                </div>
-                <!-- /ko -->
-                <!-- ko foreach: progressesByDate -->
-                <div class="single-progress-stat" data-bind="attr : { style: progress.css }"></div>
-                <!-- /ko -->
-                <!-- ko with: min -->
-                <div data-bind="attr : { style: css }" class="progress-stat-bound min">
-                    <strong data-bind="text: weight"></strong>
-                </div>
-                <!-- /ko -->
-            </div>
-            <div id="progress-stat-dates">
-                <div class="progress-stat-date first" data-bind="text: firstDate"></div>
-                <div class="progress-stat-date last" data-bind="text: lastDate"></div>
+            <canvas id="progress-stat"></canvas>
+            <div class="progress-sub">
+                <p>Periode van <strong data-bind="text: firstDate"></strong> tot <strong data-bind="text: lastDate"></strong></p>
             </div>
             <div class="heading sub">
                 <h3>Voortgang toevoegen</h3>

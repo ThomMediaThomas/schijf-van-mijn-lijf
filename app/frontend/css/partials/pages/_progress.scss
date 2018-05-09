@@ -1,61 +1,12 @@
-#progress {
-}
-
 #period-selector {
   margin-bottom: $baseMargin*2;
 }
 
-#progress-stat {
-  width: 100%;
-  height: calc(100vw -  #{$baseMargin*2});
-  max-height: 320px;
-  border-left: 1px solid $gray;
-  border-bottom: 1px solid $gray;
-  position: relative;
-  @include clearfix();
-
-  .single-progress-stat {
-    position: absolute;
-    bottom: 0px;
-    background-color: $orange;
-  }
-
-  .progress-stat-bound {
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    bottom: 0px;
-    padding: $spacer;
-    border-bottom: 1px dashed $gray;
-    border-right: 1px dashed $gray;
-
-    strong {
-      font-weight: $semibold;
-      text-align: right;
-      display: block;
-    }
-
-    &.max {
-      color: $red;
-    }
-
-    &.min {
-      color: $green;
-    }
-  }
-}
-
-#progress-stat-dates {
-  @include clearfix();
-  margin-bottom: $baseMargin;
-
-  .progress-stat-date {
-    width: 50%;
-    float: left;
-    padding: $spacer 0px;
-
-    &.last {
-      text-align: right;
-    }
-  }
+.progress-sub {
+  text-align: center;
+  padding-top: $spacer;
+  margin-top: $spacer;
+  border-top: 1px solid $grayLight;
+  font-size: 0.8rem;
+  font-style: italic;
 }

@@ -22,75 +22,11 @@ class Progress extends Base
         $collection = ProgressModel::where('user_id', $this->user->id)
             ->orderBy('progress_date', 'asc');
 
-\Log::debug($request->start_date);
-
         if ($request->start_date) {
             $collection->whereDate('progress_date', '>=', $request->start_date);
         }
 
-        if ($collection->get()->first()) {
-            $firstDate = $this->createDateFromString($collection->get()->first()->progress_date);
-            $lastDate = $this->createDateFromString($collection->get()->last()->progress_date);
-            $allDates = $this->generateDateRange($firstDate, $lastDate);
-
-            //created formatted progress
-            foreach ($allDates as $date) {
-                $dateData = array(
-                    'progress_date' => $date
-                );
-
-                $progress = ProgressModel::where('user_id', $this->user->id)
-                    ->where('progress_date', $date)
-                    ->first();
-
-                if ($progress) {
-                    $dateData['progress'] = $progress->toArray();
-                    $dateData['user_input'] = true;
-                } else {
-                    $dateData['user_input'] = false;
-                }
-
-                array_push($formattedProgress, $dateData);
-            }
-
-            //calc empty days
-            $lastUserInput = null;
-            $nextUserInput = null;
-            $nextUserInputDiff = null;
-            foreach ($formattedProgress as $index => $date) {
-                if ($date['user_input'] == true) {
-                    $lastUserInput = $date['progress'];
-                    $nextUserInput = null;
-                    $nextUserInputDiff = 0;
-                } else {
-                    $rightFormattedProgress = array_slice($formattedProgress, $index);
-
-                    if (!$nextUserInput) {
-                        foreach ($rightFormattedProgress as $innerDate) {
-                            $nextUserInputDiff++;
-                            if ($innerDate['user_input'] == true) {
-                                $nextUserInput = $innerDate['progress'];
-                                break;
-                            }
-                        }
-                    }
-
-                    $calculatedDiff = ($lastUserInput['weight'] - $nextUserInput['weight']) / $nextUserInputDiff;
-                    if ($formattedProgress[$index - 1]) {
-                        $previousWeight = $formattedProgress[$index - 1]['progress']['weight'];
-                    }
-
-                    $date['progress'] = array(
-                        'weight' => $previousWeight - $calculatedDiff
-                    );
-
-                    $formattedProgress[$index] = $date;
-                }
-            }
-        }
-
-
-        return response()->json($formattedProgress, 201);
+        return response()->json($collection->get(), 201);
     }
 
     /**

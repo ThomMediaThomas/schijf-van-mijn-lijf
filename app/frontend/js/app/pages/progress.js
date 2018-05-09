@@ -14,13 +14,8 @@ function ProgressPage() {
     });
     self.start_date = ko.observable();
 
-    self.progresses = ko.observableArray([]);
-    self.max = ko.observable({ weight: 0, css: ''});
-    self.min = ko.observable({ weight: 0, css: ''});
     self.firstDate = ko.observable();
     self.lastDate = ko.observable();
-    self.progresses = ko.observableArray([]);
-    self.progressesByDate = ko.observableArray([]);
     self.weight = ko.observable();
     self.date = ko.observable(moment().format(CONFIG.DATE_FORMATS.API));
 
@@ -69,53 +64,45 @@ function ProgressPage() {
 
     self.loadProgresses = function () {
         APP.isLoading(true);
-        self.progresses([]);
 
         AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PROGRESS, {start_date: self.start_date()}, function (progresses) {//get min and max
-            if (!progresses || progresses.length <= 0) {
-                APP.isLoading(false);
-                return false;
-            }
-
-            var max = 0, min = 200;
-            _.each(progresses, function (date) {
-                max = date.progress.weight > max ? date.progress.weight : max;
-                min = date.progress.weight < min ? date.progress.weight : min;
+            var ctx = document.getElementById('progress-stat').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: progresses ? _.pluck(progresses, 'progress_date') : [],
+                    datasets: [{
+                        borderColor: 'rgba(253, 116, 0, 1)',
+                        backgroundColor: 'rgba(253, 116, 0, 0.2)',
+                        data: progresses ? _.pluck(progresses, 'weight') : []
+                    }]
+                },
+                options: {
+                    legend : {
+                        display: false
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: {
+                                display: false
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                fontColor: '#989898',
+                                fontFamily: '"Open Sans", sans-serif;'
+                            },
+                            gridLines: {
+                                display: false
+                            }
+                        }]
+                    }
+                }
             });
-
-            var maxAdjust = max + 1,
-                minAdjust = min - 3;
-
-            //get manipulated progresses
-            self.progressesByDate(_.map(progresses, function (date, index) {
-                var percentage = (date.progress.weight - minAdjust) / (maxAdjust - minAdjust);
-                date.progress.percentage = percentage * 100;
-                date.progress.width = (Math.floor((100 / progresses.length) * 100) / 100) * 0.9;
-
-                date.progress.css = 'height: ' + date.progress.percentage + '%;';
-                date.progress.css += 'width: ' + date.progress.width + '%;';
-                date.progress.css += 'left: ' + (index * date.progress.width) + '%;';
-
-                if (date.user_input == false) {
-                    date.progress.css += 'opacity: 0.5;'
-                }
-
-                if (date.progress.weight == max) {
-                    self.max({
-                        weight: max,
-                        css: 'bottom: ' + date.progress.percentage + '%'
-                    });
-                }
-
-                if (date.progress.weight == min) {
-                    self.min({
-                        weight: min,
-                        css: 'bottom: ' + date.progress.percentage + '%'
-                    });
-                }
-
-                return date;
-            }));
 
             self.firstDate(moment(progresses[0].progress_date).format(CONFIG.DATE_FORMATS.HUMAN_SHORT));
             self.lastDate(moment(progresses[progresses.length - 1].progress_date).format(CONFIG.DATE_FORMATS.HUMAN_SHORT));

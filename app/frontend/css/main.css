@@ -2036,50 +2036,13 @@ select {
 #period-selector {
   margin-bottom: 40px; }
 
-#progress-stat {
-  width: 100%;
-  height: calc(100vw -  40px);
-  max-height: 320px;
-  border-left: 1px solid #c7c7c7;
-  border-bottom: 1px solid #c7c7c7;
-  position: relative; }
-  #progress-stat:after {
-    content: "";
-    display: table;
-    clear: both; }
-  #progress-stat .single-progress-stat {
-    position: absolute;
-    bottom: 0px;
-    background-color: #fd7400; }
-  #progress-stat .progress-stat-bound {
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    bottom: 0px;
-    padding: 4px;
-    border-bottom: 1px dashed #c7c7c7;
-    border-right: 1px dashed #c7c7c7; }
-    #progress-stat .progress-stat-bound strong {
-      font-weight: 600;
-      text-align: right;
-      display: block; }
-    #progress-stat .progress-stat-bound.max {
-      color: #fa2444; }
-    #progress-stat .progress-stat-bound.min {
-      color: #bedb39; }
-
-#progress-stat-dates {
-  margin-bottom: 20px; }
-  #progress-stat-dates:after {
-    content: "";
-    display: table;
-    clear: both; }
-  #progress-stat-dates .progress-stat-date {
-    width: 50%;
-    float: left;
-    padding: 4px 0px; }
-    #progress-stat-dates .progress-stat-date.last {
-      text-align: right; }
+.progress-sub {
+  text-align: center;
+  padding-top: 4px;
+  margin-top: 4px;
+  border-top: 1px solid #ededed;
+  font-size: 0.8rem;
+  font-style: italic; }
 
 #entries .date-nav {
   position: fixed;
