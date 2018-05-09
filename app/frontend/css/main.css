@@ -1452,8 +1452,6 @@ dl dd {
         margin-left: -28px; }
   #nav li {
     border-bottom: 1px solid #c7c7c7;
-    padding: 10px 0px;
-    cursor: pointer;
     font-weight: bold;
     font-size: 12px;
     font-size: 0.85714rem;
@@ -1461,6 +1459,10 @@ dl dd {
     -o-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
+    #nav li a {
+      display: block;
+      padding: 10px 0px;
+      cursor: pointer; }
     #nav li i {
       font-size: 20px;
       font-size: 1.42857rem;
@@ -1471,12 +1473,14 @@ dl dd {
       color: #c7c7c7; }
     #nav li.small {
       color: #c7c7c7;
-      padding: 5px 0px;
       background-color: #ededed; }
+      #nav li.small a {
+        padding: 5px 0px; }
     #nav li.active {
       color: #0c82f0;
       border-left: 4px solid #0c82f0;
-      background-color: #6db4f6; }
+      background-color: #6db4f6;
+      border-bottom: 1px solid #0c82f0; }
       #nav li.active i {
         color: #0c82f0; }
     #nav li span {
