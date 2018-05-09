@@ -41,6 +41,13 @@ function CalculatorPage(){
 
     self.init = function () {
         self.user(APP.user());
+        self.reset();
+    };
+
+    self.reset = function () {
+        self.currentStep(1);
+        self.program(new Program());
+        self.goal_speed('');
     };
 
     self.submitPersonal = function () {
