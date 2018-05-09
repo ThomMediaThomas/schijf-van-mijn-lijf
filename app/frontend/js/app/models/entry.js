@@ -66,9 +66,9 @@ function Entry(data){
                 calories += (product.product().calories / 100) * product.portion().size() * product.amount;
             });
 
-            return calories * self.amount;
+            return Math.round(calories * self.amount);
         } else {
-            return parseInt(data.calories);
+            return Math.round(parseInt(data.calories));
         }
     });
 
