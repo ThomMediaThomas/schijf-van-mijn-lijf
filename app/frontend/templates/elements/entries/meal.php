@@ -8,14 +8,7 @@
                 <h4 data-bind="text: meal().name"></h4>
                 <h5><strong data-bind="text: friendlyAmount"></strong> - <span data-bind="text: calories"></span> kilocalorieën
                 </h5>
-            </div>
-            <div class="entry-category">
-                <span data-bind="foreach: categories()">
-                    <span class="category small" data-bind="css: categorySystemName">
-                        <i class="icon" data-bind="css: icon"></i>
-                    </span>
-                </span>
-            </div>
+            </div
         </div>
         <div class="meal-products" data-bind="foreach: meal().products, css: openClass()">
             <div class="entry inset" data-bind="css: className()">
