@@ -44,13 +44,18 @@ function ProductFinder() {
         self.initialized = true;
     };
 
+    self.currentRequest = null;
     self.bindEvents = function () {
         var $productAutocomplete = self.$element.find('#term');
         $productAutocomplete.off('keyup').on('keyup', function () {
             var term = $productAutocomplete.val();
 
             if (term.length >= 2) {
-                AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PRODUCT_SEARCH, {name: term}, function (data) {
+                if (self.currentRequest) {
+                    self.currentRequest.abort();
+                }
+
+                self.currentRequest = AJAXHELPER.GET(CONFIG.API + CONFIG.ENDPOINTS.PRODUCT_SEARCH, {name: term}, function (data) {
                     var results = _.map(data, function (result) {
                         result.image = IMAGEHELPER.RESOLVE(result.image);
                         return result;

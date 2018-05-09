@@ -1,6 +1,6 @@
 var AJAXHELPER = {
         GET: function (url, data, callback, error) {
-            $.ajax({
+            return $.ajax({
                 url: url,
                 data: extendWithCredentials(data),
                 type: 'GET',
@@ -19,7 +19,7 @@ var AJAXHELPER = {
             });
         },
         POST: function (url, data, callback, error) {
-            $.ajax({
+            return $.ajax({
                 url: url,
                 data: extendWithCredentials(data),
                 type: 'POST',
@@ -38,7 +38,7 @@ var AJAXHELPER = {
             });
         },
         DELETE: function (url, data, callback, error) {
-            $.ajax({
+            return $.ajax({
                 url: url,
                 data: extendWithCredentials(data),
                 type: 'DELETE',
