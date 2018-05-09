@@ -21,7 +21,8 @@ class Product extends Model
     protected $with = [
         'subcategory',
         'brand',
-        'portions'
+        'portions',
+        'user'
     ];
 
     /**
@@ -46,5 +47,13 @@ class Product extends Model
     public function portions()
     {
         return $this->hasMany(Portion::class);
+    }
+
+    /**
+     * @return HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }

@@ -25,5 +25,10 @@
             <dt>Eiwit</dt><dd data-bind="text: DISPLAYHELPER.ROUND(proteins) + ' gr'">...</dd>
             <dt>Vet</dt><dd data-bind="text: DISPLAYHELPER.ROUND(fats) + ' gr'">...</dd>
         </dl>
+        <div class="info-box subtle">
+            <p><i class="icon icon-user"></i>
+                Dit product is aangemaakt door <span data-bind="text: product().creator"></span> op <span data-bind="text: product().created_at"></span>.
+            </p>
+        </div>
     </div>
 </div>

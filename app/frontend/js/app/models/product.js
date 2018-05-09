@@ -15,4 +15,7 @@ function Product(data){
     self.category = ko.observable(new Category(data.subcategory.category));
     self.brand = ko.observable(new Brand(data.brand));
     self.portions = ko.observableArray(data.portions);
+
+    self.created_at = moment(data.created_at).format(CONFIG.DATE_FORMATS.HUMAN_SHORT);
+    self.creator = data.user && data.user.username ? data.user.username : null;
 }

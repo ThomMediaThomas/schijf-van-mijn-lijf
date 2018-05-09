@@ -9,4 +9,7 @@ function Meal(data){
     self.products = ko.observableArray(_.map(data.products, function (product) {
         return new Entry(product);
     }));
+
+    self.created_at = moment(data.created_at).format(CONFIG.DATE_FORMATS.HUMAN_SHORT);
+    self.creator = data.user && data.user.username ? data.user.username : null;
 }

@@ -12,7 +12,8 @@ class Meal extends Model
     ];
 
     protected $with = [
-        'products'
+        'products',
+        'user'
     ];
 
     /**
@@ -21,5 +22,13 @@ class Meal extends Model
     public function products()
     {
         return $this->hasMany(MealProduct::class);
+    }
+
+    /**
+     * @return HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }
