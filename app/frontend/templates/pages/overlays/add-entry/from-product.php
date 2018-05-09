@@ -20,14 +20,16 @@
             </select>
         </div>
     </div>
-    <div class="form-row group">
-        <div class="form-row">
-            <label for="save_portion"><input type="checkbox" id="save_portion" name="save_portion" data-bind="checked: savePortion" /> Deze portie opslaan?</label>
-        </div>
-        <div data-bind="visible: savePortion">
+    <div data-bind="if: showSavePortion()">
+        <div class="form-row group">
             <div class="form-row">
-                <label for="portion_name">Naam portie:</label>
-                <input class="" type="text" id="portion_name" name="portion_name" data-bind="value: portionName">
+                <label for="save_portion"><input type="checkbox" id="save_portion" name="save_portion" data-bind="checked: savePortion" /> Deze portie opslaan?</label>
+            </div>
+            <div data-bind="visible: savePortion">
+                <div class="form-row">
+                    <label for="portion_name">Naam portie:</label>
+                    <input class="" type="text" id="portion_name" name="portion_name" data-bind="value: portionName">
+                </div>
             </div>
         </div>
     </div>

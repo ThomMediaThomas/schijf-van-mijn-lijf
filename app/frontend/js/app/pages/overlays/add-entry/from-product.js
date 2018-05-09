@@ -18,6 +18,7 @@ function FromProductForm() {
     self.portionName = ko.observable('');
 
     self.isEdit = false;
+    self.showSavePortion = ko.observable(true);
     self.entry = null;
     self.isLoading = ko.observable(false);
     self.loadingClass = ko.computed(function () {
@@ -49,12 +50,14 @@ function FromProductForm() {
             self.isEdit = true;
             self.entry = entry;
             self.fillInEntryData(entry);
+            self.showSavePortion(false);
         }
 
         //self.$element.find('#product_id').focus();
     };
 
     self.reset = function () {
+        self.showSavePortion(true);
         self.daypart_id(APP.loadedConfig.getCurrentDaypart().id);
         self.product_id('');
         self.product(null);
