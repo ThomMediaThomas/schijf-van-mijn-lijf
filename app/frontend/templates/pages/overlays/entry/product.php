@@ -13,14 +13,14 @@
     <div class="content-wrapper">
         <h3>Voedingswaarde per <span data-bind="text: friendlyAmount()"></span></h3>
         <dl>
-            <dt>Kilocalorieën</dt><dd data-bind="text: DISPLAYHELPER.ROUND(calories())">...</dd>
+            <dt>Kilocalorieën</dt><dd data-bind="text: DISPLAYHELPER.ROUND(calories()) + ' kcal'">...</dd>
             <dt>Koolhydraten</dt><dd data-bind="text: DISPLAYHELPER.ROUND(carbs()) + ' gr'">...</dd>
             <dt>Eiwit</dt><dd data-bind="text: DISPLAYHELPER.ROUND(proteins()) + ' gr'">...</dd>
             <dt>Vet</dt><dd data-bind="text: DISPLAYHELPER.ROUND(fats()) + ' gr'">...</dd>
         </dl>
         <h3>Voedingswaarde per 100gr</h3>
         <dl data-bind="with: product">
-            <dt>Kilocalorieën</dt><dd data-bind="text: DISPLAYHELPER.ROUND(calories)">...</dd>
+            <dt>Kilocalorieën</dt><dd data-bind="text: DISPLAYHELPER.ROUND(calories) + ' kcal'">...</dd>
             <dt>Koolhydraten</dt><dd data-bind="text: DISPLAYHELPER.ROUND(carbs) + ' gr'">...</dd>
             <dt>Eiwit</dt><dd data-bind="text: DISPLAYHELPER.ROUND(proteins) + ' gr'">...</dd>
             <dt>Vet</dt><dd data-bind="text: DISPLAYHELPER.ROUND(fats) + ' gr'">...</dd>
