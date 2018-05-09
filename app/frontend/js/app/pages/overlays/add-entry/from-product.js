@@ -57,7 +57,6 @@ function FromProductForm() {
     };
 
     self.reset = function () {
-        self.showSavePortion(true);
         self.daypart_id(APP.loadedConfig.getCurrentDaypart().id);
         self.product_id('');
         self.product(null);
@@ -66,6 +65,10 @@ function FromProductForm() {
         self.portion_id('');
         self.savePortion(false);
         self.portionName('');
+
+        self.isEdit = false;
+        self.entry = null;
+        self.showSavePortion(true);
     };
 
     self.fillInEntryData = function (entry) {
