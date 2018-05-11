@@ -25,7 +25,7 @@ class CreateMealProductsTable extends Migration
             $table->integer('portion_id')->unsigned()->index();
             $table->foreign('portion_id')->references('id')->on('portions')->onDelete('cascade');
 
-            $table->integer('amount');
+            $table->decimal('amount', 8, 2);
 
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

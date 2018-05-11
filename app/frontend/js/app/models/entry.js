@@ -10,7 +10,7 @@ function Entry(data){
     self.product = ko.observable(data.product ? new Product(data.product) : null);
     self.meal = ko.observable(data.meal ? new Meal(data.meal) : null);
     self.portion = ko.observable(data.portion ? new Portion(data.portion) : null);
-    self.amount = data.amount;
+    self.amount = parseFloat(data.amount);
     self.daypart_id = data.daypart_id;
 
     self.selected = ko.observable(false);

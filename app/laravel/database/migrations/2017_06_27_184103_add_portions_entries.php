@@ -17,7 +17,7 @@ class AddPortionsEntries extends Migration
             $table->integer('portion_id')->nullable()->after('product_id')->unsigned()->index();
             $table->foreign('portion_id')->references('id')->on('portions')->onDelete('cascade');
 
-            $table->integer('amount')->nullable()->after('portion_id');
+            $table->decimal('amount', 8, 2)->nullable()->after('portion_id');
         });
     }
 
