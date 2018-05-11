@@ -35,6 +35,7 @@
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/entry.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/add-entry.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/add-meal.php'); ?>
+        <?php include(dirname(__DIR__).'/frontend/templates/pages/overlays/copy-selection.php'); ?>
 
         <?php include(dirname(__DIR__).'/frontend/templates/pages/login.php'); ?>
         <?php include(dirname(__DIR__).'/frontend/templates/pages/register.php'); ?>
@@ -93,6 +94,7 @@
         <script src="js/app/pages/overlays/add-entry/from-meal.js"></script>
         <script src="js/app/pages/overlays/add-entry.js"></script>
         <script src="js/app/pages/overlays/add-meal.js"></script>
+        <script src="js/app/pages/overlays/copy-selection.js"></script>
         <script src="js/app/pages/entries.js"></script>
         <script src="js/app/pages/calculator.js"></script>
         <script src="js/app/pages/progress.js"></script>

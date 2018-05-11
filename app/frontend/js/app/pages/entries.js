@@ -202,4 +202,8 @@ function EntriesPage(){
             entry.remove();
         });
     };
+
+    self.copySelection = function () {
+
+    };
 }

@@ -35,8 +35,9 @@
         <div class="selection-nav" data-bind="visible: selectedEntries().length > 0">
             <div class="content-wrapper">
                 <ul>
-                    <li><a class="button-icon" href="#" data-bind="click: saveSelection"><i class="icon-save"></i><span>Maaltijd opslaan</span></a></li>
-                    <li><a class="button-icon" href="#" data-bind="click: removeSelection"><i class="icon-bin"></i><span>Selectie verwijderen</span></a></li>
+                    <li><a class="button-icon" href="#" data-bind="click: saveSelection"><i class="icon-save"></i><span>Opslaan</span></a></li>
+                    <li><a class="button-icon" href="#" data-bind="click: removeSelection"><i class="icon-bin"></i><span>Verwijderen</span></a></li>
+                    <li><a class="button-icon" href="#" data-bind="click: copySelection"><i class="icon-copy"></i><span>Kopiëren</span></a></li>
                 </ul>
             </div>
         </div>
