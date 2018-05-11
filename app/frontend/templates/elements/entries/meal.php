@@ -9,6 +9,8 @@
                 <h5><strong data-bind="text: friendlyAmount"></strong> - <span data-bind="text: calories"></span> kilocalorieën
                 </h5>
             </div
+            <div class="entry-category">
+            </div>
         </div>
         <div class="meal-products" data-bind="foreach: meal().products, css: openClass()">
             <div class="entry inset" data-bind="css: className()">
