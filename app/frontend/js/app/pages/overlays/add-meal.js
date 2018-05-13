@@ -71,6 +71,8 @@ function AddMealPage(){
                 if (APP.currentPage() == 'entries') {
                     APP.pages.entries.reload();
                 }
+
+                APP.notificator.show('Je maaltijd is succesvol opgeslagen.', 'success');
             }, function () {
                 self.isLoading(false);
             });
