@@ -20,7 +20,7 @@
         </div>
         <h3>Ingrediënten</h3>
         <div class="meal-products" data-bind="foreach: meal().products">
-            <div class="entry" data-bind="css: className()">
+            <div class="entry in-content" data-bind="css: className()">
                 <div class="content-wrapper entry-wrapper" data-bind="click: toggle">
                     <div class="entry-image" data-bind="with: product()">
                         <img data-bind="attr: { src: image, alt: name, title: name }"/>

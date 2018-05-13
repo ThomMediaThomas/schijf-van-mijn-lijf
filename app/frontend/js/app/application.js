@@ -26,6 +26,7 @@ function Application(){
     self.addEntry = new AddEntryPage();
     self.addMeal = new AddMealPage();
     self.entryPage = new EntryPage();
+    self.copySelectionPage = new CopySelectionPage();
     /*endregion Header*/
 
     /*region Pages*/

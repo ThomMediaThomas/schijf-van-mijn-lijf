@@ -204,6 +204,6 @@ function EntriesPage(){
     };
 
     self.copySelection = function () {
-
+        APP.copySelectionPage.toggle();
     };
 }

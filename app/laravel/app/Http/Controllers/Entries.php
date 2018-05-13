@@ -49,4 +49,29 @@ class Entries extends Base
 
         return response()->json($entry, 201);
     }
+
+    public function copy(Request $request)
+    {
+        $this->validateAuthentication($request);
+
+        $data = $request->get('entries');
+        $data = array_merge($data, [
+            'user_id' => $this->user->id
+        ]);
+
+        $copiedEntries = [];
+
+        if (isset($data['destination']) && isset($data['entries'])) {
+            $entries = $data['entries'];
+            foreach ($entries as $entry_id) {
+                $entryToCopy = Entry::findOrFail($entry_id);
+                $newEntry = $entryToCopy->replicate();
+                $newEntry->entry_date = $data['destination'];
+                $newEntry->save();
+                $copiedEntries[] = $newEntry;
+            }
+        }
+
+        return response()->json($copiedEntries, 201);
+    }
 }

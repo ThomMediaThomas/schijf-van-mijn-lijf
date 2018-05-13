@@ -7,8 +7,7 @@
             <div class="form">
                 <div class="form-row" id="period-selector">
                     <label for="period">Periode:</label>
-                    <select name="period" id="periode" data-bind="value: period, options: periods(), optionsText: 'label', optionsValue: 'value'">
-                    </select>
+                    <select name="period" id="periode" data-bind="value: period, options: periods(), optionsText: 'label', optionsValue: 'value'"></select>
                 </div>
             </div>
             <canvas id="progress-stat"></canvas>

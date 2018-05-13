@@ -1763,67 +1763,7 @@ select {
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-  /*.entry-percentage {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 3px;
-
-    i {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      height: 100%;
-      width: 50%;
-    }
-
-    .content-wrapper {
-      padding: 0px;
-      height: 3px;
-    }
-
-    &.vegetables {
-      background-color: lighten($vegetables, 40);
-
-      i {
-        background-color: $vegetables;
-      }
-    }
-
-    &.fats {
-      background-color: lighten($fats, 40);
-
-      i {
-        background-color: $fats;
-      }
-    }
-
-    &.meats {
-      background-color: lighten($meats, 40);
-
-      i {
-        background-color: $meats;
-      }
-    }
-
-    &.wheats {
-      background-color: lighten($wheats, 40);
-
-      i {
-        background-color: $wheats;
-      }
-    }
-
-    &.drinks {
-      background-color: lighten($drinks, 40);
-
-      i {
-        background-color: $drinks;
-      }
-    }
-  }*/ }
+  transition: all 0.25s ease-in-out; }
   .entry .entry, .autocomplete-product-suggestion .entry,
   .autocomplete-brand-suggestion .entry, .entry .autocomplete-product-suggestion, .autocomplete-product-suggestion .autocomplete-product-suggestion,
   .autocomplete-brand-suggestion .autocomplete-product-suggestion, .entry
@@ -1961,6 +1901,9 @@ select {
   .entry.inset .entry-content, .inset.autocomplete-product-suggestion .entry-content,
   .inset.autocomplete-brand-suggestion .entry-content {
     width: calc(100% - 80px); }
+  .entry.in-content .entry-category, .in-content.autocomplete-product-suggestion .entry-category,
+  .in-content.autocomplete-brand-suggestion .entry-category {
+    right: 0px; }
   .entry.selected, .selected.autocomplete-product-suggestion,
   .selected.autocomplete-brand-suggestion {
     border-left: 4px solid #0c82f0; }

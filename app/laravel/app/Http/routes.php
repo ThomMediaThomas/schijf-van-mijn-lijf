@@ -29,6 +29,7 @@ $api->version(
 
         $api->get('/entries', 'App\Http\Controllers\Entries@index');
         $api->post('/entries', 'App\Http\Controllers\Entries@create');
+        $api->post('/entries/copy', 'App\Http\Controllers\Entries@copy');
         $api->get('/entries/{id}', 'App\Http\Controllers\Entries@show');
         $api->post('/entries/{id}', 'App\Http\Controllers\Entries@update');
         $api->delete('/entries/{id}', 'App\Http\Controllers\Entries@delete');
