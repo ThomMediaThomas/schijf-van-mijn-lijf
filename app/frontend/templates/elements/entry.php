@@ -1,6 +1,6 @@
 <script id="entry" type="text/html">
     <div class="entry" data-bind="css: className()">
-        <div class="content-wrapper entry-wrapper" data-bind="click: toggle">
+        <div class="content-wrapper entry-wrapper" data-bind="click: {single: toggle, double: select }">
             <div class="entry-image" data-bind="with: product()">
                 <img data-bind="attr: { src: image, alt: name, title: name }"/>
             </div>
