@@ -41,12 +41,14 @@ function CopySelectionPage() {
             return false;
         }
 
+        self.reset();
         self.entries(APP.pages.entries.selectedEntries());
         self.fillDestinationSelector();
     };
 
     self.reset = function () {
         self.entries([]);
+        self.isLoading(false);
         self.destination(null);
         self.destinations([]);
     };
@@ -55,8 +57,8 @@ function CopySelectionPage() {
         var today = new moment(),
             tomorrow = (new moment()).add(1, 'days'),
             afterTomorrow = (new moment()).add(2, 'days'),
-            yesterday = (new moment()).add(1, 'days'),
-            beforeYesterday = (new moment()).add(1, 'days'),
+            yesterday = (new moment()).subtract(1, 'days'),
+            beforeYesterday = (new moment()).subtract(2, 'days'),
             destinations = [
             {
                 label: 'Vandaag - ' + today.format(CONFIG.DATE_FORMATS.HUMAN_SHORT),
@@ -106,6 +108,7 @@ function CopySelectionPage() {
                     APP.pages.entries.reload();
                     APP.notificator.show('Je selectie is succesvol gekopiëerd.', 'success');
                 }
+                self.isLoading(false);
             }, function () {
                 self.isLoading(false);
             });

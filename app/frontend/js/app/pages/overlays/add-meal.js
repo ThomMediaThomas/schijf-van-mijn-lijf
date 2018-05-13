@@ -73,6 +73,7 @@ function AddMealPage(){
                 }
 
                 APP.notificator.show('Je maaltijd is succesvol opgeslagen.', 'success');
+                self.isLoading(false);
             }, function () {
                 self.isLoading(false);
             });
