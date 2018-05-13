@@ -32,6 +32,7 @@
                 </div>
             </div>
             <a class="button" data-bind="click: submit, css: loadingClass">Toevoegen</a>
+            <a class="button small" data-bind="click: close">Annuleren</a>
         </form>
     </div>
 </div>
