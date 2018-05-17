@@ -107,7 +107,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group" data-bind="visible: goal_type() == 'stay'">
-                                    <div class="heading sub sub">
+                                    <div class="heading sub-sub">
                                         <h3>Je wilt op gewicht blijven</h3>
                                     </div>
                                     <div class="form-row">
@@ -119,7 +119,7 @@
                                     <a class="button" data-bind="click: $parent.createAdvice">Bereken advies</a>
                                 </div>
                                 <div class="form-group" data-bind="visible: goal_type() == 'loose'">
-                                    <div class="heading sub sub">
+                                    <div class="heading sub-sub">
                                         <h3>Je wilt afvallen</h3>
                                     </div>
                                     <div class="form-row">
@@ -140,7 +140,7 @@
                                     <a class="button" data-bind="click: $parent.createAdvice">Bereken advies</a>
                                 </div>
                                 <div class="form-group" data-bind="visible: goal_type() == 'gain'">
-                                    <div class="heading sub sub">
+                                    <div class="heading sub-sub">
                                         <h3>Je wilt aankomen</h3>
                                     </div>
                                     <div class="form-row">
