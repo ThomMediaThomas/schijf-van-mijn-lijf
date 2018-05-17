@@ -1906,7 +1906,8 @@ select {
     right: 0px; }
   .entry.selected, .selected.autocomplete-product-suggestion,
   .selected.autocomplete-brand-suggestion {
-    border-left: 4px solid #0c82f0; }
+    border-left: 4px solid #0c82f0;
+    background-color: #cde5fc; }
   .entry.vegetables h4, .vegetables.autocomplete-product-suggestion h4,
   .vegetables.autocomplete-brand-suggestion h4 {
     color: #bedb39; }

@@ -165,6 +165,7 @@
 
   &.selected {
     border-left: 4px solid $cyan;
+    background-color: lighten($cyanLight, 20%);
   }
 
   &.vegetables {
