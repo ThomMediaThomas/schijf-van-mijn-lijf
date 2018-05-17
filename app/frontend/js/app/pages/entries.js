@@ -117,10 +117,10 @@ function EntriesPage(){
         }
     });
 
-    self.init = function () {
+    self.init = function (options) {
         self.isLoading(true);
         self.initSwipe();
-        self.setDate(moment());
+        self.setDate(options && options.dateToGoTo ? options.dateToGoTo : moment());
         self.user(APP.user());
     };
 

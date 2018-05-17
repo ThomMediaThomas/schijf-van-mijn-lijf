@@ -47,9 +47,14 @@ function Application(){
         return this.currentPage();
     }.bind(self);
 
-    self.navigate = function(page) {
+    self.navigate = function(page, options) {
         //animate page out
         $('#page').addClass('before-toggle');
+
+        //before open
+        if (!_.isUndefined(self.pages[page]) && _.isFunction(self.pages[page].beforeOpen)) {
+            self.pages[page].beforeOpen();
+        }
 
         self.navigation.currentPage(page);
         self.navigation.close();
@@ -59,7 +64,7 @@ function Application(){
         setTimeout($.proxy(function () {
             self.currentPage(page);
             if (!_.isUndefined(self.pages[page])) {
-                self.pages[page].init();
+                self.pages[page].init(options ? options : null);
             }
             $('#page').removeClass('before-toggle');
         }, self, page), 300);

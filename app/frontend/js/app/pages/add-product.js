@@ -25,6 +25,14 @@ function AddProductPage() {
         return self.isLoading() ? 'is-loading' : '';
     });
 
+    self.dateToGoTo = null;
+
+    self.beforeOpen = function () {
+        if(APP.currentPage() == 'entries') {
+            self.dateToGoTo = APP.pages.entries.date();
+        }
+    };
+
     self.init = function () {
         if (self.initialized) {
             return false;
@@ -109,7 +117,7 @@ function AddProductPage() {
                     })
                 },
             }, function (data) {
-                APP.navigate('entries');
+                APP.navigate('entries', self.dateToGoTo ? { dateToGoTo : self.dateToGoTo } : null);
                 APP.notificator.show(self.name() + ' is succesvol toegevoegd en klaar voor gebruik.', 'success');
                 self.isLoading(false);
             });
