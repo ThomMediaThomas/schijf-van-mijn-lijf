@@ -98,3 +98,15 @@ select {
   padding-top: $spacer - 1px;
   background: url('/files/images/select.png') no-repeat White center right;
 }
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  margin: $spacer;
+
+  & + label {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+  }
+}

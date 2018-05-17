@@ -1635,6 +1635,16 @@ select {
   padding-top: 3px;
   background: url("/files/images/select.png") no-repeat White center right; }
 
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  margin: 4px; }
+  input[type="radio"] + label,
+  input[type="checkbox"] + label {
+    display: inline-block;
+    position: relative;
+    top: -2px; }
+
 .autocomplete-product-suggestion,
 .autocomplete-brand-suggestion {
   color: #989898;

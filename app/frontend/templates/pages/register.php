@@ -30,10 +30,14 @@
                 </div>
                 <div class="form-row">
                     <label for="gender">Geslacht:</label>
-                    <select class="required" id="gender" name="gender" data-bind="value: gender">
-                        <option value="m">Man</option>
-                        <option value="f">Vrouw</option>
-                    </select>
+                    <div class="form-row">
+                        <div class="form-row-inner half">
+                            <input type="radio" name="gender" id="male" value="m" data-bind="checked: gender"><label for="male">Man</label>
+                        </div>
+                        <div class="form-row-inner half">
+                            <input type="radio" name="gender" id="female" value="f" data-bind="checked: gender"><label for="female">Vrouw</label>
+                        </div>
+                    </div>
                 </div>
                 <a class="button" data-bind="click: register">Registreren</a>
             </form>
