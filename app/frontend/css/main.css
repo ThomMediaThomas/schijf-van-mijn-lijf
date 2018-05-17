@@ -2002,6 +2002,9 @@ select {
   width: 100%;
   z-index: 40; }
 
+#todays-entries {
+  position: relative; }
+
 .page.overlay {
   margin-bottom: 0px;
   position: fixed;
@@ -2090,7 +2093,7 @@ select {
     margin-right: -150px; }
 
 #loading {
-  background: url("/files/images/loading.gif") no-repeat rgba(255, 255, 255, 0.8) center center;
+  background: url("/files/images/loading.gif") no-repeat rgba(255, 255, 255, 0.6) center center;
   opacity: 0;
   top: 0%;
   pointer-events: none;
@@ -2099,6 +2102,22 @@ select {
   -webkit-transition: opacity 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out; }
   #loading.open {
+    opacity: 1; }
+
+.content-loading {
+  background: url("/files/images/loading.gif") no-repeat rgba(255, 255, 255, 0.6) center center;
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out; }
+  .content-loading.open {
     opacity: 1; }
 
 #add-entry {

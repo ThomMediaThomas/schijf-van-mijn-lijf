@@ -8,6 +8,7 @@
             </div>
         </div>
         <div class="entries" id="todays-entries" data-bind="foreach: dayparts()">
+            <div class="content-loading" data-bind="css: $parent.showLoader()"></div>
             <div class="daypart">
                 <div class="content-wrapper">
                     <h3 data-bind="text: name"></h3>

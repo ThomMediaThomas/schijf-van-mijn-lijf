@@ -8,6 +8,10 @@ function EntriesPage(){
     self.entries = ko.observableArray([]);
     self.date = ko.observable(moment());
     self.user = ko.observable();
+    self.isLoading = ko.observable(true);
+    self.showLoader = ko.computed(function () {
+        return self.isLoading() ? 'open' : 'closed'
+    });
     self.friendlyDate = ko.computed(function () {
         return self.date().format(CONFIG.DATE_FORMATS.HUMAN);
     });
@@ -114,7 +118,7 @@ function EntriesPage(){
     });
 
     self.init = function () {
-        APP.isLoading(true);
+        self.isLoading(true);
         self.initSwipe();
         self.setDate(moment());
         self.user(APP.user());
@@ -161,6 +165,7 @@ function EntriesPage(){
     };
 
     self.loadEntries = function () {
+        self.isLoading(true);
         self.dayparts(_.clone(APP.loadedConfig.dayparts));
         self.entries([]);
 
@@ -177,7 +182,7 @@ function EntriesPage(){
                     return entry;
                 }));
             });
-            APP.isLoading(false);
+            self.isLoading(false);
         });
     };
 
