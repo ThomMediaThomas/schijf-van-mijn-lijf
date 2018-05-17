@@ -131,6 +131,13 @@ function Navigation(){
     };
 
     self.setIntroCalories = function (total) {
-        self.intro('Fijn dat je er weer bent, je hebt vandaag <strong>' + total + ' kilocalorieën</strong> (van de aanbevolen ' + self.user().calories_goal() + ') ingevoerd.');
+        var text = 'Je hebt vandaag <strong>' + total + ' kcal</strong> (aanbevolen: ' + self.user().calories_goal() + ') ingevoerd.',
+            startDate = self.user().current_program().start_date();
+
+        if (startDate) {
+            var durationSinceStart = Math.floor(moment.duration((moment()).diff(startDate)).asDays());
+            text += ' Je volgt dit programma al ' + durationSinceStart + ' dagen.';
+        }
+        self.intro(text);
     }
 }
