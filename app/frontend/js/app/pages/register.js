@@ -20,16 +20,6 @@ function RegisterPage(){
         if (!isValid(self.$form)) {
             return false;
         }
-
-        console.log({
-            username: self.username(),
-                firstname: self.firstname(),
-                lastname: self.lastname(),
-                gender: self.gender(),
-                email: self.email(),
-                password: self.password(),
-                calories_average: self.gender() == 'm' ? 2500 : 2000
-        });
         return false;
 
         AJAXHELPER.POST(CONFIG.API + CONFIG.ENDPOINTS.USER, {
@@ -48,4 +38,8 @@ function RegisterPage(){
         });
         return false;
     };
+
+    self.cancel = function () {
+        APP.navigate('login');
+    }
 }

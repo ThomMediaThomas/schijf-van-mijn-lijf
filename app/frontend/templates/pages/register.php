@@ -40,6 +40,7 @@
                     </div>
                 </div>
                 <a class="button" data-bind="click: register">Registreren</a>
+                <a class="button small" data-bind="click: cancel">Annuleren</a>
             </form>
         </div>
     </div>
