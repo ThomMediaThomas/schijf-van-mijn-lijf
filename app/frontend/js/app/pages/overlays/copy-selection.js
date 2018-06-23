@@ -53,6 +53,11 @@ function CopySelectionPage() {
         self.destinations([]);
     };
 
+    self.entryTemplate = function (entry) {
+        return entry.type + '_inline';
+    };
+
+
     self.fillDestinationSelector = function () {
         var today = new moment(),
             tomorrow = (new moment()).add(1, 'days'),
